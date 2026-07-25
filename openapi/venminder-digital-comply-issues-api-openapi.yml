@@ -1,0 +1,253 @@
+openapi: 3.0.1
+info:
+  title: Venminder OpenApi BusinessUnit Issues API
+  version: v1
+security:
+- Bearer: []
+tags:
+- name: Issues
+paths:
+  /api/v1/Issues/GetAllIssues:
+    get:
+      tags:
+      - Issues
+      summary: Provides a list of all issues in the system.
+      description: Provides a basic high level set of information about all issues in the system. With this information you can drill down further for more details with other API calls.
+      parameters:
+      - name: cultureCode
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.Issues.GetAllIssuesResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.Issues.GetAllIssuesResponse'
+  /api/v1/Issues/GetIssueDetails:
+    get:
+      tags:
+      - Issues
+      summary: Provides details about a specific given issue.
+      description: Provides details about a specific given issue.
+      parameters:
+      - name: issueKey
+        in: query
+        schema:
+          type: string
+      - name: cultureCode
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.Issues.IssueDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.Issues.IssueDetails'
+components:
+  schemas:
+    OpenApi.v1.Issues.GetAllIssuesResponse:
+      title: OpenApi.v1.Issues.GetAllIssuesResponse
+      type: object
+      properties:
+        issues:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Issues.Issue'
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Issues.GetAllIssuesResponse
+    OpenApi.v1.Issues.IssueProduct:
+      title: OpenApi.v1.Issues.IssueProduct
+      type: object
+      properties:
+        product:
+          type: string
+          nullable: true
+        key:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Issues.IssueProduct
+    OpenApi.v1.Issues.IssueCommentDocument:
+      title: OpenApi.v1.Issues.IssueCommentDocument
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        fileName:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Issues.IssueCommentDocument
+    OpenApi.v1.Issues.IssueAdditionalDetails:
+      title: OpenApi.v1.Issues.IssueAdditionalDetails
+      type: object
+      properties:
+        questionKey:
+          type: string
+          nullable: true
+        question:
+          type: string
+          nullable: true
+        answerKey:
+          type: string
+          nullable: true
+        answer:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Issues.IssueAdditionalDetails
+    OpenApi.v1.Issues.Issue:
+      title: OpenApi.v1.Issues.Issue
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        vendor:
+          type: string
+          nullable: true
+        vendorKey:
+          type: string
+          nullable: true
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Issues.IssueProduct'
+          nullable: true
+        owner:
+          type: string
+          nullable: true
+        dateOpened:
+          type: string
+          format: date-time
+        dateClosed:
+          type: string
+          format: date-time
+          nullable: true
+        status:
+          type: string
+          nullable: true
+        severity:
+          type: string
+          nullable: true
+        severityKey:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Issues.Issue
+    OpenApi.v1.Issues.IssueComment:
+      title: OpenApi.v1.Issues.IssueComment
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        commentor:
+          type: string
+          nullable: true
+        comment:
+          type: string
+          nullable: true
+        commentDate:
+          type: string
+          format: date-time
+        documents:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Issues.IssueCommentDocument'
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Issues.IssueComment
+    OpenApi.v1.Issues.IssueDetails:
+      title: OpenApi.v1.Issues.IssueDetails
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        vendor:
+          type: string
+          nullable: true
+        vendorKey:
+          type: string
+          nullable: true
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Issues.IssueProduct'
+          nullable: true
+        owner:
+          type: string
+          nullable: true
+        dateOpened:
+          type: string
+          format: date-time
+        dateClosed:
+          type: string
+          format: date-time
+          nullable: true
+        status:
+          type: string
+          nullable: true
+        originType:
+          type: string
+          nullable: true
+        originTypeKey:
+          type: string
+          nullable: true
+        originOfTheIssue:
+          type: string
+          nullable: true
+        severity:
+          type: string
+          nullable: true
+        severityKey:
+          type: string
+          nullable: true
+        issueApprovalRequired:
+          type: boolean
+        ownerAllowedToApprove:
+          type: boolean
+        comments:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Issues.IssueComment'
+          nullable: true
+        additionalDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Issues.IssueAdditionalDetails'
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Issues.IssueDetails
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Please insert access token with Bearer into field eg. Bearer eyJhbGciOiJSUzI1Ni and click authorize.
+      name: Authorization
+      in: header

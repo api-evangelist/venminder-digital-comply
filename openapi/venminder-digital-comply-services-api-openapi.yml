@@ -1,0 +1,248 @@
+openapi: 3.0.1
+info:
+  title: Venminder OpenApi BusinessUnit Services API
+  version: v1
+security:
+- Bearer: []
+tags:
+- name: Services
+paths:
+  /api/v1/Services/ListServices:
+    post:
+      tags:
+      - Services
+      summary: Provides a list of purchased services.
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Services.GetServicesRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Services.GetServicesRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Services.GetServicesRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Services.GetServicesRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Services.GetServicesRequest'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Services.GetServicesRequest'
+          application/*+xml:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Services.GetServicesRequest'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OpenApi.v1.Services.Service'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.Services.Service'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+  /api/v1/Services/GetDetails:
+    get:
+      tags:
+      - Services
+      summary: Details of a specific service.
+      parameters:
+      - name: serviceId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.Services.ServiceDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.Services.ServiceDetails'
+components:
+  schemas:
+    OpenApi.v1.Services.GetServicesRequest:
+      title: OpenApi.v1.Services.GetServicesRequest
+      type: object
+      properties:
+        filterByVendorKeys:
+          type: array
+          items:
+            type: string
+          nullable: true
+        filterByProductKeys:
+          type: array
+          items:
+            type: string
+          nullable: true
+        fromDateCreated:
+          type: string
+          format: date-time
+          nullable: true
+        toDateCreated:
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Services.GetServicesRequest
+    OpenApi.v1.Services.Product:
+      title: OpenApi.v1.Services.Product
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        productKey:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Services.Product
+    OpenApi.v1.Services.Service:
+      title: OpenApi.v1.Services.Service
+      type: object
+      properties:
+        serviceID:
+          type: string
+          format: uuid
+        serviceKey:
+          type: string
+          nullable: true
+          readOnly: true
+        type:
+          type: string
+          nullable: true
+        status:
+          type: string
+          nullable: true
+        statusChangedDate:
+          type: string
+          format: date-time
+          nullable: true
+        vendor:
+          $ref: '#/components/schemas/OpenApi.v1.Services.Vendor'
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Services.Product'
+          nullable: true
+        createdDate:
+          type: string
+          format: date-time
+      additionalProperties: false
+      xml:
+        name: Services.Service
+    OpenApi.v1.Services.Vendor:
+      title: OpenApi.v1.Services.Vendor
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        vendorKey:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Services.Vendor
+    OpenApi.v1.Services.ServiceDetails:
+      title: OpenApi.v1.Services.ServiceDetails
+      type: object
+      properties:
+        serviceID:
+          type: string
+          format: uuid
+        serviceKey:
+          type: string
+          nullable: true
+          readOnly: true
+        type:
+          type: string
+          nullable: true
+        status:
+          type: string
+          nullable: true
+        statusChangedDate:
+          type: string
+          format: date-time
+          nullable: true
+        vendor:
+          $ref: '#/components/schemas/OpenApi.v1.Services.Vendor'
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Services.Product'
+          nullable: true
+        createdDate:
+          type: string
+          format: date-time
+        documentKeys:
+          type: array
+          items:
+            type: string
+          nullable: true
+        rating:
+          type: string
+          nullable: true
+        reviewLevel:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Services.ServiceDetails
+    OpenApi.v1.ErrorResponse:
+      title: OpenApi.v1.ErrorResponse
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int32
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: ErrorResponse
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type: string
+          nullable: true
+        resourceValue:
+          type: string
+          nullable: true
+        field:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: ErrorResource
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Please insert access token with Bearer into field eg. Bearer eyJhbGciOiJSUzI1Ni and click authorize.
+      name: Authorization
+      in: header

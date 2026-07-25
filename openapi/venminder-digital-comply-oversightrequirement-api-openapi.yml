@@ -1,0 +1,253 @@
+openapi: 3.0.1
+info:
+  title: Venminder OpenApi BusinessUnit OversightRequirement API
+  version: v1
+security:
+- Bearer: []
+tags:
+- name: OversightRequirement
+paths:
+  /api/v1/OversightRequirement/GetOversightRequirement:
+    get:
+      tags:
+      - OversightRequirement
+      summary: Gets a specific Oversight Requirement by its key.
+      parameters:
+      - name: key
+        in: query
+        description: This represents the key of the Oversight Requirement to be retrieved.
+        schema:
+          type: string
+      - name: cultureCode
+        in: header
+        description: The culture code controls the language used in the response. Defaults to "en-US".
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightRequirement'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+        '401':
+          description: Unauthorized
+  /api/v1/OversightRequirement/GetOversightRequirementList:
+    post:
+      tags:
+      - OversightRequirement
+      summary: Get a list of all Oversight Requirments that fit the criteria provided in the request.
+      parameters:
+      - name: cultureCode
+        in: header
+        description: The culture code controls the language used in the response. Defaults to "en-US".
+        schema:
+          type: string
+      requestBody:
+        description: The request object contains multiple properties allowing for the filtering of returned oversight requirement objects.
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.GetOversightRequirementListRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.GetOversightRequirementListRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.GetOversightRequirementListRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.GetOversightRequirementListRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.GetOversightRequirementListRequest'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.GetOversightRequirementListRequest'
+          application/*+xml:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.GetOversightRequirementListRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightRequirement'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+        '401':
+          description: Unauthorized
+components:
+  schemas:
+    OpenApi.v1.Oversight.OpenApiOversightTaskOwner:
+      title: OpenApi.v1.Oversight.OpenApiOversightTaskOwner
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        type:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOversightTaskOwner
+    OpenApi.v1.Oversight.OpenApiOversightRequirement:
+      title: OpenApi.v1.Oversight.OpenApiOversightRequirement
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        shouldNotifyAdminWhenOverdue:
+          type: boolean
+        taskDurationInDays:
+          type: integer
+          format: int32
+        isOneTimeRequirement:
+          type: boolean
+        oversightRequirementType:
+          type: string
+          nullable: true
+        oversightRequirementCategory:
+          type: string
+          nullable: true
+        oversightRequirementResultGroup:
+          type: string
+          nullable: true
+        isSoc:
+          type: boolean
+        onboardingLifecycle:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightRequirementLifecycle'
+        offboardingLifecycle:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightRequirementLifecycle'
+        ongoingLifecycle:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightRequirementLifecycle'
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOversightRequirement
+    OpenApi.v1.Oversight.OpenApiOversightRequirementLifecycle:
+      title: OpenApi.v1.Oversight.OpenApiOversightRequirementLifecycle
+      type: object
+      properties:
+        isApprovalRequired:
+          type: boolean
+        approverContact:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightContact'
+        defaultTaskOwner:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightTaskOwner'
+        isActive:
+          type: boolean
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOversightRequirementLifecycle
+    OpenApi.v1.Oversight.Request.GetOversightRequirementListRequest:
+      title: OpenApi.v1.Oversight.Request.GetOversightRequirementListRequest
+      type: object
+      properties:
+        lifecycles:
+          type: array
+          items:
+            type: string
+          nullable: true
+        defaultTaskOwnerKeys:
+          type: array
+          items:
+            type: string
+          nullable: true
+        defaultApproverKeys:
+          type: array
+          items:
+            type: string
+          nullable: true
+        keys:
+          type: array
+          items:
+            type: string
+          nullable: true
+        isOneTimeRequirement:
+          type: boolean
+          nullable: true
+        isSoc:
+          type: boolean
+          nullable: true
+        willNotifyAdminWhenOverdue:
+          type: boolean
+          nullable: true
+        requirementLevel:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Oversight.Request.GetOversightRequirementListRequest
+    OpenApi.v1.ErrorResponse:
+      title: OpenApi.v1.ErrorResponse
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int32
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: ErrorResponse
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type: string
+          nullable: true
+        resourceValue:
+          type: string
+          nullable: true
+        field:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: ErrorResource
+    OpenApi.v1.Oversight.OpenApiOversightContact:
+      title: OpenApi.v1.Oversight.OpenApiOversightContact
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOversightContact
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Please insert access token with Bearer into field eg. Bearer eyJhbGciOiJSUzI1Ni and click authorize.
+      name: Authorization
+      in: header

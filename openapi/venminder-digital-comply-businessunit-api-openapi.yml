@@ -1,0 +1,127 @@
+openapi: 3.0.1
+info:
+  title: Venminder OpenApi BusinessUnit API
+  version: v1
+security:
+- Bearer: []
+tags:
+- name: BusinessUnit
+paths:
+  /api/v1/BusinessUnitInformation/GetBusinessUnits:
+    get:
+      tags:
+      - BusinessUnit
+      summary: Provides a list of business unit related informtion.
+      description: Provides a list of business units with their assigned products and users as well as a list of unassigned products and users.
+      responses:
+        '200':
+          description: Returns list of Business Units and unassigned products and unassigned users
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.BusinessUnitInformation'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.BusinessUnitInformation'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+components:
+  schemas:
+    OpenApi.v1.BusinessUnitInformation:
+      title: OpenApi.v1.BusinessUnitInformation
+      type: object
+      properties:
+        businessUnits:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.BusinessUnitInfo'
+          nullable: true
+        unassignedProducts:
+          type: array
+          items:
+            type: string
+          nullable: true
+        unassignedUsers:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: BusinessUnitInformation
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type: string
+          nullable: true
+        resourceValue:
+          type: string
+          nullable: true
+        field:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: ErrorResource
+    OpenApi.v1.BusinessUnitInfo:
+      title: OpenApi.v1.BusinessUnitInfo
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        products:
+          type: array
+          items:
+            type: string
+          nullable: true
+        users:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: BusinessUnitInfo
+    OpenApi.v1.ErrorResponse:
+      title: OpenApi.v1.ErrorResponse
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int32
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: ErrorResponse
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Please insert access token with Bearer into field eg. Bearer eyJhbGciOiJSUzI1Ni and click authorize.
+      name: Authorization
+      in: header

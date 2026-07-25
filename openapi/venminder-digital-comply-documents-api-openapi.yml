@@ -1,0 +1,151 @@
+openapi: 3.0.1
+info:
+  title: Venminder OpenApi BusinessUnit Documents API
+  version: v1
+security:
+- Bearer: []
+tags:
+- name: Documents
+paths:
+  /api/v1/Documents/{documentKey}:
+    get:
+      tags:
+      - Documents
+      summary: Provides a service to download a document.
+      description: Provides a service to download a document stored in the Venminder platform to a local folder.
+      parameters:
+      - name: documentKey
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+  /api/v1/Documents/GetDocumentsList:
+    get:
+      tags:
+      - Documents
+      summary: Provides a list of documents stored in the Venminder platform.
+      description: Provides a list of documents stored in the Venminder platform filtered based on a high level category.  Some of the properties will include the file name, the upload date, associated vendor product, tags…
+      parameters:
+      - name: documentCategory
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: documentTag
+        in: query
+        schema:
+          type: string
+      - name: documentName
+        in: query
+        schema:
+          type: string
+      - name: vendorKey
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OpenApi.v1.ApiDocument'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+components:
+  schemas:
+    OpenApi.v1.ApiDocument:
+      title: OpenApi.v1.ApiDocument
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        fileName:
+          type: string
+          nullable: true
+        uploadedDate:
+          type: string
+          nullable: true
+        effectiveDate:
+          type: string
+          nullable: true
+        expirationDate:
+          type: string
+          nullable: true
+        vendorKey:
+          type: string
+          nullable: true
+        isArchived:
+          type: boolean
+        productKeys:
+          type: array
+          items:
+            type: string
+          nullable: true
+        tags:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: ApiDocument
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type: string
+          nullable: true
+        resourceValue:
+          type: string
+          nullable: true
+        field:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: ErrorResource
+    OpenApi.v1.ErrorResponse:
+      title: OpenApi.v1.ErrorResponse
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int32
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: ErrorResponse
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Please insert access token with Bearer into field eg. Bearer eyJhbGciOiJSUzI1Ni and click authorize.
+      name: Authorization
+      in: header

@@ -1,0 +1,482 @@
+openapi: 3.0.1
+info:
+  title: Venminder OpenApi BusinessUnit OversightTask API
+  version: v1
+security:
+- Bearer: []
+tags:
+- name: OversightTask
+paths:
+  /api/v1/OversightTask/GetOversightTask:
+    get:
+      tags:
+      - OversightTask
+      summary: Gets a specific Oversight Task by its key.
+      parameters:
+      - name: key
+        in: query
+        description: This represents the key of the Oversight Task to be retrieved.
+        schema:
+          type: string
+      - name: cultureCode
+        in: header
+        description: The culture code controls the language used in the response. Defaults to "en-US".
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightTask'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+        '401':
+          description: Unauthorized
+  /api/v1/OversightTask/GetOversightTaskList:
+    post:
+      tags:
+      - OversightTask
+      summary: Get a list of all Oversight Tasks that fit the criteria provided in the request.
+      parameters:
+      - name: cultureCode
+        in: header
+        description: The culture code controls the language used in the response. Defaults to "en-US".
+        schema:
+          type: string
+      requestBody:
+        description: The request object contains multiple properties allowing for the filtering of returned oversight task objects.
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.GetOversightTaskListRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.GetOversightTaskListRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.GetOversightTaskListRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.GetOversightTaskListRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.GetOversightTaskListRequest'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.GetOversightTaskListRequest'
+          application/*+xml:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.GetOversightTaskListRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightTask'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+        '401':
+          description: Unauthorized
+  /api/v1/OversightTask/CreateOversightTask:
+    post:
+      tags:
+      - OversightTask
+      summary: Creates an Oversight Task with the provided properties and defaults from the Oversight Requirement.
+      parameters:
+      - name: cultureCode
+        in: header
+        description: The culture code controls the language used in the response. Defaults to "en-US".
+        schema:
+          type: string
+      requestBody:
+        description: The request object containing multiple properties that gets used during task creation.
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.CreateOversightTaskRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.CreateOversightTaskRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.CreateOversightTaskRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.CreateOversightTaskRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.CreateOversightTaskRequest'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.CreateOversightTaskRequest'
+          application/*+xml:
+            schema:
+              $ref: '#/components/schemas/OpenApi.v1.Oversight.Request.CreateOversightTaskRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+        '401':
+          description: Unauthorized
+  /api/v1/OversightTask/UpdateOversightTask/{key}:
+    patch:
+      tags:
+      - OversightTask
+      summary: Updates specific properties of an Oversight Task based on the provided PATCH operations.
+      description: This PATCH endpoint only supports "replace", "add", and "remove" operations.
+      parameters:
+      - name: key
+        in: path
+        description: Provides the key of the Oversight Task that should be updated.
+        required: true
+        schema:
+          type: string
+      - name: cultureCode
+        in: header
+        description: The culture code controls the language used in the response. Defaults to "en-US".
+        schema:
+          type: string
+      requestBody:
+        description: A list of PATCH operations providing specific instructions on how to update the oversight task.
+        content:
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/OpenApi.v1.JsonPatch.Operations.Operation'
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/OpenApi.v1.JsonPatch.Operations.Operation'
+          text/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/OpenApi.v1.JsonPatch.Operations.Operation'
+          application/*+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/OpenApi.v1.JsonPatch.Operations.Operation'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+        '401':
+          description: Unauthorized
+components:
+  schemas:
+    OpenApi.v1.Oversight.OpenApiOversightTaskComment:
+      title: OpenApi.v1.Oversight.OpenApiOversightTaskComment
+      type: object
+      properties:
+        commentString:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOversightTaskComment
+    OpenApi.v1.Oversight.OpenApiOversightTaskOwner:
+      title: OpenApi.v1.Oversight.OpenApiOversightTaskOwner
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        type:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOversightTaskOwner
+    OpenApi.v1.Oversight.Request.GetOversightTaskListRequest:
+      title: OpenApi.v1.Oversight.Request.GetOversightTaskListRequest
+      type: object
+      properties:
+        keys:
+          type: array
+          items:
+            type: string
+          nullable: true
+        statuses:
+          type: array
+          items:
+            type: string
+          nullable: true
+        lifecycles:
+          type: array
+          items:
+            type: string
+          nullable: true
+        vendorKeys:
+          type: array
+          items:
+            type: string
+          nullable: true
+        productKeys:
+          type: array
+          items:
+            type: string
+          nullable: true
+        startDate:
+          type: string
+          format: date-time
+          nullable: true
+        endDate:
+          type: string
+          format: date-time
+          nullable: true
+        reviewResults:
+          type: array
+          items:
+            type: string
+          nullable: true
+        taskOwnerKeys:
+          type: array
+          items:
+            type: string
+          nullable: true
+        requirementKeys:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Oversight.Request.GetOversightTaskListRequest
+    OpenApi.v1.Oversight.Request.CreateOversightTaskRequest:
+      title: OpenApi.v1.Oversight.Request.CreateOversightTaskRequest
+      type: object
+      properties:
+        oversightRequirementKey:
+          type: string
+          nullable: true
+        ownerKey:
+          type: string
+          nullable: true
+        ownerType:
+          type: string
+          nullable: true
+        startDate:
+          type: string
+          format: date-time
+        productsKeys:
+          type: array
+          items:
+            type: string
+          nullable: true
+        vendorKey:
+          type: string
+          nullable: true
+        onboardingProperties:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOnboardingOversightTaskProperties'
+        offboardingProperties:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOffboardingOversightTaskProperties'
+      additionalProperties: false
+      xml:
+        name: Oversight.Request.CreateOversightTaskRequest
+    OpenApi.v1.Oversight.OpenApiOversightTask:
+      title: OpenApi.v1.Oversight.OpenApiOversightTask
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        requirementName:
+          type: string
+          nullable: true
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        owner:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightTaskOwner'
+        internalReviewer:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightContact'
+        internalReviewerDate:
+          type: string
+          format: date-time
+          nullable: true
+        externalReviewer:
+          type: string
+          nullable: true
+        externalReviewerDate:
+          type: string
+          format: date-time
+          nullable: true
+        taskStatus:
+          type: string
+          nullable: true
+        approvalStatus:
+          type: string
+          nullable: true
+        vendorKey:
+          type: string
+          nullable: true
+        productKeys:
+          type: array
+          items:
+            type: string
+          nullable: true
+        lifecycle:
+          type: string
+          nullable: true
+        socType:
+          type: string
+          nullable: true
+        approver:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightContact'
+        taskDocumentKeys:
+          type: array
+          items:
+            type: string
+          nullable: true
+        comments:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightTaskComment'
+          nullable: true
+        reviewResult:
+          type: string
+          nullable: true
+        requirementKey:
+          type: string
+          nullable: true
+        completedDate:
+          type: string
+          format: date-time
+          nullable: true
+        completedBy:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightContact'
+        onboardingProperties:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOnboardingOversightTaskProperties'
+        offboardingProperties:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOffboardingOversightTaskProperties'
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOversightTask
+    OpenApi.v1.ErrorResponse:
+      title: OpenApi.v1.ErrorResponse
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int32
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: ErrorResponse
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type: string
+          nullable: true
+        resourceValue:
+          type: string
+          nullable: true
+        field:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: ErrorResource
+    OpenApi.v1.Oversight.OpenApiOffboardingOversightTaskProperties:
+      title: OpenApi.v1.Oversight.OpenApiOffboardingOversightTaskProperties
+      type: object
+      properties:
+        requestKey:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOffboardingOversightTaskProperties
+    OpenApi.v1.JsonPatch.Operations.Operation:
+      title: OpenApi.v1.JsonPatch.Operations.Operation
+      type: object
+      properties:
+        path:
+          type: string
+          nullable: true
+        op:
+          type: string
+          nullable: true
+        from:
+          type: string
+          nullable: true
+        value:
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: JsonPatch.Operations.Operation
+    OpenApi.v1.Oversight.OpenApiOnboardingOversightTaskProperties:
+      title: OpenApi.v1.Oversight.OpenApiOnboardingOversightTaskProperties
+      type: object
+      properties:
+        requestRelationshipKey:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOnboardingOversightTaskProperties
+    OpenApi.v1.Oversight.OpenApiOversightContact:
+      title: OpenApi.v1.Oversight.OpenApiOversightContact
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOversightContact
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Please insert access token with Bearer into field eg. Bearer eyJhbGciOiJSUzI1Ni and click authorize.
+      name: Authorization
+      in: header
