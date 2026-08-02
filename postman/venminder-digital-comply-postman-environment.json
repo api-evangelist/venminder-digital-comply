@@ -1,0 +1,24 @@
+{
+	"id": "3dfc5f8a-21b9-48d0-9a30-c37dbfffd747",
+	"name": "Venminder API - PROD",
+	"values": [
+		{
+			"key": "login-domain",
+			"value": "https://login.venminder.com",
+			"enabled": true
+		},
+		{
+			"key": "domain",
+			"value": "https://rsd.venminder.com",
+			"enabled": true
+		},
+		{
+			"key": "access_token",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2021-11-22T21:20:53.518Z",
+	"_postman_exported_using": "Postman/9.1.5"
+}

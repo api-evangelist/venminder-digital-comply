@@ -1,0 +1,42 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.venminder.com/ + https://login.venminder.com/.well-known/openid-configuration
+  + https://www.venminder.com/about/legal
+standards:
+- id: oauth2
+  conforms: true
+  evidence: 'Docs: OAuth 2.0 client-credentials grant at https://login.venminder.com/connect/token (scope
+    venminderApi).'
+- id: oidc
+  conforms: true
+  evidence: Live OIDC discovery document at login.venminder.com/.well-known/openid-configuration (IdentityServer;
+    PAR, CIBA, device authorization endpoints advertised).
+- id: scim-2.0
+  conforms: true
+  evidence: User provisioning API at https://rsd.venminder.com/scim/v2/Users implements SCIM 2.0 (urn:ietf:params:scim:schemas:core:2.0:User,
+    ListResponse, PatchOp, .search) plus an urn:ietf:params:scim:schemas:extension:Venminder:2.0:User
+    extension.
+- id: tls-1.2
+  conforms: true
+  evidence: 'Docs: "The Venminder API utilizes https and TLS 1.2 to ensure transport security"; live probe
+    of www.venminder.com negotiated TLSv1.3.'
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a custom {statusCode, errors[]} envelope, not application/problem+json.
+- id: json:api
+  conforms: false
+  evidence: Plain JSON RPC-style resource endpoints; no JSON:API media type.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key mechanism documented in docs or OpenAPI.
+- id: pagination
+  conforms: false
+  evidence: REST endpoints do not document pagination parameters; SCIM surface returns standard SCIM ListResponse
+    startIndex/itemsPerPage/totalResults.
+compliance_program:
+  soc2_type_ii: true
+  url: https://www.venminder.com/about/legal
+  evidence: '"Our internal control environment is SOC 2 Type II audited to ensure controls are designed
+    appropriately and operate effectively. Penetration testing is performed by a third party annually"
+    (venminder.com/about/legal, July 2026).'
+  hosting: AWS (infrastructure-as-a-service); Venminder reviews AWS SOC 2 Type II report annually.

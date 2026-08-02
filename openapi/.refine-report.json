@@ -1,0 +1,42 @@
+{
+  "provider": "venminder-digital-comply",
+  "sources": [
+    "venminder-digital-comply-businessunit-api-openapi.yml",
+    "venminder-digital-comply-clientinformation-api-openapi.yml",
+    "venminder-digital-comply-contact-api-openapi.yml",
+    "venminder-digital-comply-contracts-api-openapi.yml",
+    "venminder-digital-comply-data-api-openapi.yml",
+    "venminder-digital-comply-documents-api-openapi.yml",
+    "venminder-digital-comply-issues-api-openapi.yml",
+    "venminder-digital-comply-oversightrequirement-api-openapi.yml",
+    "venminder-digital-comply-oversighttask-api-openapi.yml",
+    "venminder-digital-comply-questionnaire-api-openapi.yml",
+    "venminder-digital-comply-services-api-openapi.yml",
+    "venminder-digital-comply-vendoronboarding-api-openapi.yml",
+    "venminder-digital-comply-vendors-api-openapi.yml",
+    "venminder-digital-comply-vendorspend-api-openapi.yml",
+    "venminder-digital-comply-venmonitor-api-openapi.yml"
+  ],
+  "outputs": [
+    "venminder-digital-comply-businessunit-api-openapi.yml",
+    "venminder-digital-comply-clientinformation-api-openapi.yml",
+    "venminder-digital-comply-contact-api-openapi.yml",
+    "venminder-digital-comply-contracts-api-openapi.yml",
+    "venminder-digital-comply-data-api-openapi.yml",
+    "venminder-digital-comply-documents-api-openapi.yml",
+    "venminder-digital-comply-issues-api-openapi.yml",
+    "venminder-digital-comply-oversightrequirement-api-openapi.yml",
+    "venminder-digital-comply-oversighttask-api-openapi.yml",
+    "venminder-digital-comply-questionnaire-api-openapi.yml",
+    "venminder-digital-comply-services-api-openapi.yml",
+    "venminder-digital-comply-vendoronboarding-api-openapi.yml",
+    "venminder-digital-comply-vendors-api-openapi.yml",
+    "venminder-digital-comply-vendorspend-api-openapi.yml",
+    "venminder-digital-comply-venmonitor-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,28 @@
+# Venminder (Digital Comply)
+
+> Venminder is a third-party risk management (TPRM) platform — vendor onboarding, due diligence, contract tracking, questionnaires, oversight and continuous monitoring for financial institutions. Founded as Digital Comply, backed by Bain Capital Ventures, and merged with Ncontracts in 2024. The Venminder API (OAuth 2.0 client credentials, scope venminderApi) exposes a customer's vendors, products, contracts, documents, questionnaires, onboarding, oversight, issues, spend and Venmonitor scores at https://rsd.venminder.com; users are provisioned via a SCIM 2.0 surface at /scim/v2.
+
+## APIs
+
+- [Venminder API developer portal](https://developers.venminder.com/): getting started, API key setup, endpoint reference
+- [OpenAPI (Swagger UI)](https://rsd.venminder.com/swagger): live schema for the v1 endpoints
+- [OpenAPI JSON](https://rsd.venminder.com/swagger/v1/swagger.json): 57 operations across Vendors, Contracts, Documents, Questionnaire, Vendor Onboarding, Oversight, Issues, Spend Analysis, Services, Venmonitor
+- [Token endpoint](https://login.venminder.com/connect/token): OAuth 2.0 client-credentials grant, scope venminderApi
+- [OIDC discovery](https://login.venminder.com/.well-known/openid-configuration): IdentityServer discovery document
+- SCIM 2.0 user provisioning: https://rsd.venminder.com/scim/v2/Users (core:2.0:User + extension:Venminder:2.0:User)
+
+## Specs
+
+- [openapi/venminder-digital-comply-openapi-original.json](openapi/venminder-digital-comply-openapi-original.json): harvested OpenAPI 3.0.1
+- [postman/venminder-digital-comply-postman-collection.json](postman/venminder-digital-comply-postman-collection.json): official Postman collection published on the developer portal
+- [authentication/venminder-digital-comply-authentication.yml](authentication/venminder-digital-comply-authentication.yml): auth profile
+- [errors/venminder-digital-comply-problem-types.yml](errors/venminder-digital-comply-problem-types.yml): error envelope and response codes
+- [conventions/venminder-digital-comply-conventions.yml](conventions/venminder-digital-comply-conventions.yml): cross-cutting API semantics
+
+## Docs
+
+- [Getting Started](https://developers.venminder.com/318218fb2/p/325101-getting-started): API keys (Client ID/Secret), API Key Manager role
+- [The Venminder API](https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a): reference and Postman assets
+- [Company](https://www.venminder.com/): product and TPRM resource library
+- [Status](https://status.venminder.com/): platform status (redirects to status.ncontracts.com)
+- [Legal / privacy / SOC 2 statement](https://www.venminder.com/about/legal)

@@ -1,0 +1,164 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/venminder-digital-comply-openapi-original.json (153 component schemas, 57 operations)
+  + developers.venminder.com reference
+notation: relationships use has_one / has_many / belongs_to with the key field name; direction is from
+  the entity that owns the reference.
+entities:
+- name: Client
+  key: clientKey
+  domain: core
+  description: The Venminder customer organization; root of all data returned by the API.
+- name: Vendor
+  key: vendorKey
+  domain: vendors
+  description: A third party the client manages; carries profile, risk level, relationships.
+- name: Product
+  key: productKey
+  domain: vendors
+  description: A product/service purchased from a vendor; carries its own profile, risk and contacts.
+- name: Contact
+  key: contactKey
+  domain: vendors
+  description: Internal or external (vendor) contact person.
+- name: Contract
+  key: contractKey
+  domain: contracts
+  description: A vendor/product contract with terms, hierarchy, drafts, notes and custom data.
+- name: ContractDraft
+  key: contractDraftKey
+  domain: contracts
+  description: A draft contract; supports notes and detail retrieval.
+- name: Document
+  key: documentKey
+  domain: documents
+  description: A document stored in the Venminder platform, downloadable via the API.
+- name: BusinessUnit
+  key: businessUnitKey
+  domain: core
+  description: Client business unit used to organize vendors and oversight.
+- name: Questionnaire
+  key: questionnaireKey
+  domain: questionnaires
+  description: A questionnaire in the library; sent to vendors, producing responses.
+- name: QuestionnaireResponse
+  key: responseKey
+  domain: questionnaires
+  description: A vendor response to a questionnaire.
+- name: OnboardingRequest
+  key: requestKey
+  domain: onboarding
+  description: A vendor-onboarding request built from configurable forms with answers.
+- name: OversightRequirement
+  key: oversightRequirementKey
+  domain: oversight
+  description: A recurring oversight/due-diligence requirement.
+- name: OversightTask
+  key: oversightTaskKey
+  domain: oversight
+  description: A task generated from an oversight requirement.
+- name: Issue
+  key: issueKey
+  domain: issues
+  description: An issue tracked against vendors/products.
+- name: Budget
+  key: budgetKey
+  domain: spend
+  description: A vendor budget for spend analysis.
+- name: SpendItem
+  key: spendKey
+  domain: spend
+  description: A spend item, optionally linked to a budget.
+- name: Service
+  key: serviceKey
+  domain: services
+  description: A Venminder-purchased assessment/service deliverable.
+- name: VendorScore
+  key: vendorKey
+  domain: venmonitor
+  description: Venmonitor continuous-monitoring score for a vendor.
+- name: User
+  key: id
+  domain: provisioning
+  description: A platform user managed via the SCIM 2.0 surface (core:2.0:User + extension:Venminder:2.0:User).
+relationships:
+- from: Vendor
+  to: Client
+  kind: belongs_to
+  via: clientKey
+- from: Vendor
+  to: Product
+  kind: has_many
+  via: vendorKey
+- from: Vendor
+  to: Vendor
+  kind: has_many
+  via: thirdParty/fourthParty relationships
+- from: Product
+  to: Contact
+  kind: has_many
+  via: productKey
+- from: Contract
+  to: Vendor
+  kind: belongs_to
+  via: vendorKey
+- from: Contract
+  to: Product
+  kind: belongs_to
+  via: productKey
+- from: Contract
+  to: Contract
+  kind: has_many
+  via: parent/child hierarchy
+- from: ContractDraft
+  to: Contract
+  kind: belongs_to
+  via: contractKey
+- from: Document
+  to: Vendor
+  kind: belongs_to
+  via: vendorKey
+- from: QuestionnaireResponse
+  to: Questionnaire
+  kind: belongs_to
+  via: questionnaireKey
+- from: QuestionnaireResponse
+  to: Vendor
+  kind: belongs_to
+  via: vendorKey
+- from: OnboardingRequest
+  to: Vendor
+  kind: belongs_to
+  via: vendorKey
+- from: OversightTask
+  to: OversightRequirement
+  kind: belongs_to
+  via: oversightRequirementKey
+- from: OversightTask
+  to: Vendor
+  kind: belongs_to
+  via: vendorKey
+- from: Issue
+  to: Vendor
+  kind: belongs_to
+  via: vendorKey
+- from: SpendItem
+  to: Budget
+  kind: belongs_to
+  via: budgetKey
+- from: Budget
+  to: Vendor
+  kind: belongs_to
+  via: vendorKey
+- from: Service
+  to: Vendor
+  kind: belongs_to
+  via: vendorKey
+- from: VendorScore
+  to: Vendor
+  kind: belongs_to
+  via: vendorKey
+- from: BusinessUnit
+  to: Client
+  kind: belongs_to
+  via: clientKey

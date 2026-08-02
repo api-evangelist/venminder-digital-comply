@@ -1,0 +1,44 @@
+generated: '2026-07-21'
+method: searched
+source: openapi/venminder-digital-comply-openapi-original.json + https://developers.venminder.com/ (Getting
+  Started, Venminder Token pages)
+docs: https://developers.venminder.com/318218fb2/p/325101-getting-started
+summary:
+  types:
+  - oauth2
+  - apiKey
+  api_key_in:
+  - header
+  oauth2_flows:
+  - clientCredentials
+  transport: HTTPS with TLS 1.2 required
+notes: 'Authentication is OAuth 2.0 / OpenID Connect bearer tokens using the client-credentials grant.
+  Customers create an API Key (Client ID + Client Secret + expiration) in the Venminder Admin Panel (requires
+  the API Key Manager role; the API feature itself must be enabled by Venminder). The token endpoint is
+  https://login.venminder.com/connect/token with scope venminderApi; the resulting access token is sent
+  as an Authorization: Bearer header to rsd.venminder.com. Access tokens expire and must be refreshed
+  by re-authenticating.'
+token_endpoint: https://login.venminder.com/connect/token
+grant_type: client_credentials
+scope: venminderApi
+example: curl -v -X POST -d "grant_type=client_credentials&scope=venminderApi" -u <api_key>:<client_secret>
+  https://login.venminder.com/connect/token
+oidc_discovery: well-known/venminder-digital-comply-openid-configuration.json
+schemes:
+- name: Bearer
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: Please insert access token with Bearer into field eg. Bearer eyJhbGciOiJSUzI1Ni and click
+    authorize.
+  sources:
+  - openapi/venminder-digital-comply-openapi-original.json
+- name: OAuth2 client credentials (docs)
+  type: oauth2
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://login.venminder.com/connect/token
+    scopes:
+      venminderApi: Access to the Venminder API
+  sources:
+  - https://developers.venminder.com/ Token page

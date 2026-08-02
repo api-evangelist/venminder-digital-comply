@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.venminder.com/ (Getting Started, Token, HTTP Response Codes pages) + derived
+  from openapi/venminder-digital-comply-openapi-original.json
+description: 'Cross-cutting request/response semantics of the Venminder API: OAuth2 client-credentials
+  auth, uri-path v1 versioning, RPC-style verb-in-path resource endpoints, a custom {statusCode, errors[]}
+  error envelope, and a parallel SCIM 2.0 provisioning surface.'
+base_url: https://rsd.venminder.com
+api_style: REST/RPC hybrid over HTTPS — verb-named endpoints (GetVendorProfile, CreateContract) under
+  /api/v1/{Resource}/, JSON requests and responses
+authentication:
+  scheme: OAuth 2.0 client credentials -> Bearer access token
+  token_endpoint: https://login.venminder.com/connect/token
+  scope: venminderApi
+  detail: authentication/venminder-digital-comply-authentication.yml
+idempotency:
+  supported: false
+  notes: No idempotency-key mechanism documented.
+pagination:
+  style: null
+  notes: No pagination parameters documented on the REST endpoints; SCIM /scim/v2/Users supports filtering
+    (?filter=userName eq "...") and returns SCIM ListResponse (totalResults/startIndex/itemsPerPage).
+field_expansion:
+  supported: false
+metadata:
+  supported: false
+request_tracing:
+  supported: false
+  notes: No request-id header documented; 500 responses instruct contacting Venminder with the error code.
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: lifecycle/venminder-digital-comply-lifecycle.yml
+error_envelope:
+  shape: '{statusCode, errors: [{resourceKey, resourceValue, field}]}'
+  detail: errors/venminder-digital-comply-problem-types.yml
+rate_limits:
+  documented: false
+  notes: No rate-limit signaling documented.
+transport: HTTPS, TLS 1.2 per docs

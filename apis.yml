@@ -1,22 +1,279 @@
 aid: venminder-digital-comply
 name: Venminder (Digital Comply)
-description: 'Venminder (Digital Comply) is a company surfaced as a portfolio company of bain-capital-ventures
-  and added to the API Evangelist network as a stub for enrichment. Sector: ai-infrastructure. This profile
-  is a lead awaiting the enrichment pipeline.'
+description: >-
+  Venminder is a third-party risk management (TPRM) platform for financial institutions —
+  vendor onboarding, due diligence, contract tracking, questionnaires, oversight tasks,
+  issue tracking, spend analysis and Venmonitor continuous monitoring. Founded in Elizabethtown,
+  Kentucky as Digital Comply and backed by Bain Capital Ventures, the company merged with
+  Ncontracts in 2024. The Venminder API (OAuth 2.0 client-credentials, scope venminderApi,
+  tokens from login.venminder.com) exposes a customer's vendors, products, contracts, documents,
+  questionnaires, onboarding requests, oversight and spend data at rsd.venminder.com, alongside
+  a SCIM 2.0 user-provisioning surface at /scim/v2.
 url: https://raw.githubusercontent.com/api-evangelist/venminder-digital-comply/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://avatars.githubusercontent.com/u/116671086
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - bain-capital-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: standard
+x-tier-reason: live-api-provider
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-- Ai Infrastructure
-apis: []
+- Third-Party Risk Management
+- Vendor Management
+- Risk
+- Compliance
+- Contracts
+- Financial Services
+- Due Diligence
+- SCIM
+apis:
+- aid: venminder-digital-comply:venminder-scim-api
+  name: Venminder SCIM 2.0 User Provisioning API
+  description: >-
+    SCIM 2.0 surface for provisioning Venminder platform users — list, get, search, create and patch Users
+    using urn:ietf:params:scim:schemas:core:2.0:User plus the urn:ietf:params:scim:schemas:extension:Venminder:2.0:User
+    extension, with standard SCIM filtering, ListResponse and PatchOp semantics. Authenticated with the
+    same OAuth 2.0 client-credentials bearer tokens as the Venminder API.
+  humanURL: https://developers.venminder.com/
+  baseURL: https://rsd.venminder.com/scim/v2
+  tags:
+  - Users
+  - Provisioning
+  - SCIM
+  properties:
+  - type: Documentation
+    url: https://developers.venminder.com/
+- aid: venminder-digital-comply:venminder-digital-comply-businessunit-api
+  name: Venminder (Digital Comply) BusinessUnit API
+  description: The BusinessUnit API from Venminder (Digital Comply) — 1 operation(s) for businessunit.
+  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+  baseURL: https://rsd.venminder.com
+  tags:
+  - BusinessUnit
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-businessunit-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-clientinformation-api
+  name: Venminder (Digital Comply) ClientInformation API
+  description: >-
+    The ClientInformation API from Venminder (Digital Comply) — 1 operation(s) for clientinformation.
+  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+  baseURL: https://rsd.venminder.com
+  tags:
+  - ClientInformation
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-clientinformation-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-contact-api
+  name: Venminder (Digital Comply) Contact API
+  description: The Contact API from Venminder (Digital Comply) — 1 operation(s) for contact.
+  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+  baseURL: https://rsd.venminder.com
+  tags:
+  - Contact
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-contact-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-contracts-api
+  name: Venminder (Digital Comply) Contracts API
+  description: The Contracts API from Venminder (Digital Comply) — 9 operation(s) for contracts.
+  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+  baseURL: https://rsd.venminder.com
+  tags:
+  - Contracts
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-contracts-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-data-api
+  name: Venminder (Digital Comply) Data API
+  description: The Data API from Venminder (Digital Comply) — 1 operation(s) for data.
+  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+  baseURL: https://rsd.venminder.com
+  tags:
+  - Data
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-data-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-documents-api
+  name: Venminder (Digital Comply) Documents API
+  description: The Documents API from Venminder (Digital Comply) — 2 operation(s) for documents.
+  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+  baseURL: https://rsd.venminder.com
+  tags:
+  - Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-documents-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-issues-api
+  name: Venminder (Digital Comply) Issues API
+  description: The Issues API from Venminder (Digital Comply) — 2 operation(s) for issues.
+  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+  baseURL: https://rsd.venminder.com
+  tags:
+  - Issues
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-issues-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-oversightrequirement-api
+  name: Venminder (Digital Comply) OversightRequirement API
+  description: >-
+    The OversightRequirement API from Venminder (Digital Comply) — 2 operation(s) for oversightrequirement.
+  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+  baseURL: https://rsd.venminder.com
+  tags:
+  - OversightRequirement
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-oversightrequirement-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-oversighttask-api
+  name: Venminder (Digital Comply) OversightTask API
+  description: >-
+    The OversightTask API from Venminder (Digital Comply) — 4 operation(s) for oversighttask.
+  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+  baseURL: https://rsd.venminder.com
+  tags:
+  - OversightTask
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-oversighttask-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-questionnaire-api
+  name: Venminder (Digital Comply) Questionnaire API
+  description: >-
+    The Questionnaire API from Venminder (Digital Comply) — 4 operation(s) for questionnaire.
+  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+  baseURL: https://rsd.venminder.com
+  tags:
+  - Questionnaire
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-questionnaire-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-services-api
+  name: Venminder (Digital Comply) Services API
+  description: The Services API from Venminder (Digital Comply) — 2 operation(s) for services.
+  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+  baseURL: https://rsd.venminder.com
+  tags:
+  - Services
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-services-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-vendoronboarding-api
+  name: Venminder (Digital Comply) VendorOnboarding API
+  description: >-
+    The VendorOnboarding API from Venminder (Digital Comply) — 8 operation(s) for vendoronboarding.
+  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+  baseURL: https://rsd.venminder.com
+  tags:
+  - VendorOnboarding
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-vendoronboarding-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-vendors-api
+  name: Venminder (Digital Comply) Vendors API
+  description: The Vendors API from Venminder (Digital Comply) — 10 operation(s) for vendors.
+  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+  baseURL: https://rsd.venminder.com
+  tags:
+  - Vendors
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-vendors-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-vendorspend-api
+  name: Venminder (Digital Comply) VendorSpend API
+  description: The VendorSpend API from Venminder (Digital Comply) — 8 operation(s) for vendorspend.
+  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+  baseURL: https://rsd.venminder.com
+  tags:
+  - VendorSpend
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-vendorspend-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-venmonitor-api
+  name: Venminder (Digital Comply) Venmonitor API
+  description: The Venmonitor API from Venminder (Digital Comply) — 1 operation(s) for venmonitor.
+  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+  baseURL: https://rsd.venminder.com
+  tags:
+  - Venmonitor
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-venmonitor-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +282,62 @@ maintainers:
 common:
 - type: Website
   url: https://www.venminder.com/
+- type: DeveloperPortal
+  url: https://developers.venminder.com/
+- type: Documentation
+  url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+- type: APIReference
+  url: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+- type: GettingStarted
+  url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+- type: Support
+  url: https://www.venminder.com/contact/customer-support
+- type: Blog
+  url: https://www.venminder.com/blog
+- type: GitHubOrganization
+  url: https://github.com/venminder
+- type: Login
+  url: https://app.venminder.com/
+- type: TermsOfService
+  url: https://www.venminder.com/about/legal
+- type: PrivacyPolicy
+  url: https://www.venminder.com/privacy-policy
+- type: StatusPage
+  url: https://status.venminder.com/
+- type: Postman
+  url: postman/venminder-digital-comply-postman-collection.json
+- type: Authentication
+  url: authentication/venminder-digital-comply-authentication.yml
+- type: OAuthScopes
+  url: scopes/venminder-digital-comply-scopes.yml
+- type: OpenIDConnect
+  url: well-known/venminder-digital-comply-openid-configuration.json
+- type: WellKnown
+  url: well-known/venminder-digital-comply-well-known.yml
+- type: MCPServer
+  url: mcp/venminder-digital-comply-mcp.yml
+- type: LLMsTxt
+  url: llms/venminder-digital-comply-llms.txt
+- type: Overlay
+  url: overlays/venminder-digital-comply-openapi-overlay.yaml
+- type: Conformance
+  url: conformance/venminder-digital-comply-conformance.yml
+- type: Compliance
+  url: https://www.venminder.com/about/legal
+- type: ErrorCatalog
+  url: errors/venminder-digital-comply-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/venminder-digital-comply-lifecycle.yml
+- type: Conventions
+  url: conventions/venminder-digital-comply-conventions.yml
+- type: DataModel
+  url: data-model/venminder-digital-comply-data-model.yml
+- type: DomainSecurity
+  url: security/venminder-digital-comply-domain-security.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 20
+  pass: local-v1

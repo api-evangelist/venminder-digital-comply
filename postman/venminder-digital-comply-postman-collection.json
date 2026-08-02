@@ -1,0 +1,2591 @@
+{
+	"info": {
+		"_postman_id": "3e77a352-3ee8-4475-9edc-bdae6476bb2d",
+		"name": "Venminder API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13099048"
+	},
+	"item": [
+		{
+			"name": "BusinessUnit",
+			"item": [
+				{
+					"name": "GetBusinessUnits",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/BusinessUnitInformation/GetBusinessUnits",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"BusinessUnitInformation",
+								"GetBusinessUnits"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ClientInformation",
+			"item": [
+				{
+					"name": "GetClientInformation",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/ClientInformation/GetClientInformation",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ClientInformation",
+								"GetClientInformation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact",
+			"item": [
+				{
+					"name": "GetContactList",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Contact/GetContactList",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Contact",
+								"GetContactList"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contracts",
+			"item": [
+				{
+					"name": "GetDetails",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/api/v1/Contracts/GetDetails?contractKey=[contractKey]",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Contracts",
+								"GetDetails"
+							],
+							"query": [
+								{
+									"key": "contractKey",
+									"value": "[contractKey]"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data",
+			"item": [
+				{
+					"name": "GetCountries",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Data/Countries",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Data",
+								"Countries"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Documents",
+			"item": [
+				{
+					"name": "GetDocumentsList",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Documents/GetDocumentsList?documentCategory=[documentCategory]",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Documents",
+								"GetDocumentsList"
+							],
+							"query": [
+								{
+									"key": "documentCategory",
+									"value": "[documentCategory]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDocument",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Documents/[documentKey]",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Documents",
+								"[documentKey]"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Questionnaire",
+			"item": [
+				{
+					"name": "QuestionnaireLibrary",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Questionnaire/QuestionnaireLibrary",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Questionnaire",
+								"QuestionnaireLibrary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetResponses",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/Questionnaire/GetResponses",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Questionnaire",
+								"GetResponses"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetResponses - Status: InProgress",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": \"InProgress\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/Questionnaire/GetResponses",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Questionnaire",
+										"GetResponses"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "GetResponses - Status: Completed on Date",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": \"Completed\",\r\n    \"completedDate\": \"2021-09-16\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/Questionnaire/GetResponses",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Questionnaire",
+										"GetResponses"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "GetResponse",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Questionnaire/GetResponse?questionnaireRequestKey=[questionnaireRequestKey]",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Questionnaire",
+								"GetResponse"
+							],
+							"query": [
+								{
+									"key": "questionnaireRequestKey",
+									"value": "[questionnaireRequestKey]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Questionnaire/Download?questionnaireKey=[questionnaireRequestKey]",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Questionnaire",
+								"Download"
+							],
+							"query": [
+								{
+									"key": "questionnaireKey",
+									"value": "[questionnaireRequestKey]"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SCIM 2.0",
+			"item": [
+				{
+					"name": "User Provisioning",
+					"item": [
+						{
+							"name": "Get Users",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"var Header = require('postman-collection').Header\r",
+											"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/scim/v2/Users",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"scim",
+										"v2",
+										"Users"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Users - All",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/scim/v2/Users",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"scim",
+												"v2",
+												"Users"
+											]
+										}
+									},
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Get Users - filter",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/scim/v2/Users?filter=userName eq \"name@domain.com\"",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"scim",
+												"v2",
+												"Users"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": "userName eq \"name@domain.com\""
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Get User",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"var Header = require('postman-collection').Header\r",
+											"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/scim/v2/Users/[id]",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"scim",
+										"v2",
+										"Users",
+										"[id]"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search User(s)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"var Header = require('postman-collection').Header\r",
+											"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/scim/v2/Users/.search",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"scim",
+										"v2",
+										"Users",
+										".search"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Search User(s)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"filter\":\"userName eq \\\"name@domain.com\\\"\",\r\n    \"startIndex\":1,\r\n    \"count\":100\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{domain}}/scim/v2/Users/.search",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"scim",
+												"v2",
+												"Users",
+												".search"
+											]
+										}
+									},
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Create User",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"var Header = require('postman-collection').Header\r",
+											"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/scim/v2/Users/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"scim",
+										"v2",
+										"Users",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create User",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"schemas\": [\r\n        \"urn:ietf:params:scim:schemas:core:2.0:User\"\r\n    ],\r\n    \"userName\": \"first.last@domain.com\",\r\n    \"emails\": [\r\n        {\r\n            \"value\": \"first.last@domain.com\",\r\n            \"type\": \"work\",\r\n            \"primary\": true\r\n        }\r\n    ],\r\n    \"name\": {\r\n        \"givenName\": \"string\",\r\n        \"familyName\": \"string\"\r\n    },\r\n    \"roles\": [\r\n        \"string\",\r\n        \"string\"\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{domain}}/scim/v2/Users/",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"scim",
+												"v2",
+												"Users",
+												""
+											]
+										}
+									},
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Update User Information",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"var Header = require('postman-collection').Header\r",
+											"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/scim/v2/Users/[id]",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"scim",
+										"v2",
+										"Users",
+										"[id]"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update User Information",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"schemas\": [\r\n    \"urn:ietf:params:scim:api:messages:2.0:PatchOp\"\r\n  ],\r\n  \"Operations\": [\r\n    {\r\n      \"op\": \"replace\",\r\n      \"value\": {\r\n        \"active\": false\r\n      }\r\n    }\r\n  ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{domain}}/scim/v2/Users/aca13df4ff484420bfac68579ddf68e3",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"scim",
+												"v2",
+												"Users",
+												"aca13df4ff484420bfac68579ddf68e3"
+											]
+										}
+									},
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Spend Analysis",
+			"item": [
+				{
+					"name": "GetBudgets",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/SpendAnalysis/GetBudgets?vendorKey={vendorKey}",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"SpendAnalysis",
+								"GetBudgets"
+							],
+							"query": [
+								{
+									"key": "vendorKey",
+									"value": "{vendorKey}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateBudget",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/SpendAnalysis/CreateBudget?=",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"SpendAnalysis",
+								"CreateBudget"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CreateBudget",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"vendorKey\":\"e2448f7268ad493c81db33d24aa6e099\",\r\n\"name\": \"2019 Budget\",\r\n\"startDate\": \"2019-01-01\",\r\n\"amount\": \"1000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/SpendAnalysis/CreateBudget",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"SpendAnalysis",
+										"CreateBudget"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "UpdateBudget",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/SpendAnalysis/UpdateBudget",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"SpendAnalysis",
+								"UpdateBudget"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UpdateBudget",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"key\":\"a5dd97f8a8434fe880f67980591e13f7\",\r\n\"name\": \"2019 Budget\",\r\n\"startDate\": \"2019-01-01\",\r\n\"amount\": \"2000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/SpendAnalysis/UpdateBudget",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"SpendAnalysis",
+										"UpdateBudget"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "DeleteBudget",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/SpendAnalysis/DeleteBudget?budgetKey={budgetKey}",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"SpendAnalysis",
+								"DeleteBudget"
+							],
+							"query": [
+								{
+									"key": "budgetKey",
+									"value": "{budgetKey}"
+								},
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSpends",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/SpendAnalysis/GetSpends?vendorKey={vendorKey}",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"SpendAnalysis",
+								"GetSpends"
+							],
+							"query": [
+								{
+									"key": "vendorKey",
+									"value": "{vendorKey}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateSpendItem",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/SpendAnalysis/CreateSpendItem",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"SpendAnalysis",
+								"CreateSpendItem"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CreateSpendItem",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"budgetKey\": \"50d688cf00f74d3db285569591489f3f\",\r\n\"vendorKey\": \"e2448f7268ad493c81db33d24aa6e099\",\r\n\"productKey\": \"string\",\r\n\"invoiceNumber\": \"string\",\r\n\"invoiceDate\": \"2022-01-01\",\r\n\"amount\": \"100.00\",\r\n\"notes\": \"string\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/SpendAnalysis/CreateSpendItem",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"SpendAnalysis",
+										"CreateSpendItem"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "UpdateSpendItem",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/SpendAnalysis/UpdateSpendItem",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"SpendAnalysis",
+								"UpdateSpendItem"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UpdateSpendItem",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"key\": \"018d04fe916e49dfb1a169097fa24efd\",\r\n\"budgetKey\": \"string\",\r\n\"vendorKey\": \"e2448f7268ad493c81db33d24aa6e099\",\r\n\"productKey\": \"b52bf520dad7496ab6f3c9994762a174\",\r\n\"invoiceNumber\": \"2022-01\",\r\n\"invoiceDate\": \"2022-01-02\",\r\n\"amount\": \"100.02\",\r\n\"notes\": \"This is the note for a spend!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/SpendAnalysis/UpdateSpendItem",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"SpendAnalysis",
+										"UpdateSpendItem"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "DeleteSpendItem",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/SpendAnalysis/DeleteSpend?spendKey={spendKey}",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"SpendAnalysis",
+								"DeleteSpend"
+							],
+							"query": [
+								{
+									"key": "spendKey",
+									"value": "{spendKey}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VendorOnboarding",
+			"item": [
+				{
+					"name": "Information",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendor/Onboarding/Information",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendor",
+								"Onboarding",
+								"Information"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FormDetails",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendor/Onboarding/FormDetails?formKey=[formKey]",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendor",
+								"Onboarding",
+								"FormDetails"
+							],
+							"query": [
+								{
+									"key": "formKey",
+									"value": "[formKey]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FormAnswers",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendor/Onboarding/FormAnswers?formKey=[formKey]",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendor",
+								"Onboarding",
+								"FormAnswers"
+							],
+							"query": [
+								{
+									"key": "formKey",
+									"value": "[formKey]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Requests",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendor/Onboarding/Requests?statusID=[Onboarding-statusID]",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendor",
+								"Onboarding",
+								"Requests"
+							],
+							"query": [
+								{
+									"key": "statusID",
+									"value": "[Onboarding-statusID]"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Requests - Status: All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/v1/Vendor/Onboarding/Requests",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Vendor",
+										"Onboarding",
+										"Requests"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Requests - Status: New",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/v1/Vendor/Onboarding/Requests?statusID=1",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Vendor",
+										"Onboarding",
+										"Requests"
+									],
+									"query": [
+										{
+											"key": "statusID",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "RequestDetails",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendor/Onboarding/RequestDetails?relationshipKey=[Onboarding-relationshipKey]",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendor",
+								"Onboarding",
+								"RequestDetails"
+							],
+							"query": [
+								{
+									"key": "relationshipKey",
+									"value": "[Onboarding-relationshipKey]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RequestAnswers",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendor/Onboarding/RequestAnswers?relationshipKey=[Onboarding-relationshipKey]",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendor",
+								"Onboarding",
+								"RequestAnswers"
+							],
+							"query": [
+								{
+									"key": "relationshipKey",
+									"value": "[Onboarding-relationshipKey]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendor/Onboarding/Request",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendor",
+								"Onboarding",
+								"Request"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"category\": \"Information Technology\",\r\n    \"reasonID\": 1,\r\n    \"requestorKey\": \"0976e4f3954b45a48f8e37fba6696fc6\",\r\n    \"relationships\": [\r\n    {\r\n      \"vendorInformation\": [\r\n        {\r\n          \"key\": \"6af5056dd96d4c1cb71bf54debed90c6\",\r\n          \"answers\": [\r\n            \"Venminders Test Vendor 1\"\r\n          ]\r\n        }\r\n      ],\r\n      \"productInformation\": [\r\n        {\r\n          \"key\": \"4e47037497d24c4a94851bf6249357ce\",\r\n          \"answers\": [\r\n            \"Test Product 1\"\r\n          ]\r\n        }\r\n      ]\r\n    }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/Vendor/Onboarding/Request",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Vendor",
+										"Onboarding",
+										"Request"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "EditRequestAnswers",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendor/Onboarding/EditRequestAnswers",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendor",
+								"Onboarding",
+								"EditRequestAnswers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"relationshipKey\":\"62dc04da102845cbb3ed981e3ad9fec1\",\r\n    \"details\": [\r\n        {\r\n            \"questionKey\":\"89e567b9d47248fbab020ce88864d96e\",\r\n            \"answers\":[\r\n                \"Updated Answer\"\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/Vendor/Onboarding/EditRequestAnswers",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Vendor",
+										"Onboarding",
+										"EditRequestAnswers"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Vendors",
+			"item": [
+				{
+					"name": "GetVendorProfile",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendors/GetVendorProfile?vendorKey=[VendorKey]",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendors",
+								"GetVendorProfile"
+							],
+							"query": [
+								{
+									"key": "vendorKey",
+									"value": "[VendorKey]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProfileAnswers",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendors/ProfileAnswers?vendorKey=[VendorKey]",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendors",
+								"ProfileAnswers"
+							],
+							"query": [
+								{
+									"key": "vendorKey",
+									"value": "[VendorKey]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VendorProducts (Create)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendors/VendorProduct",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendors",
+								"VendorProduct"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "VendorProducts (Create)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"vendorName\": \"Test Vendor 1\",\r\n  \"isCriticalVendor\": true,\r\n  \"isThirdParty\": true,\r\n  \"isFourthParty\": true,\r\n  \"annualReviewDate\": \"12/01/2022\",\r\n  \"productName\": \"Test Product\",\r\n  \"productManagerKey\": \"6aab3acc00ac4ceaa4606c2c16270790\",\r\n  \"category\": \"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/Vendors/VendorProduct",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Vendors",
+										"VendorProduct"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "VendorProfile (Update)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendors/VendorProfile",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendors",
+								"VendorProfile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "VendorProfile (Update)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"VendorKey\":\"e2448f7268ad493c81db33d24aa6e099\",                        \r\n      \"vendorProfileData\": [\r\n        {\r\n        \"dataFieldKey\": \"8be36fd0e9ee475d8b86e251c1523474\",\r\n            \"answers\": [\r\n                \"True\"\r\n            ]\r\n        },\r\n        {\r\n        \"dataFieldKey\": \"3b14720d64ad4f1f8b0184714e6a0720\",\r\n            \"answers\": [\r\n                \"MondayMania.com\"\r\n            ]\r\n        }\r\n    ]\r\n} \r\n\r\n \r\n\r\n ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/Vendors/VendorProfile",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Vendors",
+										"VendorProfile"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "ProductProfile (Update)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendors/ProductProfile",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendors",
+								"ProductProfile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ProductProfile (Update) -workhere",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"productKey\":\"b52bf520dad7496ab6f3c9994762a174\",                        \r\n      \"productProfileData\": [\r\n        {\r\n        \"dataFieldKey\": \"14c9ad3d75a34d3ab4247b73ead159e1\",\r\n            \"answers\": [\r\n                \"True\"\r\n            ]\r\n        },\r\n        {\r\n        \"dataFieldKey\": \"f126b727d2f3436581754dad63326e9b\",\r\n            \"answers\": [\r\n                \"This a really cool Demo!\"\r\n            ]\r\n        }\r\n    ]\r\n} ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/Vendors/ProductProfile",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Vendors",
+										"ProductProfile"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Relationships (Update)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendors/Relationships",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendors",
+								"Relationships"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Relationships (Update)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"vendorKey\": \"string\",\r\n  \"isThirdParty\": true,\r\n  \"fourthPartyVendorKeys\": [\r\n    \"string\"\r\n  ],\r\n  \"isFourthParty\": true,\r\n  \"thirdPartyVendorKeys\": [\r\n    \"string\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/Vendors/Relationships",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Vendors",
+										"Relationships"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Risk (Update)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendors/Risk",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendors",
+								"Risk"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Risk (Update)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"productKey\": \"string\",\r\n  \"inherentRiskKey\": \"string\",\r\n  \"residualRiskKey\": \"string\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/Vendors/Risk",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Vendors",
+										"Risk"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "ProductContact (Update)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendors/ProductContact",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendors",
+								"ProductContact"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ProductContact (Update)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"productKey\": \"string\",\r\n  \"contacts\": [\r\n    {\r\n      \"firstName\": \"string\",\r\n      \"lastName\": \"string\",\r\n      \"phoneNumbers\": [\r\n        {\r\n          \"countryCodeAbbreviation\": \"string\",\r\n          \"phoneNumber\": \"string\",\r\n          \"extension\": \"string\",\r\n          \"type\": \"string\"\r\n        }\r\n      ],\r\n      \"emailAddress\": \"string\",\r\n      \"isPrimaryContact\": true\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/Vendors/ProductContact",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Vendors",
+										"ProductContact"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Relationships (Delete)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Vendors/Relationships",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Vendors",
+								"Relationships"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Relationships (Delete)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"vendorKey\": \"string\",\r\n  \"thirdPartyVendorKeys\": [\r\n    \"string\"\r\n  ],\r\n  \"fourthPartyVendorKeys\": [\r\n    \"string\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/Vendors/Relationships",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Vendors",
+										"Relationships"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "ListServices",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filterByVendorKeys\":[],\r\n    \"filterByProductKeys\":null,\r\n    \"fromDateCreated\":\"2023-01-01\",\r\n    \"toDateCreated\":null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/v1/Services/ListServices",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Services",
+								"ListServices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDetails",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var Header = require('postman-collection').Header\r",
+									"pm.request.headers.add({key: 'Authorization', value: \"Bearer \" + pm.environment.get(\"access_token\") });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/v1/Services/GetDetails?serviceId=",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Services",
+								"GetDetails"
+							],
+							"query": [
+								{
+									"key": "serviceId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Venminder Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json(); \r",
+							"let savedData = response.access_token;\r",
+							"pm.environment.set(\"access_token\", savedData );"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "[CLIENT SECRET]",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "[CLIENT KEY]",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "venminderApi",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{login-domain}}/connect/token",
+					"host": [
+						"{{login-domain}}"
+					],
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

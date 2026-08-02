@@ -1,0 +1,20 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.venminder.com/ + https://status.venminder.com/
+versioning:
+  scheme: uri-path
+  current: v1
+  base_path: /api/v1/
+  notes: OpenAPI info.version is v1; SCIM surface is /scim/v2 (SCIM 2.0 protocol version).
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No published deprecation policy or RFC 8594 Sunset support found (searched July 2026). No deprecated
+    operations declared in the OpenAPI.
+sla:
+  url: null
+  notes: No public SLA found.
+status_page: https://status.venminder.com/
+status_page_notes: status.venminder.com 301-redirects to status.ncontracts.com (Venminder merged with
+  Ncontracts in 2024); the platform status page is shared.
+deprecated_operations: []

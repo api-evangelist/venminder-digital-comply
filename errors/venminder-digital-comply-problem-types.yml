@@ -1,0 +1,49 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.venminder.com/ (HTTP Response Codes page) + derived from openapi 4xx/5xx responses
+format: custom-envelope
+envelope:
+  shape: '{statusCode, errors[]}'
+  error_fields:
+  - resourceKey
+  - resourceValue
+  - field
+  notes: Validation failures return statusCode 400 with an errors[] array of resourceKey/resourceValue/field
+    entries. Not RFC 9457 problem+json.
+scim_errors:
+  format: urn:ietf:params:scim:api:messages:2.0:Error
+  fields:
+  - schemas
+  - detail
+  - status
+  notes: The SCIM 2.0 user-provisioning surface (rsd.venminder.com/scim/v2) returns standard SCIM error
+    messages, e.g. status 404 "User not found." and 409 "User already exists in the database."
+documented_codes:
+- status: 200
+  title: OK
+  description: Everything worked as expected.
+  schema: '{"statusCode": 200}'
+- status: 400
+  title: Bad Request
+  description: The request object did not pass validation rules.
+  schema: '{"statusCode": 400, "errors": [{"resourceKey": "string", "resourceValue": "string", "field":
+    "string"}]}'
+- status: 401
+  title: Token Expired / Invalid
+  description: The bearer token is expired or invalid; re-authenticate at https://login.venminder.com/connect/token.
+- status: 403
+  title: Forbidden
+  description: The API key does not have permission for the requested resource.
+- status: 500
+  title: Internal Server Error
+  description: Contact the Venminder team with the error code.
+derived_from_openapi:
+- status: 400
+  description: Bad Request
+  operations: 50
+- status: 401
+  description: Unauthorized
+  operations: 6
+- status: 403
+  description: Forbidden
+  operations: 26

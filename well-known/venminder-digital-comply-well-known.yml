@@ -1,0 +1,56 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of /.well-known/ on www.venminder.com, api.venminder.com, rsd.venminder.com, login.venminder.com
+hosts:
+- host: https://login.venminder.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: venminder-digital-comply-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://www.venminder.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://api.venminder.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://rsd.venminder.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 302
+    note: redirects to login flow; not an OIDC discovery document
+  - path: /.well-known/oauth-authorization-server
+    status: 302
+  - path: /.well-known/api-catalog
+    status: 302
+  - path: /.well-known/ai-plugin.json
+    status: 404
+notes: The OIDC discovery document on login.venminder.com (IdentityServer/Duende) is saved verbatim as
+  venminder-digital-comply-openid-configuration.json. No security.txt is published on any probed host.

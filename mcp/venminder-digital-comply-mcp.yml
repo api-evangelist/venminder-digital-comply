@@ -1,0 +1,187 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/venminder-digital-comply-openapi-original.json (https://rsd.venminder.com/swagger/v1/swagger.json)
+notes: Venminder publishes no official MCP server (searched July 2026). This is a candidate tool list
+  derived from the Venminder OpenAPI; the spec declares no operationIds, so source_operation uses METHOD
+  + path.
+server:
+  name: venminder
+  transport: http
+  status: candidate
+tools:
+- name: business_unit_information_get_business_units
+  description: Provides a list of business unit related informtion.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/BusinessUnitInformation/GetBusinessUnits
+- name: client_information_get_client_information
+  description: Provides a list of basic vendor and product related information.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/ClientInformation/GetClientInformation
+- name: contact_get_contact_list
+  description: Provides a list of internal and external contacts.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Contact/GetContactList
+- name: contracts_get_details
+  description: Provides detailed information concerning a specific contract.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Contracts/GetDetails
+- name: contracts_get_hierarchy
+  description: Provides detailed contract hierarchy information for a vendor.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Contracts/GetHierarchy
+- name: contracts_get_contracts
+  description: Provides list of contracts for client or a specific vendor/product that is either in Ongoing
+    or Offboarding.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Contracts/GetContracts
+- name: contracts_get_drafts
+  description: Provides contract drafts information for a vendor.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Contracts/GetDrafts
+- name: contracts_get_draft_details
+  description: Provides contract draft details for a contract draft.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Contracts/GetDraftDetails
+- name: contracts_add_note_to_contract_draft
+  description: Adds a new note to an existing or new draft contract, given that FIVR and Onboarding Request
+    pass validation and authorization checks.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/Contracts/AddNoteToContractDraft
+- name: contracts_edit_contract
+  description: Modifies basic contract details provided in the request parameter.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/Contracts/EditContract
+- name: contracts_create_contract
+  description: Creates a basic self-processed contract with details provided in the request parameter.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/Contracts/CreateContract
+- name: contracts_edit_contract_custom_data
+  description: Updates existing custom data for the contract with the supplied contract's custom data
+    key.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/Contracts/EditContractCustomData
+- name: data_countries
+  description: Provides a list of countries.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Data/Countries
+- name: documents
+  description: Provides a service to download a document.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Documents/{documentKey}
+- name: documents_get_documents_list
+  description: Provides a list of documents stored in the Venminder platform.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Documents/GetDocumentsList
+- name: issues_get_all_issues
+  description: Provides a list of all issues in the system.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Issues/GetAllIssues
+- name: issues_get_issue_details
+  description: Provides details about a specific given issue.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Issues/GetIssueDetails
+- name: oversight_requirement_get_oversight_requirement
+  description: Gets a specific Oversight Requirement by its key.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/OversightRequirement/GetOversightRequirement
+- name: oversight_requirement_get_oversight_requirement_list
+  description: Get a list of all Oversight Requirments that fit the criteria provided in the request.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/OversightRequirement/GetOversightRequirementList
+- name: oversight_task_get_oversight_task
+  description: Gets a specific Oversight Task by its key.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/OversightTask/GetOversightTask
+- name: oversight_task_get_oversight_task_list
+  description: Get a list of all Oversight Tasks that fit the criteria provided in the request.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/OversightTask/GetOversightTaskList
+- name: oversight_task_create_oversight_task
+  description: Creates an Oversight Task with the provided properties and defaults from the Oversight
+    Requirement.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/OversightTask/CreateOversightTask
+- name: oversight_task_update_oversight_task
+  description: Updates specific properties of an Oversight Task based on the provided PATCH operations.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#PATCH /api/v1/OversightTask/UpdateOversightTask/{key}
+- name: questionnaire_get_responses
+  description: Provides a list of questionnaire responses.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/Questionnaire/GetResponses
+- name: questionnaire_questionnaire_library
+  description: Provides a list of questionnaires in the library.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Questionnaire/QuestionnaireLibrary
+- name: questionnaire_download
+  description: Provides a service to download a questionnaire.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Questionnaire/Download
+- name: questionnaire_get_response
+  description: Provides detailed information about a specific questionnaire.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Questionnaire/GetResponse
+- name: services_list_services
+  description: Provides a list of purchased services.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/Services/ListServices
+- name: services_get_details
+  description: Details of a specific service.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Services/GetDetails
+- name: vendor_onboarding_requests
+  description: Provides a list of vendor onboarding requests.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Vendor/Onboarding/Requests
+- name: vendor_onboarding_request_details
+  description: Provides detailed information for a vendor onboarding request.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Vendor/Onboarding/RequestDetails
+- name: vendor_onboarding_information
+  description: Provides vendor onboarding configuration information.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Vendor/Onboarding/Information
+- name: vendor_onboarding_form_details
+  description: Provides the details for a specific vendor onboarding request form.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Vendor/Onboarding/FormDetails
+- name: vendor_onboarding_request
+  description: Creates a new or updates an existing onboarding request.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/Vendor/Onboarding/Request
+- name: vendor_onboarding_form_answers
+  description: Get expected answers for onboarding form Questions
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Vendor/Onboarding/FormAnswers
+- name: vendor_onboarding_request_answers
+  description: Get expected answers for onboarding form Questions
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Vendor/Onboarding/RequestAnswers
+- name: vendor_onboarding_edit_request_answers
+  description: Creates a new or updates an existing onboarding request.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/Vendor/Onboarding/EditRequestAnswers
+- name: vendors_get_vendor_profile
+  description: Provides detailed information about a specific vendor.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Vendors/GetVendorProfile
+- name: vendors_vendor_product
+  description: Creates a new vendor and/or product.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/Vendors/VendorProduct
+- name: vendors_vendor_profile
+  description: Updates an existing vendor's profile information.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/Vendors/VendorProfile
+- name: vendors_relationships
+  description: Adds a third and/or a fourth party relationships to a vendor.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/Vendors/Relationships
+- name: vendors_relationships
+  description: Deletes a third and/or a fourth party relationships from a vendor.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#DELETE /api/v1/Vendors/Relationships
+- name: vendors_risk
+  description: Updates a product's risk level.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/Vendors/Risk
+- name: vendors_set_vendor_risk
+  description: Updates a vendor's risk level.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/Vendors/SetVendorRisk
+- name: vendors_product_profile
+  description: Updates an existing product's profile information.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/Vendors/ProductProfile
+- name: vendors_product_contact
+  description: Create a contact and assign them to a product.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/Vendors/ProductContact
+- name: vendors_profile_answers
+  description: Provides a list of answers for vendor and product profile questions.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Vendors/ProfileAnswers
+- name: vendors_get_vendor_question_keys
+  description: Provides a list of question keys for vendor information.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Vendors/GetVendorQuestionKeys
+- name: spend_analysis_create_budget
+  description: Creates a vendor Budget
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/SpendAnalysis/CreateBudget
+- name: spend_analysis_create_spend_item
+  description: Creates a vendor spend item
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/SpendAnalysis/CreateSpendItem
+- name: spend_analysis_delete_budget
+  description: Deletes a vendor budget and unlinks all spend items associated with the budget.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#DELETE /api/v1/SpendAnalysis/DeleteBudget
+- name: spend_analysis_delete_spend
+  description: Deletes a vendor spend.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#DELETE /api/v1/SpendAnalysis/DeleteSpend
+- name: spend_analysis_get_budgets
+  description: Provides a list of active budgets for a particular vendor.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/SpendAnalysis/GetBudgets
+- name: spend_analysis_get_spends
+  description: Gets all active spend items based on the vendor key.
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/SpendAnalysis/GetSpends
+- name: spend_analysis_update_spend_item
+  description: Updates a vendor spend item
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/SpendAnalysis/UpdateSpendItem
+- name: spend_analysis_update_budget
+  description: Updates a vendor spend budget
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#POST /api/v1/SpendAnalysis/UpdateBudget
+- name: venmonitor_get_vendor_score
+  description: GET /api/v1/Venmonitor/GetVendorScore
+  source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Venmonitor/GetVendorScore

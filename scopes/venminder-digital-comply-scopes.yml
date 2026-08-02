@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.venminder.com/ (Venminder Token page) + https://login.venminder.com/.well-known/openid-configuration
+docs: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
+notes: 'The customer-facing Venminder API uses the OAuth 2.0 client-credentials grant against the IdentityServer
+  at login.venminder.com with the venminderApi scope (documented curl: grant_type=client_credentials&scope=venminderApi).
+  The OpenAPI itself declares only a Bearer apiKey header scheme, so this scope surface comes from the
+  docs and the OIDC discovery document.'
+schemes:
+- name: OAuth2 client credentials
+  source: https://login.venminder.com/.well-known/openid-configuration
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://login.venminder.com/connect/token
+scopes:
+- scope: venminderApi
+  description: Access to the customer-facing Venminder API (rsd.venminder.com/api/v1 and /scim/v2).
+  flows:
+  - clientCredentials
+  sources:
+  - https://developers.venminder.com/ Token page FAQ curl example
+issuer_advertised_scopes:
+  notes: Full scopes_supported list advertised by the login.venminder.com OIDC discovery document; most
+    are internal/partner scopes not offered to API customers.
+  scopes:
+  - openid
+  - profile
+  - venminderUser
+  - internalApi
+  - venminderApi
+  - exchangeApi
+  - controlAssessmentsApi
+  - internalControlAssessmentsApi
+  - internalControlAssessmentsApiClient
+  - riskratings-partners-webapi
+  - venminderFlexBillingApi
+  - offline_access

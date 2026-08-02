@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.venminder.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 19 11:31:47 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: developers.venminder.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 24 16:20:12 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: rsd.venminder.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Mar  7 20:42:38 2027 GMT
+  hsts: null
+domains:
+- domain: venminder.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine

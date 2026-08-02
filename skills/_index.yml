@@ -1,0 +1,41 @@
+generated: '2026-07-21'
+method: generated
+source: >-
+  Packaged Agent Skills generated from the Venminder OpenAPI
+  (openapi/venminder-digital-comply-openapi-original.json), the developers.venminder.com
+  docs and the official Postman collection. The spec declares no operationIds, so every
+  step is grounded in a METHOD + path verified verbatim in the spec (SCIM operations are
+  verified against the docs + Postman collection, since the SCIM surface is outside the
+  Swagger document). Cross-cutting rules cite ../conventions/, ../errors/ and
+  ../authentication/.
+skills:
+  - file: venminder-digital-comply-onboard-a-vendor.md
+    name: Onboard a new vendor
+    api: openapi/venminder-digital-comply-openapi-original.json
+    operations:
+      - GET /api/v1/Vendor/Onboarding/Information
+      - GET /api/v1/Vendor/Onboarding/FormDetails
+      - POST /api/v1/Vendor/Onboarding/Request
+      - GET /api/v1/Vendor/Onboarding/Requests
+      - GET /api/v1/Vendor/Onboarding/RequestDetails
+      - GET /api/v1/Vendor/Onboarding/RequestAnswers
+  - file: venminder-digital-comply-vendor-risk-review.md
+    name: Review and set vendor risk
+    api: openapi/venminder-digital-comply-openapi-original.json
+    operations:
+      - GET /api/v1/ClientInformation/GetClientInformation
+      - GET /api/v1/Vendors/GetVendorProfile
+      - GET /api/v1/Contracts/GetContracts
+      - GET /api/v1/Documents/GetDocumentsList
+      - GET /api/v1/Venmonitor/GetVendorScore
+      - GET /api/v1/Issues/GetAllIssues
+      - POST /api/v1/Vendors/SetVendorRisk
+  - file: venminder-digital-comply-provision-users-scim.md
+    name: Provision platform users via SCIM 2.0
+    api: https://rsd.venminder.com/scim/v2
+    operations:
+      - GET /scim/v2/Users
+      - GET /scim/v2/Users/[id]
+      - POST /scim/v2/Users/.search
+      - POST /scim/v2/Users/
+      - PATCH /scim/v2/Users/[id]

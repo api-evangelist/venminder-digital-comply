@@ -1,0 +1,38 @@
+# generated: 2026-07-21
+# method: generated
+# source: openapi/venminder-digital-comply-openapi-original.json
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Venminder API
+  version: 1.0.0
+extends: openapi/venminder-digital-comply-openapi-original.json
+actions:
+- target: $
+  update:
+    servers:
+    - url: https://rsd.venminder.com
+      description: Production (from developers.venminder.com Postman environment; the harvested spec omits servers[])
+- target: $.info
+  update:
+    description: The Venminder API provides customers of the Venminder third-party risk management platform with
+      access to their vendors, products, contracts, documents, questionnaires, onboarding requests, oversight requirements
+      and tasks, issues, spend analysis and Venmonitor scores. Authentication is OAuth 2.0 client credentials (scope
+      venminderApi) against https://login.venminder.com/connect/token.
+    contact:
+      name: Venminder Customer Support
+      url: https://www.venminder.com/contact/customer-support
+    x-apievangelist:
+      provider: venminder-digital-comply
+      harvested: '2026-07-21'
+      source: https://rsd.venminder.com/swagger/v1/swagger.json
+- target: $.components.securitySchemes
+  update:
+    OAuth2ClientCredentials:
+      type: oauth2
+      description: 'Documented auth model: OAuth 2.0/OIDC client-credentials grant; the resulting access token is
+        presented via the Bearer header scheme.'
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.venminder.com/connect/token
+          scopes:
+            venminderApi: Access to the Venminder API
