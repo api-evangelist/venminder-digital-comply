@@ -1,0 +1,243 @@
+{
+  "item": [
+    {
+      "id": "91c994db-0680-4889-8d9f-49da34ddd4cf",
+      "name": "Venmonitor",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "41d7b3d4-45a9-4b6b-bb60-da80bb27bb11",
+          "name": "/api/v1/Venmonitor/GetVendorScore",
+          "request": {
+            "name": "/api/v1/Venmonitor/GetVendorScore",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Venmonitor",
+                "GetVendorScore"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "vendorKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6bd54c5a-69c5-409b-8f50-830247e810e9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Venmonitor",
+                    "GetVendorScore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "vendorKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"vendorNickname\": \"string\",\n    \"vendorKey\": \"string\",\n    \"venmonitorType\": \"string\",\n    \"publishedDate\": \"1975-12-24T23:57:10.371Z\",\n    \"lastRefreshDate\": \"2021-08-17T15:23:21.308Z\",\n    \"overallScoreQuantitative\": 9903.06968164235,\n    \"overallScoreQualitative\": \"string\",\n    \"dataPartnerScores\": [\n      {\n        \"dataPartnerName\": \"string\",\n        \"normalizedScoreQuantitative\": 2737.10558098029,\n        \"normalizedScoreQualitative\": \"string\"\n      },\n      {\n        \"dataPartnerName\": \"string\",\n        \"normalizedScoreQuantitative\": 2216.619506921511,\n        \"normalizedScoreQualitative\": \"string\"\n      }\n    ]\n  },\n  {\n    \"vendorNickname\": \"string\",\n    \"vendorKey\": \"string\",\n    \"venmonitorType\": \"string\",\n    \"publishedDate\": \"1981-12-25T16:23:01.619Z\",\n    \"lastRefreshDate\": \"1955-11-17T12:20:30.770Z\",\n    \"overallScoreQuantitative\": 3600.5932407610185,\n    \"overallScoreQualitative\": \"string\",\n    \"dataPartnerScores\": [\n      {\n        \"dataPartnerName\": \"string\",\n        \"normalizedScoreQuantitative\": 7424.69375576754,\n        \"normalizedScoreQualitative\": \"string\"\n      },\n      {\n        \"dataPartnerName\": \"string\",\n        \"normalizedScoreQuantitative\": 4282.85335139985,\n        \"normalizedScoreQualitative\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3e74b959-71a3-4b31-b35c-7193905bd2c4",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Venmonitor",
+                    "GetVendorScore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "vendorKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 8292,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8186c7e9-06db-4aa1-aebd-94aea534df2a",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Venmonitor",
+                    "GetVendorScore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "vendorKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2295,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4e20602d-3b39-479c-85a3-98faf8574a43",
+    "name": "Venminder OpenApi BusinessUnit Venmonitor API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Venminder OpenApi BusinessUnit Services API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Services",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Provides a list of purchased services.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/Services/ListServices",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Provides a list of purchased services."
+        },
+        {
+          "info": {
+            "name": "Details of a specific service.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Services/GetDetails",
+            "params": [
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Details of a specific service."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

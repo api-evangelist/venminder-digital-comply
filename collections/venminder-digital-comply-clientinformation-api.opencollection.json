@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Venminder OpenApi BusinessUnit ClientInformation API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ClientInformation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Provides a list of basic vendor and product related information.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/ClientInformation/GetClientInformation",
+            "params": [
+              {
+                "name": "createdDate",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides high level client configuration information including a list of the vendors and the vendor's products, a list of the profile fields for each vendor, a list of all active contracts and the products with which they are associated, a list of oversight requirements and a list of users."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

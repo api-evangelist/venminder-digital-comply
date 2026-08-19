@@ -1,0 +1,247 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Venminder OpenApi BusinessUnit Vendors API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Vendors",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Provides detailed information about a specific vendor.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Vendors/GetVendorProfile",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "vendorKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provide detailed information about a specific vendor. This includes vendor profile information, oversight requirements, a list of products, a list of contracts and much more."
+        },
+        {
+          "info": {
+            "name": "Creates a new vendor and/or product.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/Vendors/VendorProduct",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new vendor and product or adds a new product to an existing vendor."
+        },
+        {
+          "info": {
+            "name": "Updates an existing vendor's profile information.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/Vendors/VendorProfile",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a vendor's profile information. This includes standard questions as well as custom question add to the Venminder platform. Validation based on results provided in the GET ProfileAnswers API."
+        },
+        {
+          "info": {
+            "name": "Adds a third and/or a fourth party relationships to a vendor.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/Vendors/Relationships",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds a third and/or a fourth party relationships to a vendor."
+        },
+        {
+          "info": {
+            "name": "Deletes a third and/or a fourth party relationships from a vendor.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/Vendors/Relationships",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deletes a third and/or a fourth party relationships from a vendor."
+        },
+        {
+          "info": {
+            "name": "Updates a product's risk level.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/Vendors/Risk",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a product's risk level given a Risk Assessment has not been performed."
+        },
+        {
+          "info": {
+            "name": "Updates a vendor's risk level.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/Vendors/SetVendorRisk",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a vendor's risk level given a Product Risk Assessment has not been performed."
+        },
+        {
+          "info": {
+            "name": "Updates an existing product's profile information.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/Vendors/ProductProfile",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a product's profile information. This includes standard questions as well as custom question add to the Venminder platform. Validation based on results provided in the GET ProfileAnswers API."
+        },
+        {
+          "info": {
+            "name": "Create a contact and assign them to a product.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/Vendors/ProductContact",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a contact and assigns them to a product. If the contact already exists, use the POST ProductProfile API to update the list of contacts for a product."
+        },
+        {
+          "info": {
+            "name": "Provides a list of answers for vendor and product profile questions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Vendors/ProfileAnswers",
+            "params": [
+              {
+                "name": "vendorKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides a list of expected answers for the vendor and product profile questions."
+        },
+        {
+          "info": {
+            "name": "Provides a list of question keys for vendor information.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Vendors/GetVendorQuestionKeys"
+          },
+          "docs": "Provides a list of question keys for vendor information."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

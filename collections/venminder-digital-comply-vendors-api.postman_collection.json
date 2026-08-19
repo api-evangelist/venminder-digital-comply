@@ -1,0 +1,2338 @@
+{
+  "item": [
+    {
+      "id": "a23ab2ed-3cc4-4a46-bd6e-7788c206c4ca",
+      "name": "Vendors",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "645998b5-d850-4938-bd7f-59cee61d51c8",
+          "name": "Provides detailed information about a specific vendor.",
+          "request": {
+            "name": "Provides detailed information about a specific vendor.",
+            "description": {
+              "content": "Provide detailed information about a specific vendor. This includes vendor profile information, oversight requirements, a list of products, a list of contracts and much more.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendors",
+                "GetVendorProfile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "vendorKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bcf1575e-127d-4bd1-bb05-1f96daf078bb",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "GetVendorProfile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "vendorKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key\": \"string\",\n  \"contactKey\": \"string\",\n  \"name\": \"string\",\n  \"isThirdParty\": false,\n  \"fourthPartyVendorKeys\": [\n    \"string\",\n    \"string\"\n  ],\n  \"isFourthParty\": true,\n  \"thirdPartyVendorKeys\": [\n    \"string\",\n    \"string\"\n  ],\n  \"confidenceLevel\": \"string\",\n  \"confidenceLevelComments\": \"string\",\n  \"hasVendorSpendBudgets\": true,\n  \"hasVendorSpendDetails\": false,\n  \"vendorProfileData\": [\n    {\n      \"answers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"answer\": \"string\",\n      \"key\": \"string\",\n      \"groupIdentity\": \"string\",\n      \"dataFieldKey\": \"string\",\n      \"label\": \"string\",\n      \"answerFormat\": \"string\",\n      \"formattedAnswer\": \"string\"\n    },\n    {\n      \"answers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"answer\": \"string\",\n      \"key\": \"string\",\n      \"groupIdentity\": \"string\",\n      \"dataFieldKey\": \"string\",\n      \"label\": \"string\",\n      \"answerFormat\": \"string\",\n      \"formattedAnswer\": \"string\"\n    }\n  ],\n  \"openRequirements\": [\n    {\n      \"requirementKey\": \"string\",\n      \"key\": \"string\",\n      \"taskOwnerKey\": \"string\",\n      \"dueDate\": \"1947-03-13T12:15:42.948Z\",\n      \"productKeys\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"requirementKey\": \"string\",\n      \"key\": \"string\",\n      \"taskOwnerKey\": \"string\",\n      \"dueDate\": \"2015-06-30T17:21:11.253Z\",\n      \"productKeys\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"products\": [\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"isActive\": true,\n      \"inherentRisk\": \"string\",\n      \"inherentRiskScore\": 2167,\n      \"residualRisk\": \"string\",\n      \"residualRiskScore\": 2853,\n      \"contacts\": [\n        {\n          \"key\": \"string\",\n          \"contactKey\": \"string\",\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"phoneNumbers\": [\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"areaCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"prefix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"suffix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"extension\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"areaCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"prefix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"suffix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"extension\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"emailAddress\": \"string\",\n          \"isPrimary\": true,\n          \"isPrimaryQuestionnaires\": true\n        },\n        {\n          \"key\": \"string\",\n          \"contactKey\": \"string\",\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"phoneNumbers\": [\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"areaCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"prefix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"suffix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"extension\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"areaCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"prefix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"suffix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"extension\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"emailAddress\": \"string\",\n          \"isPrimary\": false,\n          \"isPrimaryQuestionnaires\": true\n        }\n      ],\n      \"businessUnits\": [\n        \"string\",\n        \"string\"\n      ],\n      \"category\": \"string\",\n      \"productProfileData\": [\n        {\n          \"answers\": [\n            \"string\",\n            \"string\"\n          ],\n          \"answer\": \"string\",\n          \"key\": \"string\",\n          \"groupIdentity\": \"string\",\n          \"dataFieldKey\": \"string\",\n          \"label\": \"string\",\n          \"answerFormat\": \"string\",\n          \"formattedAnswer\": \"string\"\n        },\n        {\n          \"answers\": [\n            \"string\",\n            \"string\"\n          ],\n          \"answer\": \"string\",\n          \"key\": \"string\",\n          \"groupIdentity\": \"string\",\n          \"dataFieldKey\": \"string\",\n          \"label\": \"string\",\n          \"answerFormat\": \"string\",\n          \"formattedAnswer\": \"string\"\n        }\n      ],\n      \"managerKey\": \"string\",\n      \"collaboratorKeys\": [\n        \"string\",\n        \"string\"\n      ],\n      \"assessmentLastCompleted\": \"1959-10-21T10:39:15.336Z\",\n      \"inherentAssessmentPerformedBy\": \"string\",\n      \"residualAssessmentPerformedBy\": \"string\",\n      \"inherentAssessmentApprovedBy\": \"string\",\n      \"residualAssessmentApprovedBy\": \"string\",\n      \"assessmentNextDue\": \"2004-10-13T05:55:15.042Z\"\n    },\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"isActive\": false,\n      \"inherentRisk\": \"string\",\n      \"inherentRiskScore\": 2974,\n      \"residualRisk\": \"string\",\n      \"residualRiskScore\": 9600,\n      \"contacts\": [\n        {\n          \"key\": \"string\",\n          \"contactKey\": \"string\",\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"phoneNumbers\": [\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"areaCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"prefix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"suffix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"extension\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"areaCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"prefix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"suffix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"extension\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"emailAddress\": \"string\",\n          \"isPrimary\": false,\n          \"isPrimaryQuestionnaires\": false\n        },\n        {\n          \"key\": \"string\",\n          \"contactKey\": \"string\",\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"phoneNumbers\": [\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"areaCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"prefix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"suffix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"extension\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"areaCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"prefix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"suffix\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"extension\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"emailAddress\": \"string\",\n          \"isPrimary\": true,\n          \"isPrimaryQuestionnaires\": true\n        }\n      ],\n      \"businessUnits\": [\n        \"string\",\n        \"string\"\n      ],\n      \"category\": \"string\",\n      \"productProfileData\": [\n        {\n          \"answers\": [\n            \"string\",\n            \"string\"\n          ],\n          \"answer\": \"string\",\n          \"key\": \"string\",\n          \"groupIdentity\": \"string\",\n          \"dataFieldKey\": \"string\",\n          \"label\": \"string\",\n          \"answerFormat\": \"string\",\n          \"formattedAnswer\": \"string\"\n        },\n        {\n          \"answers\": [\n            \"string\",\n            \"string\"\n          ],\n          \"answer\": \"string\",\n          \"key\": \"string\",\n          \"groupIdentity\": \"string\",\n          \"dataFieldKey\": \"string\",\n          \"label\": \"string\",\n          \"answerFormat\": \"string\",\n          \"formattedAnswer\": \"string\"\n        }\n      ],\n      \"managerKey\": \"string\",\n      \"collaboratorKeys\": [\n        \"string\",\n        \"string\"\n      ],\n      \"assessmentLastCompleted\": \"1993-01-01T18:46:22.774Z\",\n      \"inherentAssessmentPerformedBy\": \"string\",\n      \"residualAssessmentPerformedBy\": \"string\",\n      \"inherentAssessmentApprovedBy\": \"string\",\n      \"residualAssessmentApprovedBy\": \"string\",\n      \"assessmentNextDue\": \"1981-09-07T16:37:55.753Z\"\n    }\n  ],\n  \"contracts\": [\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"isPerpetual\": false,\n      \"effectiveDate\": \"1987-09-05T03:15:05.952Z\",\n      \"notificationDeadline\": \"1985-04-05T00:31:31.087Z\",\n      \"expirationDate\": \"1990-05-09T19:55:51.859Z\",\n      \"vendorKey\": \"string\",\n      \"productKeys\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"isPerpetual\": true,\n      \"effectiveDate\": \"1997-10-25T02:29:56.440Z\",\n      \"notificationDeadline\": \"1946-12-22T00:00:52.740Z\",\n      \"expirationDate\": \"1996-06-24T19:45:56.307Z\",\n      \"vendorKey\": \"string\",\n      \"productKeys\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"vendorRisk\": {\n    \"inherentRisk\": \"string\",\n    \"inherentRiskScore\": 8152,\n    \"residualRisk\": \"string\",\n    \"residualRiskScore\": 3152\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8aea51dd-456d-4d7e-8840-82342c6caad9",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "GetVendorProfile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "vendorKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 1717,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d6cac1e5-2744-49ff-bfb4-cd2ec44c0590",
+          "name": "Creates a new vendor and/or product.",
+          "request": {
+            "name": "Creates a new vendor and/or product.",
+            "description": {
+              "content": "Creates a new vendor and product or adds a new product to an existing vendor.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendors",
+                "VendorProduct"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"productType\": \"<string>\",\n  \"productName\": \"<string>\",\n  \"productManagerKey\": \"<string>\",\n  \"isCriticalVendor\": \"<boolean>\",\n  \"isThirdParty\": \"<boolean>\",\n  \"isFourthParty\": \"<boolean>\",\n  \"annualReviewDate\": \"<string>\",\n  \"category\": \"<string>\",\n  \"businessUnits\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ddb7c2f3-d6a9-4361-8584-6a0b6f942c6b",
+              "name": "Returns the success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "VendorProduct"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"productType\": \"<string>\",\n  \"productName\": \"<string>\",\n  \"productManagerKey\": \"<string>\",\n  \"isCriticalVendor\": \"<boolean>\",\n  \"isThirdParty\": \"<boolean>\",\n  \"isFourthParty\": \"<boolean>\",\n  \"annualReviewDate\": \"<string>\",\n  \"category\": \"<string>\",\n  \"businessUnits\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"vendorKey\": \"string\",\n  \"productKey\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e476ab92-9bc1-47ce-b1df-0dd7ab2f99e5",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "VendorProduct"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"productType\": \"<string>\",\n  \"productName\": \"<string>\",\n  \"productManagerKey\": \"<string>\",\n  \"isCriticalVendor\": \"<boolean>\",\n  \"isThirdParty\": \"<boolean>\",\n  \"isFourthParty\": \"<boolean>\",\n  \"annualReviewDate\": \"<string>\",\n  \"category\": \"<string>\",\n  \"businessUnits\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "523839d5-7445-4e72-88a3-5a68051bd5b1",
+          "name": "Updates an existing vendor's profile information.",
+          "request": {
+            "name": "Updates an existing vendor's profile information.",
+            "description": {
+              "content": "Updates a vendor's profile information. This includes standard questions as well as custom question add to the Venminder platform. Validation based on results provided in the GET ProfileAnswers API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendors",
+                "VendorProfile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorProfileData\": [\n    {\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"answer\": \"<string>\",\n      \"key\": \"<string>\",\n      \"groupIdentity\": \"<string>\",\n      \"dataFieldKey\": \"<string>\",\n      \"label\": \"<string>\",\n      \"answerFormat\": \"<string>\",\n      \"formattedAnswer\": \"<string>\"\n    },\n    {\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"answer\": \"<string>\",\n      \"key\": \"<string>\",\n      \"groupIdentity\": \"<string>\",\n      \"dataFieldKey\": \"<string>\",\n      \"label\": \"<string>\",\n      \"answerFormat\": \"<string>\",\n      \"formattedAnswer\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2f36881a-92a9-4c58-851d-ba50b11e6640",
+              "name": "Returns success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "VendorProfile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorProfileData\": [\n    {\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"answer\": \"<string>\",\n      \"key\": \"<string>\",\n      \"groupIdentity\": \"<string>\",\n      \"dataFieldKey\": \"<string>\",\n      \"label\": \"<string>\",\n      \"answerFormat\": \"<string>\",\n      \"formattedAnswer\": \"<string>\"\n    },\n    {\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"answer\": \"<string>\",\n      \"key\": \"<string>\",\n      \"groupIdentity\": \"<string>\",\n      \"dataFieldKey\": \"<string>\",\n      \"label\": \"<string>\",\n      \"answerFormat\": \"<string>\",\n      \"formattedAnswer\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0ef6c4dd-55d5-4900-ade2-1a59aeea560d",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "VendorProfile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorProfileData\": [\n    {\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"answer\": \"<string>\",\n      \"key\": \"<string>\",\n      \"groupIdentity\": \"<string>\",\n      \"dataFieldKey\": \"<string>\",\n      \"label\": \"<string>\",\n      \"answerFormat\": \"<string>\",\n      \"formattedAnswer\": \"<string>\"\n    },\n    {\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"answer\": \"<string>\",\n      \"key\": \"<string>\",\n      \"groupIdentity\": \"<string>\",\n      \"dataFieldKey\": \"<string>\",\n      \"label\": \"<string>\",\n      \"answerFormat\": \"<string>\",\n      \"formattedAnswer\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "47dd5c37-1295-4093-94cf-d2b694e000ea",
+              "name": "If vendor api key does not belong to api user's client.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "VendorProfile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorProfileData\": [\n    {\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"answer\": \"<string>\",\n      \"key\": \"<string>\",\n      \"groupIdentity\": \"<string>\",\n      \"dataFieldKey\": \"<string>\",\n      \"label\": \"<string>\",\n      \"answerFormat\": \"<string>\",\n      \"formattedAnswer\": \"<string>\"\n    },\n    {\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"answer\": \"<string>\",\n      \"key\": \"<string>\",\n      \"groupIdentity\": \"<string>\",\n      \"dataFieldKey\": \"<string>\",\n      \"label\": \"<string>\",\n      \"answerFormat\": \"<string>\",\n      \"formattedAnswer\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "704be653-a33c-450e-a540-fdb89f5b59cb",
+          "name": "Adds a third and/or a fourth party relationships to a vendor.",
+          "request": {
+            "name": "Adds a third and/or a fourth party relationships to a vendor.",
+            "description": {
+              "content": "Adds a third and/or a fourth party relationships to a vendor.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendors",
+                "Relationships"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"isThirdParty\": \"<boolean>\",\n  \"fourthPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"isFourthParty\": \"<boolean>\",\n  \"thirdPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ff3ad9b4-1f4a-444b-8ed5-2334fc06d80c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "Relationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"isThirdParty\": \"<boolean>\",\n  \"fourthPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"isFourthParty\": \"<boolean>\",\n  \"thirdPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "65efeace-c2bb-4330-bf66-2c7e901e9b50",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "Relationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"isThirdParty\": \"<boolean>\",\n  \"fourthPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"isFourthParty\": \"<boolean>\",\n  \"thirdPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b565b4e5-da4f-4b25-9837-c47d8361ceb5",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "Relationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"isThirdParty\": \"<boolean>\",\n  \"fourthPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"isFourthParty\": \"<boolean>\",\n  \"thirdPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ec017deb-fac2-47c8-8a9c-a451432b2a4f",
+          "name": "Deletes a third and/or a fourth party relationships from a vendor.",
+          "request": {
+            "name": "Deletes a third and/or a fourth party relationships from a vendor.",
+            "description": {
+              "content": "Deletes a third and/or a fourth party relationships from a vendor.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendors",
+                "Relationships"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"thirdPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"fourthPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "09d3d22f-afe7-4073-84a0-b64995a36613",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "Relationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"thirdPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"fourthPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3092ac9e-7ad8-40df-8a89-f100fabf0d28",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "Relationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"thirdPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"fourthPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0d7cd781-671a-4ade-82c4-51b0fef1e9ee",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "Relationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"thirdPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"fourthPartyVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75c2cdb3-2312-45b6-bcc4-29ccf1b7dd94",
+          "name": "Updates a product's risk level.",
+          "request": {
+            "name": "Updates a product's risk level.",
+            "description": {
+              "content": "Updates a product's risk level given a Risk Assessment has not been performed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendors",
+                "Risk"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productKey\": \"<string>\",\n  \"inherentRiskKey\": \"<string>\",\n  \"residualRiskKey\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c5fd06b8-4b73-4ab5-9490-f21d1eac1e15",
+              "name": "Returns the success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "Risk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"productKey\": \"<string>\",\n  \"inherentRiskKey\": \"<string>\",\n  \"residualRiskKey\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1704d852-c171-4cfa-bd55-5d4123778baf",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "Risk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"productKey\": \"<string>\",\n  \"inherentRiskKey\": \"<string>\",\n  \"residualRiskKey\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d888c5af-c34f-4818-9656-8c68b10585e4",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "Risk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"productKey\": \"<string>\",\n  \"inherentRiskKey\": \"<string>\",\n  \"residualRiskKey\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "def6c069-3bc3-45b9-bc3e-3a604663d002",
+          "name": "Updates a vendor's risk level.",
+          "request": {
+            "name": "Updates a vendor's risk level.",
+            "description": {
+              "content": "Updates a vendor's risk level given a Product Risk Assessment has not been performed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendors",
+                "SetVendorRisk"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"inherentRiskKey\": \"<string>\",\n  \"residualRiskKey\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b900f92c-d7bb-43e1-9f11-ce96bf8e78cf",
+              "name": "Returns the success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "SetVendorRisk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"inherentRiskKey\": \"<string>\",\n  \"residualRiskKey\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8182d4fb-a9ad-4937-8ba7-c62f0356ebd3",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "SetVendorRisk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"inherentRiskKey\": \"<string>\",\n  \"residualRiskKey\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79e8fa77-e0b3-4820-ae01-23581b8fd262",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "SetVendorRisk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vendorKey\": \"<string>\",\n  \"inherentRiskKey\": \"<string>\",\n  \"residualRiskKey\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dbc9c937-b8b4-4882-80a5-aa8e914c4dcb",
+          "name": "Updates an existing product's profile information.",
+          "request": {
+            "name": "Updates an existing product's profile information.",
+            "description": {
+              "content": "Updates a product's profile information. This includes standard questions as well as custom question add to the Venminder platform. Validation based on results provided in the GET ProfileAnswers API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendors",
+                "ProductProfile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productKey\": \"<string>\",\n  \"productManagerKey\": \"<string>\",\n  \"productName\": \"<string>\",\n  \"productType\": \"<string>\",\n  \"productProfileData\": [\n    {\n      \"dataFieldKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"dataFieldKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"isActive\": \"<boolean>\",\n  \"category\": \"<string>\",\n  \"collaboratorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"contacts\": [\n    {\n      \"key\": \"<string>\",\n      \"isPrimaryContact\": \"<boolean>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"isPrimaryContact\": \"<boolean>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f593f483-57fe-459c-941f-2c248434c78e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "ProductProfile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"productKey\": \"<string>\",\n  \"productManagerKey\": \"<string>\",\n  \"productName\": \"<string>\",\n  \"productType\": \"<string>\",\n  \"productProfileData\": [\n    {\n      \"dataFieldKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"dataFieldKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"isActive\": \"<boolean>\",\n  \"category\": \"<string>\",\n  \"collaboratorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"contacts\": [\n    {\n      \"key\": \"<string>\",\n      \"isPrimaryContact\": \"<boolean>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"isPrimaryContact\": \"<boolean>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2ed99ebf-74c9-452c-9244-b8678483a5ee",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "ProductProfile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"productKey\": \"<string>\",\n  \"productManagerKey\": \"<string>\",\n  \"productName\": \"<string>\",\n  \"productType\": \"<string>\",\n  \"productProfileData\": [\n    {\n      \"dataFieldKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"dataFieldKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"isActive\": \"<boolean>\",\n  \"category\": \"<string>\",\n  \"collaboratorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"contacts\": [\n    {\n      \"key\": \"<string>\",\n      \"isPrimaryContact\": \"<boolean>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"isPrimaryContact\": \"<boolean>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6dc5e6b2-bd43-4fb0-95fc-f68a5ccaa12f",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "ProductProfile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"productKey\": \"<string>\",\n  \"productManagerKey\": \"<string>\",\n  \"productName\": \"<string>\",\n  \"productType\": \"<string>\",\n  \"productProfileData\": [\n    {\n      \"dataFieldKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"dataFieldKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"isActive\": \"<boolean>\",\n  \"category\": \"<string>\",\n  \"collaboratorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"contacts\": [\n    {\n      \"key\": \"<string>\",\n      \"isPrimaryContact\": \"<boolean>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"isPrimaryContact\": \"<boolean>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d3f667e2-b59a-43b0-85c9-021a208e0469",
+          "name": "Create a contact and assign them to a product.",
+          "request": {
+            "name": "Create a contact and assign them to a product.",
+            "description": {
+              "content": "Creates a contact and assigns them to a product. If the contact already exists, use the POST ProductProfile API to update the list of contacts for a product.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendors",
+                "ProductContact"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productKey\": \"<string>\",\n  \"contacts\": [\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"phoneNumbers\": [\n        {\n          \"countryCodeAbbreviation\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"countryCodeAbbreviation\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"type\": \"<string>\"\n        }\n      ],\n      \"emailAddress\": \"<string>\",\n      \"isPrimaryContact\": \"<boolean>\"\n    },\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"phoneNumbers\": [\n        {\n          \"countryCodeAbbreviation\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"countryCodeAbbreviation\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"type\": \"<string>\"\n        }\n      ],\n      \"emailAddress\": \"<string>\",\n      \"isPrimaryContact\": \"<boolean>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4b01ef95-fa9f-46e9-8800-9147c3a70e6a",
+              "name": "Returns the success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "ProductContact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"productKey\": \"<string>\",\n  \"contacts\": [\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"phoneNumbers\": [\n        {\n          \"countryCodeAbbreviation\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"countryCodeAbbreviation\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"type\": \"<string>\"\n        }\n      ],\n      \"emailAddress\": \"<string>\",\n      \"isPrimaryContact\": \"<boolean>\"\n    },\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"phoneNumbers\": [\n        {\n          \"countryCodeAbbreviation\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"countryCodeAbbreviation\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"type\": \"<string>\"\n        }\n      ],\n      \"emailAddress\": \"<string>\",\n      \"isPrimaryContact\": \"<boolean>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactsKeys\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b0c319fc-5bfc-497e-98fe-517e34f4d1c0",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "ProductContact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"productKey\": \"<string>\",\n  \"contacts\": [\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"phoneNumbers\": [\n        {\n          \"countryCodeAbbreviation\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"countryCodeAbbreviation\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"type\": \"<string>\"\n        }\n      ],\n      \"emailAddress\": \"<string>\",\n      \"isPrimaryContact\": \"<boolean>\"\n    },\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"phoneNumbers\": [\n        {\n          \"countryCodeAbbreviation\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"countryCodeAbbreviation\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"type\": \"<string>\"\n        }\n      ],\n      \"emailAddress\": \"<string>\",\n      \"isPrimaryContact\": \"<boolean>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8f6ed687-bb5c-4f03-8b65-f091402cbb01",
+          "name": "Provides a list of answers for vendor and product profile questions.",
+          "request": {
+            "name": "Provides a list of answers for vendor and product profile questions.",
+            "description": {
+              "content": "Provides a list of expected answers for the vendor and product profile questions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendors",
+                "ProfileAnswers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "vendorKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "609caf33-c6d2-4e87-8120-99a378dc8a3a",
+              "name": "Returns list of expected answers of Vendor and Product Profile Questions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "ProfileAnswers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "vendorKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"vendorProfileAnswers\": [\n    {\n      \"dataFieldKey\": \"string\",\n      \"expectedAnswers\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"dataFieldKey\": \"string\",\n      \"expectedAnswers\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"productProfileAnswers\": [\n    {\n      \"dataFieldKey\": \"string\",\n      \"expectedAnswers\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"dataFieldKey\": \"string\",\n      \"expectedAnswers\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d6c9c925-3278-44a9-a35d-5ef4140c2010",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "ProfileAnswers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "vendorKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d0bbdf79-15f2-4509-91d2-6bc99e2359af",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "ProfileAnswers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "vendorKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bc3ac246-b936-43a5-8a82-dfeb4b8a5722",
+          "name": "Provides a list of question keys for vendor information.",
+          "request": {
+            "name": "Provides a list of question keys for vendor information.",
+            "description": {
+              "content": "Provides a list of question keys for vendor information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendors",
+                "GetVendorQuestionKeys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "29f4d2f5-1072-436f-bb38-b9453355a901",
+              "name": "Returns a list of question keys for vendor information.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "GetVendorQuestionKeys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key\": \"string\",\n  \"label\": \"string\",\n  \"answerFormat\": \"string\",\n  \"vendorsAppliedTo\": [\n    \"string\",\n    \"string\"\n  ],\n  \"parentKey\": \"string\",\n  \"selectedParentOption\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9f64567e-2958-43ac-9384-ab278022fdb6",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "GetVendorQuestionKeys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b76e8b07-e7b2-4cb5-972e-8098e8e716b4",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendors",
+                    "GetVendorQuestionKeys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 7328,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "aaef6119-3027-419e-b273-3cd95639210b",
+    "name": "Venminder OpenApi BusinessUnit Vendors API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

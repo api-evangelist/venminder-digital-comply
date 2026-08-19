@@ -1,0 +1,1784 @@
+{
+  "item": [
+    {
+      "id": "90cd7ca7-a0e5-4094-b313-e3ec57c41a3e",
+      "name": "VendorOnboarding",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "24a839f5-2109-4dbf-8359-5a4b9f08d5e3",
+          "name": "Provides a list of vendor onboarding requests.",
+          "request": {
+            "name": "Provides a list of vendor onboarding requests.",
+            "description": {
+              "content": "Provides a list of vendor onboarding requests. The returned list can be limited based on the status of the request. Information will include vendor name, product name, status, section status…",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendor",
+                "Onboarding",
+                "Requests"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "statusID",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "requestedDateStart",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "requestedDateEnd",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "approvedOrDeclinedDateStart",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "approvedOrDeclinedDateEnd",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "deadlineDateStart",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "deadlineDateEnd",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "355ceddb-f906-4950-aa47-b8189b6d35dc",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "Requests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "statusID",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "requestedDateStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "requestedDateEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "approvedOrDeclinedDateStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "approvedOrDeclinedDateEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "deadlineDateStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "deadlineDateEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 3045,\n  \"requests\": [\n    {\n      \"relationshipKey\": \"string\",\n      \"vendorName\": \"string\",\n      \"vendorKey\": \"string\",\n      \"productName\": \"string\",\n      \"productKey\": \"string\",\n      \"status\": \"string\",\n      \"statusID\": 8896,\n      \"approvedOrDeclinedDate\": \"1994-08-04T17:21:20.507Z\",\n      \"requestorName\": \"string\",\n      \"requestorKey\": \"string\",\n      \"requestedDate\": \"1982-07-04T12:21:16.563Z\",\n      \"deadlineDate\": \"1996-12-19T08:47:58.476Z\",\n      \"vmoManagerName\": \"string\",\n      \"vmoManagerKey\": \"string\",\n      \"sectionStatus\": [\n        {\n          \"sectionName\": \"string\",\n          \"isRequired\": false,\n          \"status\": \"string\",\n          \"statusDate\": \"1983-05-31T08:47:59.369Z\",\n          \"assignedTo\": \"string\",\n          \"assignedToKey\": \"string\",\n          \"approverName\": \"string\",\n          \"approverKey\": \"string\"\n        },\n        {\n          \"sectionName\": \"string\",\n          \"isRequired\": false,\n          \"status\": \"string\",\n          \"statusDate\": \"1960-07-02T22:03:41.600Z\",\n          \"assignedTo\": \"string\",\n          \"assignedToKey\": \"string\",\n          \"approverName\": \"string\",\n          \"approverKey\": \"string\"\n        }\n      ]\n    },\n    {\n      \"relationshipKey\": \"string\",\n      \"vendorName\": \"string\",\n      \"vendorKey\": \"string\",\n      \"productName\": \"string\",\n      \"productKey\": \"string\",\n      \"status\": \"string\",\n      \"statusID\": 434,\n      \"approvedOrDeclinedDate\": \"2017-06-03T10:27:20.678Z\",\n      \"requestorName\": \"string\",\n      \"requestorKey\": \"string\",\n      \"requestedDate\": \"1962-08-09T16:00:47.819Z\",\n      \"deadlineDate\": \"2008-03-19T12:35:21.978Z\",\n      \"vmoManagerName\": \"string\",\n      \"vmoManagerKey\": \"string\",\n      \"sectionStatus\": [\n        {\n          \"sectionName\": \"string\",\n          \"isRequired\": false,\n          \"status\": \"string\",\n          \"statusDate\": \"1976-04-15T02:59:16.519Z\",\n          \"assignedTo\": \"string\",\n          \"assignedToKey\": \"string\",\n          \"approverName\": \"string\",\n          \"approverKey\": \"string\"\n        },\n        {\n          \"sectionName\": \"string\",\n          \"isRequired\": true,\n          \"status\": \"string\",\n          \"statusDate\": \"1971-08-19T08:11:20.690Z\",\n          \"assignedTo\": \"string\",\n          \"assignedToKey\": \"string\",\n          \"approverName\": \"string\",\n          \"approverKey\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "762c966b-f274-4d44-a8ef-ae0bc454acca",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "Requests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "statusID",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "requestedDateStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "requestedDateEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "approvedOrDeclinedDateStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "approvedOrDeclinedDateEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "deadlineDateStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "deadlineDateEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 8842,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ebdcc932-3b69-4304-919a-2c4672fcdb37",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "Requests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "statusID",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "requestedDateStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "requestedDateEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "approvedOrDeclinedDateStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "approvedOrDeclinedDateEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "deadlineDateStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "deadlineDateEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2647,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "420340da-6b7b-4d83-a802-67dd4f83dead",
+          "name": "Provides detailed information for a vendor onboarding request.",
+          "request": {
+            "name": "Provides detailed information for a vendor onboarding request.",
+            "description": {
+              "content": "Provides details for a specific vendor onboarding request include requestor, vmo manager, status, vendor, product, criticality, and risk question….",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendor",
+                "Onboarding",
+                "RequestDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "relationshipKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5880946e-51fa-4314-8a9a-3b5d3eff9ed6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "RequestDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "relationshipKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"onboardingStatusDetail\": {\n    \"isIncumbentVendor\": true,\n    \"currentProductManagerKey\": \"string\",\n    \"request\": {\n      \"requestKey\": \"string\",\n      \"requestorName\": \"string\",\n      \"requestorKey\": \"string\",\n      \"requestDate\": \"1992-11-14T22:35:41.190Z\",\n      \"requestReason\": \"string\",\n      \"requestReasonID\": \"string\",\n      \"deadlineDate\": \"2008-08-07T16:11:59.979Z\",\n      \"vmoManagerName\": \"string\",\n      \"vmoManagerKey\": \"string\",\n      \"statusID\": 9198,\n      \"status\": \"string\",\n      \"approvedOrDeclinedDate\": \"1974-12-05T13:42:20.850Z\",\n      \"isCategoryExempted\": false,\n      \"category\": \"string\",\n      \"areMultipleVendorsInRequest\": true,\n      \"otherRelationshipsInRequest\": [\n        {\n          \"vendorName\": \"string\",\n          \"productName\": \"string\",\n          \"relationshipKey\": \"string\"\n        },\n        {\n          \"vendorName\": \"string\",\n          \"productName\": \"string\",\n          \"relationshipKey\": \"string\"\n        }\n      ]\n    },\n    \"vendorInformation\": {\n      \"vendorName\": \"string\",\n      \"vendorKey\": \"string\",\n      \"productName\": \"string\",\n      \"productKey\": \"string\",\n      \"isExempt\": false,\n      \"isOversightExempt\": false\n    },\n    \"riskInformation\": {\n      \"inherentRiskScore\": 3320,\n      \"inherentRiskDescription\": \"string\",\n      \"residualRiskScore\": 6537,\n      \"residualRiskDescription\": \"string\",\n      \"riskLevelCount\": 7843\n    },\n    \"notes\": [\n      {\n        \"date\": \"1974-05-16T12:02:35.292Z\",\n        \"author\": \"string\",\n        \"description\": \"string\",\n        \"isEditable\": true\n      },\n      {\n        \"date\": \"2001-07-05T11:23:52.814Z\",\n        \"author\": \"string\",\n        \"description\": \"string\",\n        \"isEditable\": false\n      }\n    ],\n    \"workflowDetails\": [\n      {\n        \"workflowName\": \"string\",\n        \"workflowKey\": \"string\",\n        \"steps\": [\n          {\n            \"description\": \"string\",\n            \"isComplete\": false,\n            \"completedDate\": \"string\",\n            \"startDate\": \"string\",\n            \"dueDate\": \"string\",\n            \"comment\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"stepStatus\": 1821,\n            \"claimedBy\": \"string\",\n            \"approvedBy\": \"string\"\n          },\n          {\n            \"description\": \"string\",\n            \"isComplete\": false,\n            \"completedDate\": \"string\",\n            \"startDate\": \"string\",\n            \"dueDate\": \"string\",\n            \"comment\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"stepStatus\": 1755,\n            \"claimedBy\": \"string\",\n            \"approvedBy\": \"string\"\n          }\n        ],\n        \"isWorklfowComplete\": false,\n        \"stepsCount\": 8039,\n        \"completedStepsCount\": 2071\n      },\n      {\n        \"workflowName\": \"string\",\n        \"workflowKey\": \"string\",\n        \"steps\": [\n          {\n            \"description\": \"string\",\n            \"isComplete\": true,\n            \"completedDate\": \"string\",\n            \"startDate\": \"string\",\n            \"dueDate\": \"string\",\n            \"comment\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"stepStatus\": 7893,\n            \"claimedBy\": \"string\",\n            \"approvedBy\": \"string\"\n          },\n          {\n            \"description\": \"string\",\n            \"isComplete\": false,\n            \"completedDate\": \"string\",\n            \"startDate\": \"string\",\n            \"dueDate\": \"string\",\n            \"comment\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"stepStatus\": 814,\n            \"claimedBy\": \"string\",\n            \"approvedBy\": \"string\"\n          }\n        ],\n        \"isWorklfowComplete\": false,\n        \"stepsCount\": 8765,\n        \"completedStepsCount\": 3684\n      }\n    ]\n  },\n  \"onboardingDetails\": {\n    \"criticality\": \"string\",\n    \"riskLevel\": \"string\",\n    \"onboardingFormKey\": \"string\",\n    \"details\": [\n      {\n        \"question\": \"string\",\n        \"questionKey\": \"string\",\n        \"questionResponsibility\": \"string\",\n        \"dataFieldKey\": \"string\",\n        \"questionType\": \"string\",\n        \"childQuestions\": [\n          {\n            \"question\": \"string\",\n            \"questionKey\": \"string\",\n            \"questionResponsibility\": \"string\",\n            \"questionType\": \"string\",\n            \"parentSelectionName\": \"string\"\n          },\n          {\n            \"question\": \"string\",\n            \"questionKey\": \"string\",\n            \"questionResponsibility\": \"string\",\n            \"questionType\": \"string\",\n            \"parentSelectionName\": \"string\"\n          }\n        ],\n        \"answer\": \"string\",\n        \"answers\": [\n          \"string\",\n          \"string\"\n        ],\n        \"profileQuestionType\": \"string\",\n        \"isEditable\": false\n      },\n      {\n        \"question\": \"string\",\n        \"questionKey\": \"string\",\n        \"questionResponsibility\": \"string\",\n        \"dataFieldKey\": \"string\",\n        \"questionType\": \"string\",\n        \"childQuestions\": [\n          {\n            \"question\": \"string\",\n            \"questionKey\": \"string\",\n            \"questionResponsibility\": \"string\",\n            \"questionType\": \"string\",\n            \"parentSelectionName\": \"string\"\n          },\n          {\n            \"question\": \"string\",\n            \"questionKey\": \"string\",\n            \"questionResponsibility\": \"string\",\n            \"questionType\": \"string\",\n            \"parentSelectionName\": \"string\"\n          }\n        ],\n        \"answer\": \"string\",\n        \"answers\": [\n          \"string\",\n          \"string\"\n        ],\n        \"profileQuestionType\": \"string\",\n        \"isEditable\": false\n      }\n    ]\n  },\n  \"sectionStatus\": [\n    {\n      \"sectionName\": \"string\",\n      \"isRequired\": false,\n      \"status\": \"string\",\n      \"statusDate\": \"1957-05-29T23:25:09.952Z\",\n      \"assignedTo\": \"string\",\n      \"assignedToKey\": \"string\",\n      \"approverName\": \"string\",\n      \"approverKey\": \"string\"\n    },\n    {\n      \"sectionName\": \"string\",\n      \"isRequired\": true,\n      \"status\": \"string\",\n      \"statusDate\": \"1958-10-02T10:56:06.735Z\",\n      \"assignedTo\": \"string\",\n      \"assignedToKey\": \"string\",\n      \"approverName\": \"string\",\n      \"approverKey\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ddba7546-0a81-445c-83bb-f578f0d1e61f",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "RequestDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "relationshipKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2647,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9de0d8cf-4d99-4b98-8d06-a71a1f26e2cc",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "RequestDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "relationshipKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2647,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1694865c-f6bb-40b0-854e-107455626cf7",
+          "name": "Provides vendor onboarding configuration information.",
+          "request": {
+            "name": "Provides vendor onboarding configuration information.",
+            "description": {
+              "content": "Provides vendor onboarding configuration information. This includes the master form, custom forms and request reasons.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendor",
+                "Onboarding",
+                "Information"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "28ee545c-201f-4093-ae56-174cb577549f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "Information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"onboardingForms\": [\n    {\n      \"formName\": \"string\",\n      \"formKey\": \"string\",\n      \"categories\": [\n        \"string\",\n        \"string\"\n      ],\n      \"formType\": \"string\",\n      \"isActive\": true,\n      \"lastEditedBy\": \"string\",\n      \"lastEditedDate\": \"2015-01-31T10:18:15.076Z\",\n      \"lastEditedByKey\": \"string\"\n    },\n    {\n      \"formName\": \"string\",\n      \"formKey\": \"string\",\n      \"categories\": [\n        \"string\",\n        \"string\"\n      ],\n      \"formType\": \"string\",\n      \"isActive\": false,\n      \"lastEditedBy\": \"string\",\n      \"lastEditedDate\": \"1955-02-01T21:01:03.996Z\",\n      \"lastEditedByKey\": \"string\"\n    }\n  ],\n  \"requestReasons\": [\n    {\n      \"reasonID\": 8678,\n      \"reason\": \"string\",\n      \"isCustomReason\": false\n    },\n    {\n      \"reasonID\": 5857,\n      \"reason\": \"string\",\n      \"isCustomReason\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a727a5aa-8724-45c0-8e11-f5164e81bfe4",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "Information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2647,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bd96af5d-e7df-48a9-9ad2-043871800fd4",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "Information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2647,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ee005066-eeb4-4f4c-9bf3-4bc8ca3b0296",
+          "name": "Provides the details for a specific vendor onboarding request form.",
+          "request": {
+            "name": "Provides the details for a specific vendor onboarding request form.",
+            "description": {
+              "content": "Provides the details for a specific vendor onboarding request form include vendor, product, criticality, and risk question.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendor",
+                "Onboarding",
+                "FormDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "formKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ae10f4e1-5d42-40de-99f2-bd9be53aa5dc",
+              "name": "Returns Onboarding Form Questions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "FormDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "formKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"formKey\": \"string\",\n  \"formName\": \"string\",\n  \"vendorInformationQuestions\": [\n    {\n      \"question\": \"string\",\n      \"questionKey\": \"string\",\n      \"questionResponsibility\": \"string\",\n      \"dataFieldKey\": \"string\",\n      \"questionType\": \"string\",\n      \"childQuestions\": [\n        {\n          \"question\": \"string\",\n          \"questionKey\": \"string\",\n          \"questionResponsibility\": \"string\",\n          \"questionType\": \"string\",\n          \"parentSelectionName\": \"string\"\n        },\n        {\n          \"question\": \"string\",\n          \"questionKey\": \"string\",\n          \"questionResponsibility\": \"string\",\n          \"questionType\": \"string\",\n          \"parentSelectionName\": \"string\"\n        }\n      ]\n    },\n    {\n      \"question\": \"string\",\n      \"questionKey\": \"string\",\n      \"questionResponsibility\": \"string\",\n      \"dataFieldKey\": \"string\",\n      \"questionType\": \"string\",\n      \"childQuestions\": [\n        {\n          \"question\": \"string\",\n          \"questionKey\": \"string\",\n          \"questionResponsibility\": \"string\",\n          \"questionType\": \"string\",\n          \"parentSelectionName\": \"string\"\n        },\n        {\n          \"question\": \"string\",\n          \"questionKey\": \"string\",\n          \"questionResponsibility\": \"string\",\n          \"questionType\": \"string\",\n          \"parentSelectionName\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"productInformationQuestions\": [\n    {\n      \"question\": \"string\",\n      \"questionKey\": \"string\",\n      \"questionResponsibility\": \"string\",\n      \"dataFieldKey\": \"string\",\n      \"questionType\": \"string\",\n      \"childQuestions\": [\n        {\n          \"question\": \"string\",\n          \"questionKey\": \"string\",\n          \"questionResponsibility\": \"string\",\n          \"questionType\": \"string\",\n          \"parentSelectionName\": \"string\"\n        },\n        {\n          \"question\": \"string\",\n          \"questionKey\": \"string\",\n          \"questionResponsibility\": \"string\",\n          \"questionType\": \"string\",\n          \"parentSelectionName\": \"string\"\n        }\n      ]\n    },\n    {\n      \"question\": \"string\",\n      \"questionKey\": \"string\",\n      \"questionResponsibility\": \"string\",\n      \"dataFieldKey\": \"string\",\n      \"questionType\": \"string\",\n      \"childQuestions\": [\n        {\n          \"question\": \"string\",\n          \"questionKey\": \"string\",\n          \"questionResponsibility\": \"string\",\n          \"questionType\": \"string\",\n          \"parentSelectionName\": \"string\"\n        },\n        {\n          \"question\": \"string\",\n          \"questionKey\": \"string\",\n          \"questionResponsibility\": \"string\",\n          \"questionType\": \"string\",\n          \"parentSelectionName\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"pricingQuestions\": [\n    {\n      \"question\": \"string\",\n      \"questionKey\": \"string\",\n      \"questionResponsibility\": \"string\"\n    },\n    {\n      \"question\": \"string\",\n      \"questionKey\": \"string\",\n      \"questionResponsibility\": \"string\"\n    }\n  ],\n  \"criticalityQuestions\": [\n    {\n      \"question\": \"string\",\n      \"questionKey\": \"string\",\n      \"questionResponsibility\": \"string\"\n    },\n    {\n      \"question\": \"string\",\n      \"questionKey\": \"string\",\n      \"questionResponsibility\": \"string\"\n    }\n  ],\n  \"riskAssessmentQuestions\": [\n    {\n      \"question\": \"string\",\n      \"questionKey\": \"string\",\n      \"questionResponsibility\": \"string\",\n      \"isPrevailing\": true\n    },\n    {\n      \"question\": \"string\",\n      \"questionKey\": \"string\",\n      \"questionResponsibility\": \"string\",\n      \"isPrevailing\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4fc4d1b3-6246-40da-bed3-a2f1e2143520",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "FormDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "formKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2647,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9a07b356-5fc6-4cfb-a8fe-865b80320a53",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "FormDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "formKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2647,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2bff8aa4-0fd5-4acb-b0a6-d760656a0176",
+          "name": "Creates a new or updates an existing onboarding request.",
+          "request": {
+            "name": "Creates a new or updates an existing onboarding request.",
+            "description": {
+              "content": "Creates a new or updates an existing onboarding request that is in a draft status.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendor",
+                "Onboarding",
+                "Request"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"category\": \"<string>\",\n  \"reasonID\": \"<integer>\",\n  \"productType\": \"<string>\",\n  \"deadline\": \"<string>\",\n  \"requestorKey\": \"<string>\",\n  \"isDraft\": \"<boolean>\",\n  \"relationships\": [\n    {\n      \"relationshipKey\": \"<string>\",\n      \"vendorInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"productInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"criticalityInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"pricingInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"riskInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    },\n    {\n      \"relationshipKey\": \"<string>\",\n      \"vendorInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"productInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"criticalityInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"pricingInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"riskInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1c79d06d-0c3d-4875-a030-3f49eef92566",
+              "name": "Returns success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "Request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"category\": \"<string>\",\n  \"reasonID\": \"<integer>\",\n  \"productType\": \"<string>\",\n  \"deadline\": \"<string>\",\n  \"requestorKey\": \"<string>\",\n  \"isDraft\": \"<boolean>\",\n  \"relationships\": [\n    {\n      \"relationshipKey\": \"<string>\",\n      \"vendorInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"productInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"criticalityInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"pricingInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"riskInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    },\n    {\n      \"relationshipKey\": \"<string>\",\n      \"vendorInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"productInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"criticalityInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"pricingInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"riskInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"relationshipKey\": \"string\",\n    \"vendorName\": \"string\",\n    \"productName\": \"string\"\n  },\n  {\n    \"relationshipKey\": \"string\",\n    \"vendorName\": \"string\",\n    \"productName\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8990f74e-468b-4f39-ba88-2de8bdfccd88",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "Request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"category\": \"<string>\",\n  \"reasonID\": \"<integer>\",\n  \"productType\": \"<string>\",\n  \"deadline\": \"<string>\",\n  \"requestorKey\": \"<string>\",\n  \"isDraft\": \"<boolean>\",\n  \"relationships\": [\n    {\n      \"relationshipKey\": \"<string>\",\n      \"vendorInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"productInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"criticalityInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"pricingInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"riskInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    },\n    {\n      \"relationshipKey\": \"<string>\",\n      \"vendorInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"productInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"criticalityInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"pricingInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"riskInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2647,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e8ca70e2-39cf-439a-8874-7d067b1cbf1c",
+              "name": "If relation api key does not belong to api user's client.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "Request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"category\": \"<string>\",\n  \"reasonID\": \"<integer>\",\n  \"productType\": \"<string>\",\n  \"deadline\": \"<string>\",\n  \"requestorKey\": \"<string>\",\n  \"isDraft\": \"<boolean>\",\n  \"relationships\": [\n    {\n      \"relationshipKey\": \"<string>\",\n      \"vendorInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"productInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"criticalityInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"pricingInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"riskInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    },\n    {\n      \"relationshipKey\": \"<string>\",\n      \"vendorInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"productInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tieredAnswers\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"answers\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"criticalityInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"pricingInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"riskInformation\": [\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"answers\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2647,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "63725305-4079-467c-95d4-462d516120e6",
+          "name": "Get expected answers for onboarding form Questions",
+          "request": {
+            "name": "Get expected answers for onboarding form Questions",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendor",
+                "Onboarding",
+                "FormAnswers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "formKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "22fc2aa5-4029-4c7c-b828-9cba7480001a",
+              "name": "Returns list of expected answers of onboarding form Questions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "FormAnswers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "formKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"vendorProfileAnswers\": [\n    {\n      \"dataFieldKey\": \"string\",\n      \"expectedAnswers\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"dataFieldKey\": \"string\",\n      \"expectedAnswers\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"productProfileAnswers\": [\n    {\n      \"dataFieldKey\": \"string\",\n      \"expectedAnswers\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"dataFieldKey\": \"string\",\n      \"expectedAnswers\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "795698aa-6933-4576-b682-e03fcb9d9c4b",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "FormAnswers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "formKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2647,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "37454f05-645a-414b-92bb-9c717f808c97",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "FormAnswers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "formKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2647,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2c6976e6-0543-4405-84bb-6fb7b0d8305a",
+          "name": "Get expected answers for onboarding form Questions",
+          "request": {
+            "name": "Get expected answers for onboarding form Questions",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendor",
+                "Onboarding",
+                "RequestAnswers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "relationshipKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "97dc175a-a7ca-4ec3-afcd-49cf4b8915cd",
+              "name": "Returns list of expected answers of onboarding form Questions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "RequestAnswers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "relationshipKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"vendorProfileAnswers\": [\n    {\n      \"dataFieldKey\": \"string\",\n      \"expectedAnswers\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"dataFieldKey\": \"string\",\n      \"expectedAnswers\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"productProfileAnswers\": [\n    {\n      \"dataFieldKey\": \"string\",\n      \"expectedAnswers\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"dataFieldKey\": \"string\",\n      \"expectedAnswers\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ffa9c6cf-da93-48fb-beef-af8a570254b1",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "RequestAnswers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "relationshipKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2647,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "44c12e24-d6e5-4b6b-a3c6-0fc9bcc8effa",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "RequestAnswers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "relationshipKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2647,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3468e566-37af-4798-acac-25c95cfb7c62",
+          "name": "Creates a new or updates an existing onboarding request.",
+          "request": {
+            "name": "Creates a new or updates an existing onboarding request.",
+            "description": {
+              "content": "Creates a new or updates an existing onboarding request that is in a draft status.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Vendor",
+                "Onboarding",
+                "EditRequestAnswers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"relationshipKey\": \"<string>\",\n  \"details\": [\n    {\n      \"questionKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"questionKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3262498b-1639-41bc-9de9-6a996aad12ee",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "EditRequestAnswers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"relationshipKey\": \"<string>\",\n  \"details\": [\n    {\n      \"questionKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"questionKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fe89fec5-5cc9-4235-bf78-e6628e374532",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "EditRequestAnswers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"relationshipKey\": \"<string>\",\n  \"details\": [\n    {\n      \"questionKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"questionKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2647,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "092f898b-a9ee-4f31-a032-2f17843b5e51",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Vendor",
+                    "Onboarding",
+                    "EditRequestAnswers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"relationshipKey\": \"<string>\",\n  \"details\": [\n    {\n      \"questionKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"questionKey\": \"<string>\",\n      \"answers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 2647,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7a6c151c-623a-43c8-9707-96308dc6654e",
+    "name": "Venminder OpenApi BusinessUnit VendorOnboarding API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

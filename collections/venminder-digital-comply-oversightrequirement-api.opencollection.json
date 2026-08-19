@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Venminder OpenApi BusinessUnit OversightRequirement API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OversightRequirement",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Gets a specific Oversight Requirement by its key.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/OversightRequirement/GetOversightRequirement",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "query",
+                "description": "This represents the key of the Oversight Requirement to be retrieved."
+              }
+            ]
+          },
+          "docs": "Gets a specific Oversight Requirement by its key."
+        },
+        {
+          "info": {
+            "name": "Get a list of all Oversight Requirments that fit the criteria provided in the request.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/OversightRequirement/GetOversightRequirementList",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get a list of all Oversight Requirments that fit the criteria provided in the request."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

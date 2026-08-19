@@ -185,3 +185,9 @@ tools:
 - name: venmonitor_get_vendor_score
   description: GET /api/v1/Venmonitor/GetVendorScore
   source_operation: openapi/venminder-digital-comply-openapi-original.json#GET /api/v1/Venmonitor/GetVendorScore
+deployment:
+  mode: none
+  verified: derived
+  tools: 57
+  checked: '2026-08-12'
+  source: catalog MCP census

@@ -1,0 +1,1587 @@
+{
+  "item": [
+    {
+      "id": "338fc503-f5ed-42ab-827f-68b075285781",
+      "name": "Contracts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a6f18b95-9528-44b6-bec9-08e110c1de30",
+          "name": "Provides detailed information concerning a specific contract.",
+          "request": {
+            "name": "Provides detailed information concerning a specific contract.",
+            "description": {
+              "content": "Provides detailed information concerning a specific contract associated with a vendor. This will included both standard and custom metadata fields as well as a list of any modification to the contract.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Contracts",
+                "GetDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contractKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "504b66d1-e88f-423a-b70a-019f17f369a5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "GetDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contractKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key\": \"string\",\n  \"uploadedByKey\": \"string\",\n  \"uploadedDate\": \"1999-10-13T11:33:16.648Z\",\n  \"effectiveDate\": \"1965-01-11T11:51:34.476Z\",\n  \"term\": 4268,\n  \"expirationDate\": \"2022-05-27T10:17:23.183Z\",\n  \"autoRenewalNoticeDays\": 1617,\n  \"firstReminderDate\": \"2022-02-22T12:08:23.775Z\",\n  \"firstReminderOffset\": 8211,\n  \"renewalMonths\": 7025,\n  \"hasAutoRenewalClause\": true,\n  \"hasSla\": true,\n  \"hasNda\": false,\n  \"slas\": [\n    {\n      \"title\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"title\": \"string\",\n      \"description\": \"string\"\n    }\n  ],\n  \"hasEqualOpportunityEmployment\": false,\n  \"vendorSignator\": \"string\",\n  \"institutionSignator\": \"string\",\n  \"dataItems\": [\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"value\": \"string\",\n      \"sortOrder\": 6115,\n      \"type\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"value\": \"string\",\n      \"sortOrder\": 8531,\n      \"type\": \"string\"\n    }\n  ],\n  \"hasEarlyTerminationProvision\": true,\n  \"hasEarlyTerminationProvisionDescription\": \"string\",\n  \"vendorKey\": \"string\",\n  \"productKeys\": [\n    \"string\",\n    \"string\"\n  ],\n  \"pricings\": [\n    {\n      \"key\": \"string\",\n      \"price\": 1420.6809215252047,\n      \"item\": \"string\",\n      \"period\": \"string\",\n      \"productKey\": \"string\",\n      \"tieredPricingFrom\": 264,\n      \"tieredPricingTo\": 4408,\n      \"tieredPricing\": \"string\",\n      \"term\": \"string\",\n      \"comments\": \"string\",\n      \"sortOrder\": 2574\n    },\n    {\n      \"key\": \"string\",\n      \"price\": 2591.0180129296978,\n      \"item\": \"string\",\n      \"period\": \"string\",\n      \"productKey\": \"string\",\n      \"tieredPricingFrom\": 9245,\n      \"tieredPricingTo\": 792,\n      \"tieredPricing\": \"string\",\n      \"term\": \"string\",\n      \"comments\": \"string\",\n      \"sortOrder\": 3636\n    }\n  ],\n  \"status\": \"string\",\n  \"active\": false,\n  \"cancellationEffectiveDate\": \"2015-06-12T22:29:19.272Z\",\n  \"documents\": [\n    {\n      \"key\": \"string\",\n      \"fileName\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"fileName\": \"string\"\n    }\n  ],\n  \"hasPricing\": true,\n  \"isPerpetual\": false,\n  \"contractName\": \"string\",\n  \"requiredNotificationDeadline\": \"1949-04-07T08:18:20.182Z\",\n  \"modifications\": [\n    {\n      \"key\": \"string\",\n      \"uploadedByKey\": \"string\",\n      \"uploadedDate\": \"2017-12-06T17:47:04.085Z\",\n      \"createdDate\": \"1991-09-08T13:26:09.863Z\",\n      \"effectiveDate\": \"1979-05-06T10:08:32.434Z\",\n      \"description\": \"string\",\n      \"documents\": [\n        {\n          \"key\": \"string\",\n          \"fileName\": \"string\"\n        },\n        {\n          \"key\": \"string\",\n          \"fileName\": \"string\"\n        }\n      ],\n      \"modifications\": [\n        {\n          \"name\": \"string\",\n          \"fromValue\": \"string\",\n          \"toValue\": \"string\",\n          \"isUserData\": true,\n          \"sortOrder\": 891\n        },\n        {\n          \"name\": \"string\",\n          \"fromValue\": \"string\",\n          \"toValue\": \"string\",\n          \"isUserData\": false,\n          \"sortOrder\": 8284\n        }\n      ]\n    },\n    {\n      \"key\": \"string\",\n      \"uploadedByKey\": \"string\",\n      \"uploadedDate\": \"1984-03-10T18:44:32.633Z\",\n      \"createdDate\": \"2007-02-14T16:00:15.237Z\",\n      \"effectiveDate\": \"2021-12-09T08:33:13.707Z\",\n      \"description\": \"string\",\n      \"documents\": [\n        {\n          \"key\": \"string\",\n          \"fileName\": \"string\"\n        },\n        {\n          \"key\": \"string\",\n          \"fileName\": \"string\"\n        }\n      ],\n      \"modifications\": [\n        {\n          \"name\": \"string\",\n          \"fromValue\": \"string\",\n          \"toValue\": \"string\",\n          \"isUserData\": false,\n          \"sortOrder\": 6277\n        },\n        {\n          \"name\": \"string\",\n          \"fromValue\": \"string\",\n          \"toValue\": \"string\",\n          \"isUserData\": false,\n          \"sortOrder\": 9365\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7e0fcc50-769a-42f2-8a25-151b9c9db5a2",
+          "name": "Provides detailed contract hierarchy information for a vendor.",
+          "request": {
+            "name": "Provides detailed contract hierarchy information for a vendor.",
+            "description": {
+              "content": "Provides detailed contract hierarchy including parent contracts, child contracts and modifications for a vendor.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Contracts",
+                "GetHierarchy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "vendorKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f35eb8d4-6929-493d-95be-21503642bf02",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "GetHierarchy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "vendorKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"key\": \"string\",\n    \"contractName\": \"string\",\n    \"status\": \"string\",\n    \"expirationDate\": \"1947-06-05T20:11:59.666Z\",\n    \"firstReminderDate\": \"2026-07-05T01:54:18.219Z\",\n    \"cancellationEffectiveDate\": \"2013-12-23T18:08:14.224Z\",\n    \"isAddendumOrModification\": true,\n    \"isPerpetual\": true,\n    \"isExpiredContract\": false,\n    \"active\": true,\n    \"firstReminderOffset\": 9347,\n    \"autoRenewalNoticeDays\": 6199,\n    \"contractDocumentTypes\": [\n      \"string\",\n      \"string\"\n    ],\n    \"products\": [\n      \"string\",\n      \"string\"\n    ],\n    \"childContracts\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Contracts.ContractHierarchyInformation detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Contracts.ContractHierarchyInformation detected>\"\n      }\n    ],\n    \"modifications\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Contracts.ContractHierarchyInformation detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Contracts.ContractHierarchyInformation detected>\"\n      }\n    ]\n  },\n  {\n    \"key\": \"string\",\n    \"contractName\": \"string\",\n    \"status\": \"string\",\n    \"expirationDate\": \"1974-11-10T10:16:18.557Z\",\n    \"firstReminderDate\": \"2015-10-22T23:27:53.740Z\",\n    \"cancellationEffectiveDate\": \"2006-01-26T12:41:56.201Z\",\n    \"isAddendumOrModification\": true,\n    \"isPerpetual\": false,\n    \"isExpiredContract\": true,\n    \"active\": true,\n    \"firstReminderOffset\": 2135,\n    \"autoRenewalNoticeDays\": 967,\n    \"contractDocumentTypes\": [\n      \"string\",\n      \"string\"\n    ],\n    \"products\": [\n      \"string\",\n      \"string\"\n    ],\n    \"childContracts\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Contracts.ContractHierarchyInformation detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Contracts.ContractHierarchyInformation detected>\"\n      }\n    ],\n    \"modifications\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Contracts.ContractHierarchyInformation detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Contracts.ContractHierarchyInformation detected>\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4771de7e-e241-42ad-92c8-6947c1ad6d90",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "GetHierarchy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "vendorKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 1191,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9fb800bb-72be-493f-a23c-451d2e6795b6",
+          "name": "Provides list of contracts for client or a specific vendor/product that is either in Ongoing or Offboarding.",
+          "request": {
+            "name": "Provides list of contracts for client or a specific vendor/product that is either in Ongoing or Offboarding.",
+            "description": {
+              "content": "Provides list of contracts for client or specific vendor/product that is in Ongoing or Offboarding, taking into consideration extra filters applied as well. This will include metadata and simple data for the contract and associated product(s).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Contracts",
+                "GetContracts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "vendorKey",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "productKey",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "statusID",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeArchived",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "notificationDeadlineDateStart",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "notificationDeadlineDateEnd",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expirationDateStart",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expirationDateEnd",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4f790147-d88d-4c79-b296-744257a719f8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "GetContracts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "vendorKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "productKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statusID",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "includeArchived",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "notificationDeadlineDateStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "notificationDeadlineDateEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "expirationDateStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "expirationDateEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key\": \"string\",\n  \"contractName\": \"string\",\n  \"status\": \"string\",\n  \"isPerpetual\": true,\n  \"effectiveDate\": \"1952-03-11T04:57:09.661Z\",\n  \"expirationDate\": \"2005-07-31T00:13:56.290Z\",\n  \"autoRenewalNoticeDays\": 1980,\n  \"requiredNotificationDeadline\": \"2017-07-19T02:46:18.095Z\",\n  \"archivedDate\": \"1985-04-06T03:40:57.813Z\",\n  \"vendorName\": \"string\",\n  \"vendorKey\": \"string\",\n  \"products\": [\n    {\n      \"productName\": \"string\",\n      \"productStatus\": \"string\",\n      \"productKey\": \"string\"\n    },\n    {\n      \"productName\": \"string\",\n      \"productStatus\": \"string\",\n      \"productKey\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "704ba7e4-5943-4208-a096-1503a9f781a8",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "GetContracts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "vendorKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "productKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statusID",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "includeArchived",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "notificationDeadlineDateStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "notificationDeadlineDateEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "expirationDateStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "expirationDateEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 9088,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b8710eb4-3627-4d79-8f97-acefc9971a61",
+          "name": "Provides contract drafts information for a vendor.",
+          "request": {
+            "name": "Provides contract drafts information for a vendor.",
+            "description": {
+              "content": "Provides list of contract drafts including notes for a vendor.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Contracts",
+                "GetDrafts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "vendorKey",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "relationshipKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "72e97426-c324-4cec-8d20-d6d031dbea31",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "GetDrafts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "vendorKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "relationshipKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"key\": \"string\",\n    \"contractName\": \"string\",\n    \"notes\": [\n      {\n        \"note\": \"string\",\n        \"authorName\": \"string\",\n        \"createdDate\": \"1983-04-26T05:43:01.590Z\"\n      },\n      {\n        \"note\": \"string\",\n        \"authorName\": \"string\",\n        \"createdDate\": \"1994-05-31T18:04:15.897Z\"\n      }\n    ]\n  },\n  {\n    \"key\": \"string\",\n    \"contractName\": \"string\",\n    \"notes\": [\n      {\n        \"note\": \"string\",\n        \"authorName\": \"string\",\n        \"createdDate\": \"2004-03-14T20:03:07.462Z\"\n      },\n      {\n        \"note\": \"string\",\n        \"authorName\": \"string\",\n        \"createdDate\": \"2015-08-28T10:33:46.390Z\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c060a986-b51c-4abb-9e42-e5ec41c73a85",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "GetDrafts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "vendorKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "relationshipKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 9088,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9279ef92-4292-4870-b14d-0b9256de87f3",
+          "name": "Provides contract draft details for a contract draft.",
+          "request": {
+            "name": "Provides contract draft details for a contract draft.",
+            "description": {
+              "content": "Provides detailed information for contract draft including approvers, draft documents and timelines.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Contracts",
+                "GetDraftDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "draftKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "00e44166-b9c9-4139-854a-dbe49ab6fc69",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "GetDraftDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "draftKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key\": \"string\",\n  \"contractName\": \"string\",\n  \"notes\": [\n    {\n      \"note\": \"string\",\n      \"authorName\": \"string\",\n      \"createdDate\": \"2013-05-27T01:38:56.240Z\"\n    },\n    {\n      \"note\": \"string\",\n      \"authorName\": \"string\",\n      \"createdDate\": \"2025-11-30T07:28:03.295Z\"\n    }\n  ],\n  \"draftApprovers\": {\n    \"approverContacts\": [\n      {\n        \"key\": \"string\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"emailAddress\": \"string\"\n      },\n      {\n        \"key\": \"string\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"emailAddress\": \"string\"\n      }\n    ],\n    \"approverRoles\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"draftDocuments\": [\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"timelines\": [\n        {\n          \"key\": \"string\",\n          \"fileName\": \"string\",\n          \"type\": \"string\",\n          \"action\": \"string\",\n          \"versionMajor\": 524,\n          \"versionMinor\": 1116,\n          \"createdBy\": \"string\",\n          \"createdDate\": \"1950-12-02T06:57:56.489Z\",\n          \"assignedTo\": \"string\",\n          \"approverCustomRole\": \"string\",\n          \"onBehalfOfUploadedBy\": \"string\",\n          \"dueDate\": \"1992-11-19T06:29:58.999Z\",\n          \"completedDate\": \"1976-11-25T17:24:17.924Z\",\n          \"comment\": \"string\",\n          \"active\": false\n        },\n        {\n          \"key\": \"string\",\n          \"fileName\": \"string\",\n          \"type\": \"string\",\n          \"action\": \"string\",\n          \"versionMajor\": 7827,\n          \"versionMinor\": 5737,\n          \"createdBy\": \"string\",\n          \"createdDate\": \"1948-01-09T00:48:13.773Z\",\n          \"assignedTo\": \"string\",\n          \"approverCustomRole\": \"string\",\n          \"onBehalfOfUploadedBy\": \"string\",\n          \"dueDate\": \"1964-11-02T11:27:17.742Z\",\n          \"completedDate\": \"1971-01-21T06:27:21.173Z\",\n          \"comment\": \"string\",\n          \"active\": false\n        }\n      ]\n    },\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"timelines\": [\n        {\n          \"key\": \"string\",\n          \"fileName\": \"string\",\n          \"type\": \"string\",\n          \"action\": \"string\",\n          \"versionMajor\": 8937,\n          \"versionMinor\": 3809,\n          \"createdBy\": \"string\",\n          \"createdDate\": \"1964-05-16T11:37:50.288Z\",\n          \"assignedTo\": \"string\",\n          \"approverCustomRole\": \"string\",\n          \"onBehalfOfUploadedBy\": \"string\",\n          \"dueDate\": \"1983-03-31T05:14:27.760Z\",\n          \"completedDate\": \"1952-07-06T10:05:29.918Z\",\n          \"comment\": \"string\",\n          \"active\": false\n        },\n        {\n          \"key\": \"string\",\n          \"fileName\": \"string\",\n          \"type\": \"string\",\n          \"action\": \"string\",\n          \"versionMajor\": 4375,\n          \"versionMinor\": 234,\n          \"createdBy\": \"string\",\n          \"createdDate\": \"1966-03-25T22:15:12.941Z\",\n          \"assignedTo\": \"string\",\n          \"approverCustomRole\": \"string\",\n          \"onBehalfOfUploadedBy\": \"string\",\n          \"dueDate\": \"2019-11-18T07:38:53.405Z\",\n          \"completedDate\": \"1951-05-11T22:17:20.588Z\",\n          \"comment\": \"string\",\n          \"active\": true\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e7c2554c-a4f5-4a7f-a343-f6d8937d65dc",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "GetDraftDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "draftKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 9088,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "03c56b0e-b71d-496b-8762-d27746e30bfc",
+          "name": "Adds a new note to an existing or new draft contract, given that FIVR and Onboarding Request pass validation and authorization checks.",
+          "request": {
+            "name": "Adds a new note to an existing or new draft contract, given that FIVR and Onboarding Request pass validation and authorization checks.",
+            "description": {
+              "content": "Adds a new note to an existing or new draft contract, given that FIVR and Onboarding Request pass validation and authorization checks.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Contracts",
+                "AddNoteToContractDraft"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"draftKey\": \"<string>\",\n  \"productKey\": \"<string>\",\n  \"requestRelationshipKey\": \"<string>\",\n  \"note\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f211b485-c019-4b38-a146-baa4f401bd96",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "AddNoteToContractDraft"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"draftKey\": \"<string>\",\n  \"productKey\": \"<string>\",\n  \"requestRelationshipKey\": \"<string>\",\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"draftKey\": \"string\",\n  \"productKey\": \"string\",\n  \"requestRelationshipKey\": \"string\",\n  \"note\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "285195b4-9c00-44cb-b0cf-1bf226865edc",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "AddNoteToContractDraft"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"draftKey\": \"<string>\",\n  \"productKey\": \"<string>\",\n  \"requestRelationshipKey\": \"<string>\",\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 9088,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "28b8fe34-a386-4dd2-bf3d-76f37ba185ff",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "AddNoteToContractDraft"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"draftKey\": \"<string>\",\n  \"productKey\": \"<string>\",\n  \"requestRelationshipKey\": \"<string>\",\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 9088,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "42880233-9963-4b51-81f9-0240bd57c0f1",
+          "name": "Modifies basic contract details provided in the request parameter.",
+          "request": {
+            "name": "Modifies basic contract details provided in the request parameter.",
+            "description": {
+              "content": "Modifies basic contract details provided in the request parameter.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Contracts",
+                "EditContract"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contractName\": \"<string>\",\n  \"contractDate\": \"<dateTime>\",\n  \"term\": \"<integer>\",\n  \"expirationDate\": \"<dateTime>\",\n  \"daysRequired\": \"<integer>\",\n  \"hasAutoRenewalClause\": \"<boolean>\",\n  \"autoRenewalTerm\": \"<integer>\",\n  \"key\": \"<string>\",\n  \"hasNda\": \"<boolean>\",\n  \"hasEarlyTerminationProvision\": \"<boolean>\",\n  \"earlyTerminationProvisionDescription\": \"<string>\",\n  \"isEqualOpportunityEmployer\": \"<boolean>\",\n  \"vendorSignator\": \"<string>\",\n  \"institutionSignator\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "87870cab-af41-405f-9eac-8cbc05eaacdd",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "EditContract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractName\": \"<string>\",\n  \"contractDate\": \"<dateTime>\",\n  \"term\": \"<integer>\",\n  \"expirationDate\": \"<dateTime>\",\n  \"daysRequired\": \"<integer>\",\n  \"hasAutoRenewalClause\": \"<boolean>\",\n  \"autoRenewalTerm\": \"<integer>\",\n  \"key\": \"<string>\",\n  \"hasNda\": \"<boolean>\",\n  \"hasEarlyTerminationProvision\": \"<boolean>\",\n  \"earlyTerminationProvisionDescription\": \"<string>\",\n  \"isEqualOpportunityEmployer\": \"<boolean>\",\n  \"vendorSignator\": \"<string>\",\n  \"institutionSignator\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2fb76cc6-3933-4d8c-b0c1-278a8bdc7d5f",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "EditContract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractName\": \"<string>\",\n  \"contractDate\": \"<dateTime>\",\n  \"term\": \"<integer>\",\n  \"expirationDate\": \"<dateTime>\",\n  \"daysRequired\": \"<integer>\",\n  \"hasAutoRenewalClause\": \"<boolean>\",\n  \"autoRenewalTerm\": \"<integer>\",\n  \"key\": \"<string>\",\n  \"hasNda\": \"<boolean>\",\n  \"hasEarlyTerminationProvision\": \"<boolean>\",\n  \"earlyTerminationProvisionDescription\": \"<string>\",\n  \"isEqualOpportunityEmployer\": \"<boolean>\",\n  \"vendorSignator\": \"<string>\",\n  \"institutionSignator\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 9088,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "12c9de24-a3c8-4213-8e9e-dfa9591ae7bc",
+          "name": "Creates a basic self-processed contract with details provided in the request parameter.",
+          "request": {
+            "name": "Creates a basic self-processed contract with details provided in the request parameter.",
+            "description": {
+              "content": "Creates a basic self-processed contract with details provided in the request parameter.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Contracts",
+                "CreateContract"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contractName\": \"<string>\",\n  \"contractDate\": \"<dateTime>\",\n  \"term\": \"<integer>\",\n  \"expirationDate\": \"<dateTime>\",\n  \"daysRequired\": \"<integer>\",\n  \"hasAutoRenewalClause\": \"<boolean>\",\n  \"autoRenewalTerm\": \"<integer>\",\n  \"vendorKey\": \"<string>\",\n  \"productKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"isPerpetual\": \"<boolean>\",\n  \"emailSchedule\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c37cc517-077b-410a-972b-1dd550970dd8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "CreateContract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractName\": \"<string>\",\n  \"contractDate\": \"<dateTime>\",\n  \"term\": \"<integer>\",\n  \"expirationDate\": \"<dateTime>\",\n  \"daysRequired\": \"<integer>\",\n  \"hasAutoRenewalClause\": \"<boolean>\",\n  \"autoRenewalTerm\": \"<integer>\",\n  \"vendorKey\": \"<string>\",\n  \"productKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"isPerpetual\": \"<boolean>\",\n  \"emailSchedule\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2e63fa82-a717-45bf-a4e4-2db23d5ef405",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "CreateContract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractName\": \"<string>\",\n  \"contractDate\": \"<dateTime>\",\n  \"term\": \"<integer>\",\n  \"expirationDate\": \"<dateTime>\",\n  \"daysRequired\": \"<integer>\",\n  \"hasAutoRenewalClause\": \"<boolean>\",\n  \"autoRenewalTerm\": \"<integer>\",\n  \"vendorKey\": \"<string>\",\n  \"productKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"isPerpetual\": \"<boolean>\",\n  \"emailSchedule\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 9088,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "403476e4-fb29-43bd-8694-feaa8224ec1f",
+          "name": "Updates existing custom data for the contract with the supplied contract's custom data key.",
+          "request": {
+            "name": "Updates existing custom data for the contract with the supplied contract's custom data key.",
+            "description": {
+              "content": "Updates existing custom data for the contract with the supplied contract's custom data key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Contracts",
+                "EditContractCustomData"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key\": \"<string>\",\n  \"value\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d58aa63d-5e2b-4429-8036-6276409e8de4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "EditContractCustomData"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key\": \"<string>\",\n  \"value\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "84324aad-3b2f-4944-9e37-02ddb6b134a8",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contracts",
+                    "EditContractCustomData"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key\": \"<string>\",\n  \"value\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 9088,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c6c2e8c7-0122-480a-891c-bdaff4f91902",
+    "name": "Venminder OpenApi BusinessUnit Contracts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

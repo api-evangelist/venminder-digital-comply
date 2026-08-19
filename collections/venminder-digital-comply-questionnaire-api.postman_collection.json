@@ -1,0 +1,876 @@
+{
+  "item": [
+    {
+      "id": "014cd595-4256-4111-b04e-af48f427a87a",
+      "name": "Questionnaire",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "98188f50-af3f-4265-9629-4aa7a6a3aaa3",
+          "name": "Provides a list of questionnaire responses.",
+          "request": {
+            "name": "Provides a list of questionnaire responses.",
+            "description": {
+              "content": "Provides a list of questionnaire responses.  The returned list can be limited based on the status, sent date, deadline, and/or completed date of the questionnaire response. Information will include vendor name, product name, status, date sent…",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Questionnaire",
+                "GetResponses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"searchText\": \"<string>\",\n  \"status\": \"<string>\",\n  \"sentDate\": \"<string>\",\n  \"deadline\": \"<string>\",\n  \"completedDate\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "df32596a-17a1-42d6-903a-86fcc97ed805",
+              "name": "Returns list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Questionnaire",
+                    "GetResponses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"searchText\": \"<string>\",\n  \"status\": \"<string>\",\n  \"sentDate\": \"<string>\",\n  \"deadline\": \"<string>\",\n  \"completedDate\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"questionnaireRequestKey\": \"string\",\n    \"vendorKey\": \"string\",\n    \"productKey\": \"string\",\n    \"questionnaireKey\": \"string\",\n    \"sentToKey\": \"string\",\n    \"sentTo\": \"string\",\n    \"sentByKey\": \"string\",\n    \"sentBy\": \"string\",\n    \"sentDate\": \"2023-12-05T13:21:59.262Z\",\n    \"deadlineDate\": \"1979-09-22T05:33:45.785Z\",\n    \"percentageAnswered\": 7221,\n    \"answeredDate\": \"1954-12-03T20:37:49.859Z\",\n    \"percentageComplete\": 2650,\n    \"status\": \"string\",\n    \"completedDate\": \"1991-03-20T18:51:35.408Z\",\n    \"canceledDate\": \"2019-08-14T10:32:32.486Z\",\n    \"changeLogs\": [\n      {\n        \"date\": \"1946-09-05T18:58:27.805Z\",\n        \"typeID\": 4417,\n        \"lastUpdatedByKey\": \"string\",\n        \"lastUpdatedByName\": \"string\",\n        \"newAssigned\": \"string\",\n        \"previousAssigned\": \"string\",\n        \"declinedComments\": \"string\",\n        \"lastUpdatedDate\": \"1980-11-26T08:39:09.836Z\",\n        \"oldDeadline\": \"1978-01-15T13:54:58.946Z\",\n        \"newDeadline\": \"1996-04-30T12:12:44.919Z\"\n      },\n      {\n        \"date\": \"1947-12-01T23:27:26.911Z\",\n        \"typeID\": 5359,\n        \"lastUpdatedByKey\": \"string\",\n        \"lastUpdatedByName\": \"string\",\n        \"newAssigned\": \"string\",\n        \"previousAssigned\": \"string\",\n        \"declinedComments\": \"string\",\n        \"lastUpdatedDate\": \"1969-10-12T06:34:29.601Z\",\n        \"oldDeadline\": \"1968-05-04T12:26:48.054Z\",\n        \"newDeadline\": \"2003-11-27T05:38:44.754Z\"\n      }\n    ],\n    \"emailLogs\": [\n      {\n        \"sentToKey\": \"string\",\n        \"sentToAddress\": \"string\",\n        \"sentDate\": \"2009-10-18T17:12:03.792Z\",\n        \"emailTemplate\": \"string\",\n        \"copiedToKeys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"copiedToAddresses\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"sentToKey\": \"string\",\n        \"sentToAddress\": \"string\",\n        \"sentDate\": \"1967-07-20T03:55:37.281Z\",\n        \"emailTemplate\": \"string\",\n        \"copiedToKeys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"copiedToAddresses\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ],\n    \"lifeCycleStage\": \"string\"\n  },\n  {\n    \"questionnaireRequestKey\": \"string\",\n    \"vendorKey\": \"string\",\n    \"productKey\": \"string\",\n    \"questionnaireKey\": \"string\",\n    \"sentToKey\": \"string\",\n    \"sentTo\": \"string\",\n    \"sentByKey\": \"string\",\n    \"sentBy\": \"string\",\n    \"sentDate\": \"1968-01-30T08:15:05.218Z\",\n    \"deadlineDate\": \"1976-05-11T11:59:57.775Z\",\n    \"percentageAnswered\": 1031,\n    \"answeredDate\": \"2002-06-25T13:15:11.837Z\",\n    \"percentageComplete\": 9536,\n    \"status\": \"string\",\n    \"completedDate\": \"1976-12-24T07:06:42.338Z\",\n    \"canceledDate\": \"1981-07-08T08:46:43.134Z\",\n    \"changeLogs\": [\n      {\n        \"date\": \"1949-05-25T00:45:00.789Z\",\n        \"typeID\": 473,\n        \"lastUpdatedByKey\": \"string\",\n        \"lastUpdatedByName\": \"string\",\n        \"newAssigned\": \"string\",\n        \"previousAssigned\": \"string\",\n        \"declinedComments\": \"string\",\n        \"lastUpdatedDate\": \"1978-11-19T00:49:50.646Z\",\n        \"oldDeadline\": \"1992-03-09T22:30:25.814Z\",\n        \"newDeadline\": \"1949-01-03T09:57:21.853Z\"\n      },\n      {\n        \"date\": \"1980-02-11T10:01:23.398Z\",\n        \"typeID\": 6566,\n        \"lastUpdatedByKey\": \"string\",\n        \"lastUpdatedByName\": \"string\",\n        \"newAssigned\": \"string\",\n        \"previousAssigned\": \"string\",\n        \"declinedComments\": \"string\",\n        \"lastUpdatedDate\": \"1973-11-22T09:48:09.479Z\",\n        \"oldDeadline\": \"2026-02-13T07:30:21.240Z\",\n        \"newDeadline\": \"2007-05-24T08:37:07.462Z\"\n      }\n    ],\n    \"emailLogs\": [\n      {\n        \"sentToKey\": \"string\",\n        \"sentToAddress\": \"string\",\n        \"sentDate\": \"2012-06-12T21:32:54.041Z\",\n        \"emailTemplate\": \"string\",\n        \"copiedToKeys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"copiedToAddresses\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"sentToKey\": \"string\",\n        \"sentToAddress\": \"string\",\n        \"sentDate\": \"2000-05-08T17:21:11.560Z\",\n        \"emailTemplate\": \"string\",\n        \"copiedToKeys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"copiedToAddresses\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ],\n    \"lifeCycleStage\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "26a123d8-ab3f-400e-a615-53c921bc4496",
+              "name": "If the filter request is invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Questionnaire",
+                    "GetResponses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"searchText\": \"<string>\",\n  \"status\": \"<string>\",\n  \"sentDate\": \"<string>\",\n  \"deadline\": \"<string>\",\n  \"completedDate\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 4393,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d94c472a-f5f9-4a7d-b089-528d2908ad77",
+              "name": "If API user's does not have read permission.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Questionnaire",
+                    "GetResponses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"searchText\": \"<string>\",\n  \"status\": \"<string>\",\n  \"sentDate\": \"<string>\",\n  \"deadline\": \"<string>\",\n  \"completedDate\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 1192,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "40b19c08-bffc-4cf8-8032-eacdb4cd1430",
+          "name": "Provides a list of questionnaires in the library.",
+          "request": {
+            "name": "Provides a list of questionnaires in the library.",
+            "description": {
+              "content": "Provides a list of questionnaires in the questionnaire library.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Questionnaire",
+                "QuestionnaireLibrary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec9a667c-5275-4e0d-8c8d-dcc951e76549",
+              "name": "Returns list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Questionnaire",
+                    "QuestionnaireLibrary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"questionnaireKey\": \"string\",\n    \"name\": \"string\",\n    \"type\": \"string\",\n    \"createdByKey\": \"string\",\n    \"createdBy\": \"string\",\n    \"createdDate\": \"2018-05-16T11:55:26.663Z\",\n    \"lastUsedDate\": \"2015-09-21T19:21:42.973Z\",\n    \"status\": \"string\",\n    \"versionID\": \"string\",\n    \"version\": \"string\"\n  },\n  {\n    \"questionnaireKey\": \"string\",\n    \"name\": \"string\",\n    \"type\": \"string\",\n    \"createdByKey\": \"string\",\n    \"createdBy\": \"string\",\n    \"createdDate\": \"2006-03-14T22:09:49.517Z\",\n    \"lastUsedDate\": \"2012-03-05T09:15:24.684Z\",\n    \"status\": \"string\",\n    \"versionID\": \"string\",\n    \"version\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b040f87-0dbb-4151-87ec-1255c8e9b396",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Questionnaire",
+                    "QuestionnaireLibrary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 1192,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8c7dcc03-82b1-4714-a352-ad1cde6969e9",
+              "name": "If Vendor Questionnaire feature is disabled for financial Instituion or API user does not have read permission.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Questionnaire",
+                    "QuestionnaireLibrary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 1192,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2912f85e-ca93-4c0d-a720-cf82c035e487",
+          "name": "Provides a service to download a questionnaire.",
+          "request": {
+            "name": "Provides a service to download a questionnaire.",
+            "description": {
+              "content": "Provides a service to download a questionnaire and documents attached to it as a zip to a local folder.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Questionnaire",
+                "Download"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "questionnaireRequestKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5bfbfeb9-c2c2-4f16-9cb9-b139ffa90530",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Questionnaire",
+                    "Download"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "questionnaireRequestKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "02a12f98-9b2c-4225-b8ff-e3e3422294af",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Questionnaire",
+                    "Download"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "questionnaireRequestKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 1192,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d33efc4a-82c3-4bc0-978d-700b0a38afa0",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Questionnaire",
+                    "Download"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "questionnaireRequestKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 1192,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2875da49-3e92-4c1e-a60b-75eebe63ff16",
+          "name": "Provides detailed information about a specific questionnaire.",
+          "request": {
+            "name": "Provides detailed information about a specific questionnaire.",
+            "description": {
+              "content": "Provides detailed information about a specific questionnaire.  This includes the vendor, product, recipient, questions, answers, scoring (if applicable),…",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Questionnaire",
+                "GetResponse"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "questionnaireRequestKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "61f138e6-3b77-4c90-b8d0-2cee5ffeba18",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Questionnaire",
+                    "GetResponse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "questionnaireRequestKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"vendorKey\": \"string\",\n  \"productKey\": \"string\",\n  \"isCritical\": true,\n  \"lifeCycleStage\": \"string\",\n  \"questionnaireRequestKey\": \"string\",\n  \"recipientKey\": \"string\",\n  \"recipientName\": \"string\",\n  \"dateSent\": \"1953-03-14T16:10:18.195Z\",\n  \"deadline\": \"1997-04-30T23:22:32.082Z\",\n  \"dateReceived\": \"1967-11-03T18:40:22.336Z\",\n  \"overallScore\": \"string\",\n  \"overallPoints\": {\n    \"numerator\": 6208,\n    \"denominator\": 1703,\n    \"score\": 4478.58962044848\n  },\n  \"sections\": [\n    {\n      \"questions\": [\n        {\n          \"question\": \"string\",\n          \"questionNumber\": \"string\",\n          \"serialNumber\": \"string\",\n          \"questionScore\": {\n            \"appliedPoints\": 308,\n            \"maxPoints\": 7315\n          },\n          \"answer\": \"string\",\n          \"isIssueCreated\": true,\n          \"recipientAttachmentKeys\": [\n            \"string\",\n            \"string\"\n          ],\n          \"availableResponses\": [\n            {\n              \"response\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"points\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"response\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"points\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"additionalComments\": \"string\",\n          \"childQuestions\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Questionnaire.QuestionWithScore detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Questionnaire.QuestionWithScore detected>\"\n            }\n          ]\n        },\n        {\n          \"question\": \"string\",\n          \"questionNumber\": \"string\",\n          \"serialNumber\": \"string\",\n          \"questionScore\": {\n            \"appliedPoints\": 8315,\n            \"maxPoints\": 5712\n          },\n          \"answer\": \"string\",\n          \"isIssueCreated\": true,\n          \"recipientAttachmentKeys\": [\n            \"string\",\n            \"string\"\n          ],\n          \"availableResponses\": [\n            {\n              \"response\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"points\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"response\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"points\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"additionalComments\": \"string\",\n          \"childQuestions\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Questionnaire.QuestionWithScore detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Questionnaire.QuestionWithScore detected>\"\n            }\n          ]\n        }\n      ],\n      \"name\": \"string\",\n      \"sectionRiskLevel\": \"string\",\n      \"sectionScore\": {\n        \"numerator\": 6584,\n        \"denominator\": 8453,\n        \"score\": 4012.409573815473\n      }\n    },\n    {\n      \"questions\": [\n        {\n          \"question\": \"string\",\n          \"questionNumber\": \"string\",\n          \"serialNumber\": \"string\",\n          \"questionScore\": {\n            \"appliedPoints\": 6967,\n            \"maxPoints\": 4009\n          },\n          \"answer\": \"string\",\n          \"isIssueCreated\": false,\n          \"recipientAttachmentKeys\": [\n            \"string\",\n            \"string\"\n          ],\n          \"availableResponses\": [\n            {\n              \"response\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"points\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"response\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"points\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"additionalComments\": \"string\",\n          \"childQuestions\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Questionnaire.QuestionWithScore detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Questionnaire.QuestionWithScore detected>\"\n            }\n          ]\n        },\n        {\n          \"question\": \"string\",\n          \"questionNumber\": \"string\",\n          \"serialNumber\": \"string\",\n          \"questionScore\": {\n            \"appliedPoints\": 2496,\n            \"maxPoints\": 829\n          },\n          \"answer\": \"string\",\n          \"isIssueCreated\": false,\n          \"recipientAttachmentKeys\": [\n            \"string\",\n            \"string\"\n          ],\n          \"availableResponses\": [\n            {\n              \"response\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"points\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"response\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"points\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"additionalComments\": \"string\",\n          \"childQuestions\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Questionnaire.QuestionWithScore detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/OpenApi.v1.Questionnaire.QuestionWithScore detected>\"\n            }\n          ]\n        }\n      ],\n      \"name\": \"string\",\n      \"sectionRiskLevel\": \"string\",\n      \"sectionScore\": {\n        \"numerator\": 5285,\n        \"denominator\": 9106,\n        \"score\": 321.63686957681904\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ca186c18-f377-4cf2-b500-4194cdbfa482",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Questionnaire",
+                    "GetResponse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "questionnaireRequestKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 1192,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ecab4e2b-bfc6-45d7-bd85-7994568ef3bb",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Questionnaire",
+                    "GetResponse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "questionnaireRequestKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 1192,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a3283b82-204b-4bd2-af14-cd2cb8ce558f",
+    "name": "Venminder OpenApi BusinessUnit Questionnaire API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

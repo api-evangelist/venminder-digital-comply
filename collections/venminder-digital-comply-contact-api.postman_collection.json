@@ -1,0 +1,225 @@
+{
+  "item": [
+    {
+      "id": "f9980e02-f0ee-45c5-84b1-b7a87c09221c",
+      "name": "Contact",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "52cc4057-e60c-4af6-8c81-933379bf2f22",
+          "name": "Provides a list of internal and external contacts.",
+          "request": {
+            "name": "Provides a list of internal and external contacts.",
+            "description": {
+              "content": "Provides a list of internal and external contacts. This includes name, email address, phone numbers, if contact is enrolled and active, and vendors and products the external contact is assigned to.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Contact",
+                "GetContactList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1ab3ee0d-98bd-4135-b997-a93775883ab5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contact",
+                    "GetContactList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"internalContacts\": [\n    {\n      \"key\": \"string\",\n      \"isActive\": false,\n      \"isEnrolled\": false,\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"emailAddress\": \"string\",\n      \"fullName\": \"string\",\n      \"phoneNumbers\": [\n        {\n          \"type\": \"string\",\n          \"areaCode\": \"string\",\n          \"prefix\": \"string\",\n          \"suffix\": \"string\",\n          \"extension\": \"string\"\n        },\n        {\n          \"type\": \"string\",\n          \"areaCode\": \"string\",\n          \"prefix\": \"string\",\n          \"suffix\": \"string\",\n          \"extension\": \"string\"\n        }\n      ],\n      \"createdByUserKeyOrDescription\": \"string\",\n      \"createdDate\": \"2017-10-07T17:44:50.906Z\",\n      \"roles\": [\n        {\n          \"key\": \"string\",\n          \"roleName\": \"string\",\n          \"isCustom\": true\n        },\n        {\n          \"key\": \"string\",\n          \"roleName\": \"string\",\n          \"isCustom\": false\n        }\n      ]\n    },\n    {\n      \"key\": \"string\",\n      \"isActive\": false,\n      \"isEnrolled\": true,\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"emailAddress\": \"string\",\n      \"fullName\": \"string\",\n      \"phoneNumbers\": [\n        {\n          \"type\": \"string\",\n          \"areaCode\": \"string\",\n          \"prefix\": \"string\",\n          \"suffix\": \"string\",\n          \"extension\": \"string\"\n        },\n        {\n          \"type\": \"string\",\n          \"areaCode\": \"string\",\n          \"prefix\": \"string\",\n          \"suffix\": \"string\",\n          \"extension\": \"string\"\n        }\n      ],\n      \"createdByUserKeyOrDescription\": \"string\",\n      \"createdDate\": \"1966-06-14T05:41:03.054Z\",\n      \"roles\": [\n        {\n          \"key\": \"string\",\n          \"roleName\": \"string\",\n          \"isCustom\": false\n        },\n        {\n          \"key\": \"string\",\n          \"roleName\": \"string\",\n          \"isCustom\": true\n        }\n      ]\n    }\n  ],\n  \"externalContacts\": [\n    {\n      \"addressBookKey\": \"string\",\n      \"contactKey\": \"string\",\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"fullName\": \"string\",\n      \"emailAddress\": \"string\",\n      \"isEnrolled\": true,\n      \"isActive\": true,\n      \"phoneNumbers\": [\n        {\n          \"type\": \"string\",\n          \"areaCode\": \"string\",\n          \"prefix\": \"string\",\n          \"suffix\": \"string\",\n          \"extension\": \"string\"\n        },\n        {\n          \"type\": \"string\",\n          \"areaCode\": \"string\",\n          \"prefix\": \"string\",\n          \"suffix\": \"string\",\n          \"extension\": \"string\"\n        }\n      ],\n      \"vendorsAppliedTo\": [\n        \"string\",\n        \"string\"\n      ],\n      \"productsAppliedTo\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"addressBookKey\": \"string\",\n      \"contactKey\": \"string\",\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"fullName\": \"string\",\n      \"emailAddress\": \"string\",\n      \"isEnrolled\": true,\n      \"isActive\": false,\n      \"phoneNumbers\": [\n        {\n          \"type\": \"string\",\n          \"areaCode\": \"string\",\n          \"prefix\": \"string\",\n          \"suffix\": \"string\",\n          \"extension\": \"string\"\n        },\n        {\n          \"type\": \"string\",\n          \"areaCode\": \"string\",\n          \"prefix\": \"string\",\n          \"suffix\": \"string\",\n          \"extension\": \"string\"\n        }\n      ],\n      \"vendorsAppliedTo\": [\n        \"string\",\n        \"string\"\n      ],\n      \"productsAppliedTo\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "78bb85de-1bea-452f-8c9a-240aba58d0f2",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contact",
+                    "GetContactList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 8254,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0dceaedb-ad17-49fc-8566-c5ef8be37f4d",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Contact",
+                    "GetContactList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 8569,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a0bbd004-aca4-462e-9fba-b226b63ff9a9",
+    "name": "Venminder OpenApi BusinessUnit Contact API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

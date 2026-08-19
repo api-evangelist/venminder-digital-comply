@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Venminder OpenApi BusinessUnit Questionnaire API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Questionnaire",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Provides a list of questionnaire responses.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/Questionnaire/GetResponses",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Provides a list of questionnaire responses.  The returned list can be limited based on the status, sent date, deadline, and/or completed date of the questionnaire response. Information will include vendor name, product name, status, date sent…"
+        },
+        {
+          "info": {
+            "name": "Provides a list of questionnaires in the library.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Questionnaire/QuestionnaireLibrary",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Provides a list of questionnaires in the questionnaire library."
+        },
+        {
+          "info": {
+            "name": "Provides a service to download a questionnaire.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Questionnaire/Download",
+            "params": [
+              {
+                "name": "questionnaireRequestKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides a service to download a questionnaire and documents attached to it as a zip to a local folder."
+        },
+        {
+          "info": {
+            "name": "Provides detailed information about a specific questionnaire.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Questionnaire/GetResponse",
+            "params": [
+              {
+                "name": "questionnaireRequestKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides detailed information about a specific questionnaire.  This includes the vendor, product, recipient, questions, answers, scoring (if applicable),…"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

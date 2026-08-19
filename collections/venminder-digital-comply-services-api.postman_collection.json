@@ -1,0 +1,295 @@
+{
+  "item": [
+    {
+      "id": "8647765f-008f-41f6-b62a-d525c8811bc5",
+      "name": "Services",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "286bbae8-ee58-49a3-866f-0530f0593c3c",
+          "name": "Provides a list of purchased services.",
+          "request": {
+            "name": "Provides a list of purchased services.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Services",
+                "ListServices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filterByVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filterByProductKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"fromDateCreated\": \"<dateTime>\",\n  \"toDateCreated\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7ee29660-d530-4331-9714-73fd4a83bb2c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Services",
+                    "ListServices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filterByVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filterByProductKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"fromDateCreated\": \"<dateTime>\",\n  \"toDateCreated\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"serviceID\": \"4f37ddf5-0425-8d31-720d-8cb5a2c90f86\",\n    \"serviceKey\": \"string\",\n    \"type\": \"string\",\n    \"status\": \"string\",\n    \"statusChangedDate\": \"1980-10-02T10:21:34.094Z\",\n    \"vendor\": {\n      \"name\": \"string\",\n      \"vendorKey\": \"string\"\n    },\n    \"products\": [\n      {\n        \"name\": \"string\",\n        \"productKey\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"productKey\": \"string\"\n      }\n    ],\n    \"createdDate\": \"2019-06-28T12:52:43.370Z\"\n  },\n  {\n    \"serviceID\": \"db02aa4a-c43e-7327-b7eb-f1ec343a05c2\",\n    \"serviceKey\": \"string\",\n    \"type\": \"string\",\n    \"status\": \"string\",\n    \"statusChangedDate\": \"1978-06-16T04:15:20.703Z\",\n    \"vendor\": {\n      \"name\": \"string\",\n      \"vendorKey\": \"string\"\n    },\n    \"products\": [\n      {\n        \"name\": \"string\",\n        \"productKey\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"productKey\": \"string\"\n      }\n    ],\n    \"createdDate\": \"2023-11-26T22:39:15.549Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "673f5040-9b1a-447b-8d22-e7f0f0bd45f4",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Services",
+                    "ListServices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filterByVendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filterByProductKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"fromDateCreated\": \"<dateTime>\",\n  \"toDateCreated\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 1160,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ba4dcef8-baa1-4491-8e13-3d0c4e186f33",
+          "name": "Details of a specific service.",
+          "request": {
+            "name": "Details of a specific service.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Services",
+                "GetDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "serviceId",
+                  "value": "<uuid>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9045ad49-2986-409f-a537-5272537d325e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Services",
+                    "GetDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "serviceId",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"serviceID\": \"4272268b-4ec5-3a38-86c8-1fba97225dfb\",\n  \"serviceKey\": \"string\",\n  \"type\": \"string\",\n  \"status\": \"string\",\n  \"statusChangedDate\": \"2001-01-21T00:41:39.844Z\",\n  \"vendor\": {\n    \"name\": \"string\",\n    \"vendorKey\": \"string\"\n  },\n  \"products\": [\n    {\n      \"name\": \"string\",\n      \"productKey\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"productKey\": \"string\"\n    }\n  ],\n  \"createdDate\": \"1977-05-15T16:52:12.274Z\",\n  \"documentKeys\": [\n    \"string\",\n    \"string\"\n  ],\n  \"rating\": \"string\",\n  \"reviewLevel\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "03e35e11-33da-44a8-8829-aea28129a8db",
+    "name": "Venminder OpenApi BusinessUnit Services API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

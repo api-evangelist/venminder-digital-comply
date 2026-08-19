@@ -1,0 +1,240 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Venminder OpenApi BusinessUnit Contracts API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Contracts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Provides detailed information concerning a specific contract.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Contracts/GetDetails",
+            "params": [
+              {
+                "name": "contractKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides detailed information concerning a specific contract associated with a vendor. This will included both standard and custom metadata fields as well as a list of any modification to the contract."
+        },
+        {
+          "info": {
+            "name": "Provides detailed contract hierarchy information for a vendor.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Contracts/GetHierarchy",
+            "params": [
+              {
+                "name": "vendorKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides detailed contract hierarchy including parent contracts, child contracts and modifications for a vendor."
+        },
+        {
+          "info": {
+            "name": "Provides list of contracts for client or a specific vendor/product that is either in Ongoing or Offboarding.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Contracts/GetContracts",
+            "params": [
+              {
+                "name": "vendorKey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "productKey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "statusID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeArchived",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "notificationDeadlineDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "notificationDeadlineDateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expirationDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expirationDateEnd",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides list of contracts for client or specific vendor/product that is in Ongoing or Offboarding, taking into consideration extra filters applied as well. This will include metadata and simple data for the contract and associated product(s)."
+        },
+        {
+          "info": {
+            "name": "Provides contract drafts information for a vendor.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Contracts/GetDrafts",
+            "params": [
+              {
+                "name": "vendorKey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "relationshipKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides list of contract drafts including notes for a vendor."
+        },
+        {
+          "info": {
+            "name": "Provides contract draft details for a contract draft.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Contracts/GetDraftDetails",
+            "params": [
+              {
+                "name": "draftKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides detailed information for contract draft including approvers, draft documents and timelines."
+        },
+        {
+          "info": {
+            "name": "Adds a new note to an existing or new draft contract, given that FIVR and Onboarding Request pass validation and authorization checks.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/Contracts/AddNoteToContractDraft",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds a new note to an existing or new draft contract, given that FIVR and Onboarding Request pass validation and authorization checks."
+        },
+        {
+          "info": {
+            "name": "Modifies basic contract details provided in the request parameter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/Contracts/EditContract",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modifies basic contract details provided in the request parameter."
+        },
+        {
+          "info": {
+            "name": "Creates a basic self-processed contract with details provided in the request parameter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/Contracts/CreateContract",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a basic self-processed contract with details provided in the request parameter."
+        },
+        {
+          "info": {
+            "name": "Updates existing custom data for the contract with the supplied contract's custom data key.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/Contracts/EditContractCustomData",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates existing custom data for the contract with the supplied contract's custom data key."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

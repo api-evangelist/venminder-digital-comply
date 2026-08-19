@@ -1,0 +1,206 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Venminder OpenApi BusinessUnit VendorSpend API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "VendorSpend",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Creates a vendor Budget",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/SpendAnalysis/CreateBudget",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a vendor Budget"
+        },
+        {
+          "info": {
+            "name": "Creates a vendor spend item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/SpendAnalysis/CreateSpendItem",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a vendor spend item"
+        },
+        {
+          "info": {
+            "name": "Deletes a vendor budget and unlinks all spend items associated with the budget.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/SpendAnalysis/DeleteBudget",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "budgetKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Deletes a vendor budget and unlinks all spend items associated with the budget."
+        },
+        {
+          "info": {
+            "name": "Deletes a vendor spend.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/SpendAnalysis/DeleteSpend",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "spendKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Deletes a vendor spend."
+        },
+        {
+          "info": {
+            "name": "Provides a list of active budgets for a particular vendor.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/SpendAnalysis/GetBudgets",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "vendorKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides a list of active budgets for a particular vendor. This includes the budget key, name, amount, start date, and end date."
+        },
+        {
+          "info": {
+            "name": "Gets all active spend items based on the vendor key.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/SpendAnalysis/GetSpends",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "vendorKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns null for ProductKey if the spend is only linked to the vendor."
+        },
+        {
+          "info": {
+            "name": "Updates a vendor spend item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/SpendAnalysis/UpdateSpendItem",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a vendor spend item"
+        },
+        {
+          "info": {
+            "name": "Updates a vendor spend budget",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/SpendAnalysis/UpdateBudget",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a vendor spend budget"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

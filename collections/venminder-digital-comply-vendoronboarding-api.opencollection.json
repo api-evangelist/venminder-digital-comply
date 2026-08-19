@@ -1,0 +1,193 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Venminder OpenApi BusinessUnit VendorOnboarding API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "VendorOnboarding",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Provides a list of vendor onboarding requests.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Vendor/Onboarding/Requests",
+            "params": [
+              {
+                "name": "statusID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "requestedDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "requestedDateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "approvedOrDeclinedDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "approvedOrDeclinedDateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "deadlineDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "deadlineDateEnd",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides a list of vendor onboarding requests. The returned list can be limited based on the status of the request. Information will include vendor name, product name, status, section status…"
+        },
+        {
+          "info": {
+            "name": "Provides detailed information for a vendor onboarding request.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Vendor/Onboarding/RequestDetails",
+            "params": [
+              {
+                "name": "relationshipKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides details for a specific vendor onboarding request include requestor, vmo manager, status, vendor, product, criticality, and risk question…."
+        },
+        {
+          "info": {
+            "name": "Provides vendor onboarding configuration information.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Vendor/Onboarding/Information"
+          },
+          "docs": "Provides vendor onboarding configuration information. This includes the master form, custom forms and request reasons."
+        },
+        {
+          "info": {
+            "name": "Provides the details for a specific vendor onboarding request form.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Vendor/Onboarding/FormDetails",
+            "params": [
+              {
+                "name": "formKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides the details for a specific vendor onboarding request form include vendor, product, criticality, and risk question."
+        },
+        {
+          "info": {
+            "name": "Creates a new or updates an existing onboarding request.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/Vendor/Onboarding/Request",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new or updates an existing onboarding request that is in a draft status."
+        },
+        {
+          "info": {
+            "name": "Get expected answers for onboarding form Questions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Vendor/Onboarding/FormAnswers",
+            "params": [
+              {
+                "name": "formKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get expected answers for onboarding form Questions"
+        },
+        {
+          "info": {
+            "name": "Get expected answers for onboarding form Questions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Vendor/Onboarding/RequestAnswers",
+            "params": [
+              {
+                "name": "relationshipKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get expected answers for onboarding form Questions"
+        },
+        {
+          "info": {
+            "name": "Creates a new or updates an existing onboarding request.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/Vendor/Onboarding/EditRequestAnswers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new or updates an existing onboarding request that is in a draft status."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

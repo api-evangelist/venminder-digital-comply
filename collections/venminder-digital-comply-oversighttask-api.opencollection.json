@@ -1,0 +1,122 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Venminder OpenApi BusinessUnit OversightTask API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OversightTask",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Gets a specific Oversight Task by its key.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/OversightTask/GetOversightTask",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "query",
+                "description": "This represents the key of the Oversight Task to be retrieved."
+              }
+            ]
+          },
+          "docs": "Gets a specific Oversight Task by its key."
+        },
+        {
+          "info": {
+            "name": "Get a list of all Oversight Tasks that fit the criteria provided in the request.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/OversightTask/GetOversightTaskList",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get a list of all Oversight Tasks that fit the criteria provided in the request."
+        },
+        {
+          "info": {
+            "name": "Creates an Oversight Task with the provided properties and defaults from the Oversight Requirement.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/OversightTask/CreateOversightTask",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an Oversight Task with the provided properties and defaults from the Oversight Requirement."
+        },
+        {
+          "info": {
+            "name": "Updates specific properties of an Oversight Task based on the provided PATCH operations.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/api/v1/OversightTask/UpdateOversightTask/:key",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path",
+                "description": "Provides the key of the Oversight Task that should be updated."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This PATCH endpoint only supports \"replace\", \"add\", and \"remove\" operations."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

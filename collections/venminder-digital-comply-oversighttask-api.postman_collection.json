@@ -1,0 +1,993 @@
+{
+  "item": [
+    {
+      "id": "5439fd28-05ba-43ed-829f-4e9bbe714ff2",
+      "name": "OversightTask",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "12fbae05-bcd6-4da8-9521-bc4a3a041b34",
+          "name": "Gets a specific Oversight Task by its key.",
+          "request": {
+            "name": "Gets a specific Oversight Task by its key.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "OversightTask",
+                "GetOversightTask"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>",
+                  "description": "This represents the key of the Oversight Task to be retrieved."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                "key": "cultureCode",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "050bc410-2afb-4b39-93fb-ea0bfb75ba39",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "OversightTask",
+                    "GetOversightTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                    "key": "cultureCode",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key\": \"string\",\n  \"requirementName\": \"string\",\n  \"startDate\": \"1972-08-24T00:37:48.836Z\",\n  \"endDate\": \"2001-01-16T07:15:11.573Z\",\n  \"owner\": {\n    \"key\": \"string\",\n    \"name\": \"string\",\n    \"type\": \"string\"\n  },\n  \"internalReviewer\": {\n    \"key\": \"string\",\n    \"name\": \"string\"\n  },\n  \"internalReviewerDate\": \"1985-07-25T22:31:13.884Z\",\n  \"externalReviewer\": \"string\",\n  \"externalReviewerDate\": \"2010-10-18T16:38:57.652Z\",\n  \"taskStatus\": \"string\",\n  \"approvalStatus\": \"string\",\n  \"vendorKey\": \"string\",\n  \"productKeys\": [\n    \"string\",\n    \"string\"\n  ],\n  \"lifecycle\": \"string\",\n  \"socType\": \"string\",\n  \"approver\": {\n    \"key\": \"string\",\n    \"name\": \"string\"\n  },\n  \"taskDocumentKeys\": [\n    \"string\",\n    \"string\"\n  ],\n  \"comments\": [\n    {\n      \"commentString\": \"string\"\n    },\n    {\n      \"commentString\": \"string\"\n    }\n  ],\n  \"reviewResult\": \"string\",\n  \"requirementKey\": \"string\",\n  \"completedDate\": \"1997-10-20T15:21:56.006Z\",\n  \"completedBy\": {\n    \"key\": \"string\",\n    \"name\": \"string\"\n  },\n  \"onboardingProperties\": {\n    \"requestRelationshipKey\": \"string\"\n  },\n  \"offboardingProperties\": {\n    \"requestKey\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b7442739-7df6-4a4b-8c92-a9c7060de859",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "OversightTask",
+                    "GetOversightTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                    "key": "cultureCode",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 4315,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5f8ba34a-0327-48fe-bfb8-41ff9ed8adcb",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "OversightTask",
+                    "GetOversightTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                    "key": "cultureCode",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3692c3f0-8dcb-4504-bf6d-23d5ebc6b91b",
+          "name": "Get a list of all Oversight Tasks that fit the criteria provided in the request.",
+          "request": {
+            "name": "Get a list of all Oversight Tasks that fit the criteria provided in the request.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "OversightTask",
+                "GetOversightTaskList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                "key": "cultureCode",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"statuses\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lifecycles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"vendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"productKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"reviewResults\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"taskOwnerKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"requirementKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3f658b40-1b4b-4ae7-af95-f7d51b9b34df",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "OversightTask",
+                    "GetOversightTaskList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                    "key": "cultureCode",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"keys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"statuses\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lifecycles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"vendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"productKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"reviewResults\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"taskOwnerKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"requirementKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"key\": \"string\",\n    \"requirementName\": \"string\",\n    \"startDate\": \"1970-03-29T06:04:52.645Z\",\n    \"endDate\": \"1951-08-17T00:51:33.034Z\",\n    \"owner\": {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\"\n    },\n    \"internalReviewer\": {\n      \"key\": \"string\",\n      \"name\": \"string\"\n    },\n    \"internalReviewerDate\": \"2010-02-08T12:44:11.458Z\",\n    \"externalReviewer\": \"string\",\n    \"externalReviewerDate\": \"2001-10-17T13:11:31.850Z\",\n    \"taskStatus\": \"string\",\n    \"approvalStatus\": \"string\",\n    \"vendorKey\": \"string\",\n    \"productKeys\": [\n      \"string\",\n      \"string\"\n    ],\n    \"lifecycle\": \"string\",\n    \"socType\": \"string\",\n    \"approver\": {\n      \"key\": \"string\",\n      \"name\": \"string\"\n    },\n    \"taskDocumentKeys\": [\n      \"string\",\n      \"string\"\n    ],\n    \"comments\": [\n      {\n        \"commentString\": \"string\"\n      },\n      {\n        \"commentString\": \"string\"\n      }\n    ],\n    \"reviewResult\": \"string\",\n    \"requirementKey\": \"string\",\n    \"completedDate\": \"2000-09-21T06:31:20.191Z\",\n    \"completedBy\": {\n      \"key\": \"string\",\n      \"name\": \"string\"\n    },\n    \"onboardingProperties\": {\n      \"requestRelationshipKey\": \"string\"\n    },\n    \"offboardingProperties\": {\n      \"requestKey\": \"string\"\n    }\n  },\n  {\n    \"key\": \"string\",\n    \"requirementName\": \"string\",\n    \"startDate\": \"2013-05-07T22:20:53.351Z\",\n    \"endDate\": \"1987-05-23T09:12:18.533Z\",\n    \"owner\": {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\"\n    },\n    \"internalReviewer\": {\n      \"key\": \"string\",\n      \"name\": \"string\"\n    },\n    \"internalReviewerDate\": \"1968-08-14T02:00:43.599Z\",\n    \"externalReviewer\": \"string\",\n    \"externalReviewerDate\": \"1979-07-29T06:06:10.925Z\",\n    \"taskStatus\": \"string\",\n    \"approvalStatus\": \"string\",\n    \"vendorKey\": \"string\",\n    \"productKeys\": [\n      \"string\",\n      \"string\"\n    ],\n    \"lifecycle\": \"string\",\n    \"socType\": \"string\",\n    \"approver\": {\n      \"key\": \"string\",\n      \"name\": \"string\"\n    },\n    \"taskDocumentKeys\": [\n      \"string\",\n      \"string\"\n    ],\n    \"comments\": [\n      {\n        \"commentString\": \"string\"\n      },\n      {\n        \"commentString\": \"string\"\n      }\n    ],\n    \"reviewResult\": \"string\",\n    \"requirementKey\": \"string\",\n    \"completedDate\": \"2013-05-25T00:46:10.784Z\",\n    \"completedBy\": {\n      \"key\": \"string\",\n      \"name\": \"string\"\n    },\n    \"onboardingProperties\": {\n      \"requestRelationshipKey\": \"string\"\n    },\n    \"offboardingProperties\": {\n      \"requestKey\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e8c35090-b244-4249-b53b-eaac710b8d77",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "OversightTask",
+                    "GetOversightTaskList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                    "key": "cultureCode",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"keys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"statuses\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lifecycles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"vendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"productKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"reviewResults\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"taskOwnerKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"requirementKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 4031,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fdb5b944-6e0b-4744-b2f4-3cd3b91b1a1f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "OversightTask",
+                    "GetOversightTaskList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                    "key": "cultureCode",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"keys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"statuses\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lifecycles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"vendorKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"productKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"reviewResults\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"taskOwnerKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"requirementKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b90c23d3-0550-4d95-904d-0c8588b1f525",
+          "name": "Creates an Oversight Task with the provided properties and defaults from the Oversight Requirement.",
+          "request": {
+            "name": "Creates an Oversight Task with the provided properties and defaults from the Oversight Requirement.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "OversightTask",
+                "CreateOversightTask"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                "key": "cultureCode",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"oversightRequirementKey\": \"<string>\",\n  \"ownerKey\": \"<string>\",\n  \"ownerType\": \"<string>\",\n  \"startDate\": \"<dateTime>\",\n  \"productsKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"vendorKey\": \"<string>\",\n  \"onboardingProperties\": {\n    \"requestRelationshipKey\": \"<string>\"\n  },\n  \"offboardingProperties\": {\n    \"requestKey\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "afebed69-d5f5-4b3a-ad9f-e26e87a08c79",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "OversightTask",
+                    "CreateOversightTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                    "key": "cultureCode",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"oversightRequirementKey\": \"<string>\",\n  \"ownerKey\": \"<string>\",\n  \"ownerType\": \"<string>\",\n  \"startDate\": \"<dateTime>\",\n  \"productsKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"vendorKey\": \"<string>\",\n  \"onboardingProperties\": {\n    \"requestRelationshipKey\": \"<string>\"\n  },\n  \"offboardingProperties\": {\n    \"requestKey\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9406c5e2-52d4-4e59-a28e-f3282a90d6d3",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "OversightTask",
+                    "CreateOversightTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                    "key": "cultureCode",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"oversightRequirementKey\": \"<string>\",\n  \"ownerKey\": \"<string>\",\n  \"ownerType\": \"<string>\",\n  \"startDate\": \"<dateTime>\",\n  \"productsKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"vendorKey\": \"<string>\",\n  \"onboardingProperties\": {\n    \"requestRelationshipKey\": \"<string>\"\n  },\n  \"offboardingProperties\": {\n    \"requestKey\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 4031,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fb2f9005-f86b-4a02-9028-ce12c4a6f954",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "OversightTask",
+                    "CreateOversightTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                    "key": "cultureCode",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"oversightRequirementKey\": \"<string>\",\n  \"ownerKey\": \"<string>\",\n  \"ownerType\": \"<string>\",\n  \"startDate\": \"<dateTime>\",\n  \"productsKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"vendorKey\": \"<string>\",\n  \"onboardingProperties\": {\n    \"requestRelationshipKey\": \"<string>\"\n  },\n  \"offboardingProperties\": {\n    \"requestKey\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dcbf950a-2171-4338-98f6-a2e276d07366",
+          "name": "Updates specific properties of an Oversight Task based on the provided PATCH operations.",
+          "request": {
+            "name": "Updates specific properties of an Oversight Task based on the provided PATCH operations.",
+            "description": {
+              "content": "This PATCH endpoint only supports \"replace\", \"add\", and \"remove\" operations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "OversightTask",
+                "UpdateOversightTask",
+                ":key"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "key",
+                  "description": "(Required) Provides the key of the Oversight Task that should be updated."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                "key": "cultureCode",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"path\": \"<string>\",\n    \"op\": \"<string>\",\n    \"from\": \"<string>\",\n    \"value\": {}\n  },\n  {\n    \"path\": \"<string>\",\n    \"op\": \"<string>\",\n    \"from\": \"<string>\",\n    \"value\": {}\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "303b4cc4-dab6-4b20-90c4-f9b03ea92147",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "OversightTask",
+                    "UpdateOversightTask",
+                    ":key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "key",
+                      "description": "(Required) Provides the key of the Oversight Task that should be updated."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                    "key": "cultureCode",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"path\": \"<string>\",\n    \"op\": \"<string>\",\n    \"from\": \"<string>\",\n    \"value\": {}\n  },\n  {\n    \"path\": \"<string>\",\n    \"op\": \"<string>\",\n    \"from\": \"<string>\",\n    \"value\": {}\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ec0f8be2-143d-4da5-87f0-3ab01f93cf35",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "OversightTask",
+                    "UpdateOversightTask",
+                    ":key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "key",
+                      "description": "(Required) Provides the key of the Oversight Task that should be updated."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                    "key": "cultureCode",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"path\": \"<string>\",\n    \"op\": \"<string>\",\n    \"from\": \"<string>\",\n    \"value\": {}\n  },\n  {\n    \"path\": \"<string>\",\n    \"op\": \"<string>\",\n    \"from\": \"<string>\",\n    \"value\": {}\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 4031,\n  \"errors\": [\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    },\n    {\n      \"resourceKey\": \"string\",\n      \"resourceValue\": \"string\",\n      \"field\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "25a25d85-b91f-4fb7-ad3f-6e4268c68c89",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "OversightTask",
+                    "UpdateOversightTask",
+                    ":key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "key",
+                      "description": "(Required) Provides the key of the Oversight Task that should be updated."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The culture code controls the language used in the response. Defaults to \"en-US\".",
+                    "key": "cultureCode",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"path\": \"<string>\",\n    \"op\": \"<string>\",\n    \"from\": \"<string>\",\n    \"value\": {}\n  },\n  {\n    \"path\": \"<string>\",\n    \"op\": \"<string>\",\n    \"from\": \"<string>\",\n    \"value\": {}\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "39d13ff2-09c4-4f60-9640-f127c80b21ae",
+    "name": "Venminder OpenApi BusinessUnit OversightTask API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

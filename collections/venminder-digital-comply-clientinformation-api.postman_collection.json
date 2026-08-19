@@ -1,0 +1,143 @@
+{
+  "item": [
+    {
+      "id": "06cceb4a-a757-467f-90b8-c0b9dfc782c3",
+      "name": "ClientInformation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "78a8d04a-90b6-47af-9b0f-bfb1fd0b81a4",
+          "name": "Provides a list of basic vendor and product related information.",
+          "request": {
+            "name": "Provides a list of basic vendor and product related information.",
+            "description": {
+              "content": "Provides high level client configuration information including a list of the vendors and the vendor's products, a list of the profile fields for each vendor, a list of all active contracts and the products with which they are associated, a list of oversight requirements and a list of users.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "ClientInformation",
+                "GetClientInformation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "createdDate",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a437a51b-661d-48cb-97f1-38275caef2e5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "ClientInformation",
+                    "GetClientInformation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "createdDate",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"vendors\": [\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"isCritical\": false,\n      \"isThirdParty\": true,\n      \"isFourthParty\": true,\n      \"confidenceLevel\": \"string\",\n      \"confidenceLevelComments\": \"string\",\n      \"products\": [\n        {\n          \"key\": \"string\",\n          \"name\": \"string\",\n          \"isActive\": true,\n          \"productType\": \"string\",\n          \"category\": \"string\",\n          \"createdDate\": \"1951-10-28T23:07:00.461Z\"\n        },\n        {\n          \"key\": \"string\",\n          \"name\": \"string\",\n          \"isActive\": false,\n          \"productType\": \"string\",\n          \"category\": \"string\",\n          \"createdDate\": \"2020-08-14T12:12:35.867Z\"\n        }\n      ],\n      \"contracts\": [\n        {\n          \"key\": \"string\",\n          \"name\": \"string\",\n          \"isPerpetual\": false,\n          \"effectiveDate\": \"1958-01-04T11:55:30.006Z\",\n          \"notificationDeadline\": \"2007-09-02T13:23:33.712Z\",\n          \"expirationDate\": \"2024-12-15T12:54:07.773Z\",\n          \"vendorKey\": \"string\",\n          \"productKeys\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"key\": \"string\",\n          \"name\": \"string\",\n          \"isPerpetual\": true,\n          \"effectiveDate\": \"2007-12-01T05:20:55.557Z\",\n          \"notificationDeadline\": \"2021-04-20T10:01:56.935Z\",\n          \"expirationDate\": \"1948-08-31T22:17:55.375Z\",\n          \"vendorKey\": \"string\",\n          \"productKeys\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"hasVendorSpendBudgets\": true,\n      \"hasVendorSpendDetails\": false\n    },\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"isCritical\": true,\n      \"isThirdParty\": true,\n      \"isFourthParty\": false,\n      \"confidenceLevel\": \"string\",\n      \"confidenceLevelComments\": \"string\",\n      \"products\": [\n        {\n          \"key\": \"string\",\n          \"name\": \"string\",\n          \"isActive\": false,\n          \"productType\": \"string\",\n          \"category\": \"string\",\n          \"createdDate\": \"2020-05-12T02:10:59.569Z\"\n        },\n        {\n          \"key\": \"string\",\n          \"name\": \"string\",\n          \"isActive\": true,\n          \"productType\": \"string\",\n          \"category\": \"string\",\n          \"createdDate\": \"1959-06-01T20:20:11.055Z\"\n        }\n      ],\n      \"contracts\": [\n        {\n          \"key\": \"string\",\n          \"name\": \"string\",\n          \"isPerpetual\": false,\n          \"effectiveDate\": \"1991-02-05T07:42:29.932Z\",\n          \"notificationDeadline\": \"1952-02-26T06:51:39.439Z\",\n          \"expirationDate\": \"2007-10-26T03:32:14.399Z\",\n          \"vendorKey\": \"string\",\n          \"productKeys\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"key\": \"string\",\n          \"name\": \"string\",\n          \"isPerpetual\": true,\n          \"effectiveDate\": \"1954-07-01T09:04:31.759Z\",\n          \"notificationDeadline\": \"1983-07-04T20:50:47.133Z\",\n          \"expirationDate\": \"1969-07-03T18:22:48.128Z\",\n          \"vendorKey\": \"string\",\n          \"productKeys\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"hasVendorSpendBudgets\": true,\n      \"hasVendorSpendDetails\": true\n    }\n  ],\n  \"vendorProfileDataFields\": [\n    {\n      \"key\": \"string\",\n      \"label\": \"string\",\n      \"answerFormat\": \"string\",\n      \"vendorsAppliedTo\": [\n        \"string\",\n        \"string\"\n      ],\n      \"parentKey\": \"string\",\n      \"selectedParentOption\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"label\": \"string\",\n      \"answerFormat\": \"string\",\n      \"vendorsAppliedTo\": [\n        \"string\",\n        \"string\"\n      ],\n      \"parentKey\": \"string\",\n      \"selectedParentOption\": \"string\"\n    }\n  ],\n  \"productProfileDataFields\": [\n    {\n      \"key\": \"string\",\n      \"label\": \"string\",\n      \"answerFormat\": \"string\",\n      \"parentKey\": \"string\",\n      \"selectedParentOption\": \"string\",\n      \"productsAppliedTo\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"key\": \"string\",\n      \"label\": \"string\",\n      \"answerFormat\": \"string\",\n      \"parentKey\": \"string\",\n      \"selectedParentOption\": \"string\",\n      \"productsAppliedTo\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"oversightRequirements\": [\n    {\n      \"key\": \"string\",\n      \"label\": \"string\",\n      \"appliesToAllProducts\": false\n    },\n    {\n      \"key\": \"string\",\n      \"label\": \"string\",\n      \"appliesToAllProducts\": true\n    }\n  ],\n  \"users\": [\n    {\n      \"key\": \"string\",\n      \"isActive\": false,\n      \"isEnrolled\": false,\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"emailAddress\": \"string\",\n      \"fullName\": \"string\",\n      \"phoneNumbers\": [\n        {\n          \"type\": \"string\",\n          \"areaCode\": \"string\",\n          \"prefix\": \"string\",\n          \"suffix\": \"string\",\n          \"extension\": \"string\"\n        },\n        {\n          \"type\": \"string\",\n          \"areaCode\": \"string\",\n          \"prefix\": \"string\",\n          \"suffix\": \"string\",\n          \"extension\": \"string\"\n        }\n      ],\n      \"createdByUserKeyOrDescription\": \"string\",\n      \"createdDate\": \"1978-10-22T07:14:33.208Z\",\n      \"roles\": [\n        {\n          \"key\": \"string\",\n          \"roleName\": \"string\",\n          \"isCustom\": true\n        },\n        {\n          \"key\": \"string\",\n          \"roleName\": \"string\",\n          \"isCustom\": true\n        }\n      ]\n    },\n    {\n      \"key\": \"string\",\n      \"isActive\": true,\n      \"isEnrolled\": true,\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"emailAddress\": \"string\",\n      \"fullName\": \"string\",\n      \"phoneNumbers\": [\n        {\n          \"type\": \"string\",\n          \"areaCode\": \"string\",\n          \"prefix\": \"string\",\n          \"suffix\": \"string\",\n          \"extension\": \"string\"\n        },\n        {\n          \"type\": \"string\",\n          \"areaCode\": \"string\",\n          \"prefix\": \"string\",\n          \"suffix\": \"string\",\n          \"extension\": \"string\"\n        }\n      ],\n      \"createdByUserKeyOrDescription\": \"string\",\n      \"createdDate\": \"2009-02-20T17:06:10.492Z\",\n      \"roles\": [\n        {\n          \"key\": \"string\",\n          \"roleName\": \"string\",\n          \"isCustom\": false\n        },\n        {\n          \"key\": \"string\",\n          \"roleName\": \"string\",\n          \"isCustom\": true\n        }\n      ]\n    }\n  ],\n  \"businessUnits\": [\n    {\n      \"key\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"name\": \"string\"\n    }\n  ],\n  \"riskLevels\": [\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"score\": 7189\n    },\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"score\": 8398\n    }\n  ],\n  \"valueLists\": [\n    {\n      \"key\": \"string\",\n      \"label\": \"string\",\n      \"dataKeyFieldLabel\": \"string\",\n      \"dataKeyField\": \"string\",\n      \"sortIndex\": 4197\n    },\n    {\n      \"key\": \"string\",\n      \"label\": \"string\",\n      \"dataKeyFieldLabel\": \"string\",\n      \"dataKeyField\": \"string\",\n      \"sortIndex\": 5651\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4ca97c1e-55b1-46da-860c-fcb52478b1ec",
+    "name": "Venminder OpenApi BusinessUnit ClientInformation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Venminder OpenApi BusinessUnit Documents API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Provides a service to download a document.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Documents/:documentKey",
+            "params": [
+              {
+                "name": "documentKey",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Provides a service to download a document stored in the Venminder platform to a local folder."
+        },
+        {
+          "info": {
+            "name": "Provides a list of documents stored in the Venminder platform.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Documents/GetDocumentsList",
+            "params": [
+              {
+                "name": "documentCategory",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "documentTag",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "documentName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "vendorKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides a list of documents stored in the Venminder platform filtered based on a high level category.  Some of the properties will include the file name, the upload date, associated vendor product, tags…"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,250 @@
+{
+  "item": [
+    {
+      "id": "5f742c86-1eb2-449d-9f99-1d0a140df4d6",
+      "name": "Issues",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6853547f-e21a-41dd-acf2-f50142962e01",
+          "name": "Provides a list of all issues in the system.",
+          "request": {
+            "name": "Provides a list of all issues in the system.",
+            "description": {
+              "content": "Provides a basic high level set of information about all issues in the system. With this information you can drill down further for more details with other API calls.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Issues",
+                "GetAllIssues"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "389ab6c9-dce3-4f36-8de2-3cbdc15852d2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Issues",
+                    "GetAllIssues"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"issues\": [\n    {\n      \"key\": \"string\",\n      \"title\": \"string\",\n      \"vendor\": \"string\",\n      \"vendorKey\": \"string\",\n      \"products\": [\n        {\n          \"product\": \"string\",\n          \"key\": \"string\"\n        },\n        {\n          \"product\": \"string\",\n          \"key\": \"string\"\n        }\n      ],\n      \"owner\": \"string\",\n      \"dateOpened\": \"2009-03-04T21:14:41.837Z\",\n      \"dateClosed\": \"2016-06-14T07:38:23.852Z\",\n      \"status\": \"string\",\n      \"severity\": \"string\",\n      \"severityKey\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"title\": \"string\",\n      \"vendor\": \"string\",\n      \"vendorKey\": \"string\",\n      \"products\": [\n        {\n          \"product\": \"string\",\n          \"key\": \"string\"\n        },\n        {\n          \"product\": \"string\",\n          \"key\": \"string\"\n        }\n      ],\n      \"owner\": \"string\",\n      \"dateOpened\": \"1962-08-18T18:11:49.742Z\",\n      \"dateClosed\": \"2000-05-12T08:40:54.135Z\",\n      \"status\": \"string\",\n      \"severity\": \"string\",\n      \"severityKey\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bc1a1d56-77ce-47f6-bebc-bc1c649f1e00",
+          "name": "Provides details about a specific given issue.",
+          "request": {
+            "name": "Provides details about a specific given issue.",
+            "description": {
+              "content": "Provides details about a specific given issue.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "Issues",
+                "GetIssueDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "issueKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "cultureCode",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7d331a3f-f08a-4d77-bb2a-6ca1df1ed167",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "Issues",
+                    "GetIssueDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "issueKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "cultureCode",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key\": \"string\",\n  \"title\": \"string\",\n  \"vendor\": \"string\",\n  \"vendorKey\": \"string\",\n  \"products\": [\n    {\n      \"product\": \"string\",\n      \"key\": \"string\"\n    },\n    {\n      \"product\": \"string\",\n      \"key\": \"string\"\n    }\n  ],\n  \"owner\": \"string\",\n  \"dateOpened\": \"1969-07-29T05:35:27.612Z\",\n  \"dateClosed\": \"2015-04-22T18:46:01.685Z\",\n  \"status\": \"string\",\n  \"originType\": \"string\",\n  \"originTypeKey\": \"string\",\n  \"originOfTheIssue\": \"string\",\n  \"severity\": \"string\",\n  \"severityKey\": \"string\",\n  \"issueApprovalRequired\": true,\n  \"ownerAllowedToApprove\": true,\n  \"comments\": [\n    {\n      \"key\": \"string\",\n      \"commentor\": \"string\",\n      \"comment\": \"string\",\n      \"commentDate\": \"2012-04-19T16:00:23.030Z\",\n      \"documents\": [\n        {\n          \"key\": \"string\",\n          \"fileName\": \"string\"\n        },\n        {\n          \"key\": \"string\",\n          \"fileName\": \"string\"\n        }\n      ]\n    },\n    {\n      \"key\": \"string\",\n      \"commentor\": \"string\",\n      \"comment\": \"string\",\n      \"commentDate\": \"1997-07-01T13:22:48.620Z\",\n      \"documents\": [\n        {\n          \"key\": \"string\",\n          \"fileName\": \"string\"\n        },\n        {\n          \"key\": \"string\",\n          \"fileName\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"additionalDetails\": [\n    {\n      \"questionKey\": \"string\",\n      \"question\": \"string\",\n      \"answerKey\": \"string\",\n      \"answer\": \"string\"\n    },\n    {\n      \"questionKey\": \"string\",\n      \"question\": \"string\",\n      \"answerKey\": \"string\",\n      \"answer\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0dc3834b-9c4a-4e45-b5f5-35803915cf6e",
+    "name": "Venminder OpenApi BusinessUnit Issues API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

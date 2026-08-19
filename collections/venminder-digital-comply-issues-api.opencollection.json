@@ -1,0 +1,67 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Venminder OpenApi BusinessUnit Issues API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Issues",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Provides a list of all issues in the system.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Issues/GetAllIssues",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Provides a basic high level set of information about all issues in the system. With this information you can drill down further for more details with other API calls."
+        },
+        {
+          "info": {
+            "name": "Provides details about a specific given issue.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/Issues/GetIssueDetails",
+            "headers": [
+              {
+                "name": "cultureCode",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "issueKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides details about a specific given issue."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
