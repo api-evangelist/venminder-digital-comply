@@ -39,6 +39,16 @@ tags:
 - Risk
 - Compliance
 - Contracts
+- Financial-Services
+- Due Diligence
+- SCIM
+tags_raw:
+- Company
+- Third-Party Risk Management
+- Vendor Management
+- Risk
+- Compliance
+- Contracts
 - Financial Services
 - Due Diligence
 - SCIM
@@ -53,6 +63,10 @@ apis:
   humanURL: https://developers.venminder.com/
   baseURL: https://rsd.venminder.com/scim/v2
   tags:
+  - User
+  - Provisioning
+  - SCIM
+  tags_raw:
   - Users
   - Provisioning
   - SCIM
@@ -65,6 +79,8 @@ apis:
   humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
   baseURL: https://rsd.venminder.com
   tags:
+  - Business Unit
+  tags_raw:
   - BusinessUnit
   properties:
   - type: OpenAPI
@@ -80,6 +96,8 @@ apis:
   humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
   baseURL: https://rsd.venminder.com
   tags:
+  - Client information
+  tags_raw:
   - ClientInformation
   properties:
   - type: OpenAPI
@@ -224,6 +242,8 @@ apis:
   humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
   baseURL: https://rsd.venminder.com
   tags:
+  - Vendor Onboarding
+  tags_raw:
   - VendorOnboarding
   properties:
   - type: OpenAPI
