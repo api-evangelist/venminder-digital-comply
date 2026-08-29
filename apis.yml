@@ -10,6 +10,18 @@ description: >-
   questionnaires, onboarding requests, oversight and spend data at rsd.venminder.com, alongside
   a SCIM 2.0 user-provisioning surface at /scim/v2.
 url: https://raw.githubusercontent.com/api-evangelist/venminder-digital-comply/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
