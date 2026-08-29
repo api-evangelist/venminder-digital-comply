@@ -1,0 +1,78 @@
+slug: venminder-digital-comply
+provider: Venminder (Digital Comply)
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 6
+edges:
+- tag: VendorOnboarding
+  spec_file: venminder-digital-comply-vendoronboarding-api-openapi.yml
+  capability_id: BC-510.10
+  capability_id_l1: BC-510
+  capability_name: Supplier Onboarding Management
+  confidence: 0.9
+  evidence: '"Provides a list of vendor onboarding requests"; "Creates a new or updates an existing onboarding
+    request"; schema OpenApi.v1.VendorOnboardingRequestDetail with RiskInformation and WorkflowInformation'
+  reason: Operations create and progress vendor onboarding requests with profile answers, workflow and
+    risk information — squarely supplier onboarding/qualification and due diligence.
+- tag: VendorSpend
+  spec_file: venminder-digital-comply-vendorspend-api-openapi.yml
+  capability_id: BC-500.60
+  capability_id_l1: BC-500
+  capability_name: Procurement Spend Analysis Management
+  confidence: 0.85
+  evidence: POST /api/v1/SpendAnalysis/CreateSpendItem "Creates a vendor spend item"; "Provides a list
+    of active budgets for a particular vendor"
+  reason: CRUD over vendor spend items and budgets under a SpendAnalysis path is procurement spend visibility
+    and savings/budget tracking.
+- tag: Vendors
+  spec_file: venminder-digital-comply-vendors-api-openapi.yml
+  capability_id: BC-510
+  capability_id_l1: BC-510
+  capability_name: Supplier Management
+  confidence: 0.85
+  evidence: '"Provides detailed information about a specific vendor"; "Updates a vendor''s risk level";
+    "Adds a third and/or a fourth party relationships to a vendor"; schema OpenApi.VendorRiskLevels'
+  reason: Maintains the vendor master profile, product records, contacts, third/fourth-party relationships
+    and risk levels — Supplier Management overall; spans master data and risk so no single L2 is asserted.
+- tag: Venmonitor
+  spec_file: venminder-digital-comply-venmonitor-api-openapi.yml
+  capability_id: BC-510.30
+  capability_id_l1: BC-510
+  capability_name: Supplier Risk Management
+  confidence: 0.85
+  evidence: GET /api/v1/Venmonitor/GetVendorScore; schemas OpenApi.v1.Venmonitor.DataPartnerScore, GetVendorScoreResponse;
+    vendor description "Venmonitor continuous monitoring"
+  reason: Retrieval of vendor risk scores from data partners is continuous third-party risk monitoring,
+    i.e. supplier risk management.
+- tag: Contracts
+  spec_file: venminder-digital-comply-contracts-api-openapi.yml
+  capability_id: BC-500.20
+  capability_id_l1: BC-500
+  capability_name: Procurement Contract Management
+  confidence: 0.75
+  evidence: '"Creates a basic self-processed contract with details provided in the request parameter.";
+    "Provides detailed contract hierarchy information for a vendor."; schemas ContractDraftDetails, DraftApprovers,
+    ContractPricing'
+  reason: Full lifecycle of vendor contracts — drafts, approvers, hierarchy, create/edit — inside a third-party
+    risk platform, i.e. procurement-side contract management. Slight ambiguity with generic legal Contract
+    Management (BC-150.10), but the vendor/product framing points to procurement contracts.
+- tag: Questionnaire
+  spec_file: venminder-digital-comply-questionnaire-api-openapi.yml
+  capability_id: BC-510
+  capability_id_l1: BC-510
+  capability_name: Supplier Management
+  confidence: 0.75
+  evidence: '"Provides a list of questionnaires in the library"; "Provides a list of questionnaire responses";
+    schema OpenApi.v1.Questionnaire.QuestionnaireWithScore'
+  reason: Scored due-diligence questionnaires issued to third parties are core supplier qualification/due-diligence
+    assessment; evidence does not settle whether this is onboarding due diligence (510.10) or ongoing
+    risk assessment (510.30), so L1 only.
