@@ -108,7 +108,7 @@ apis:
   humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
   baseURL: https://rsd.venminder.com
   tags:
-  - Client information
+  - ClientInformation
   tags_raw:
   - ClientInformation
   properties:
@@ -254,7 +254,7 @@ apis:
   humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
   baseURL: https://rsd.venminder.com
   tags:
-  - Vendor Onboarding
+  - VendorOnboarding
   tags_raw:
   - VendorOnboarding
   properties:
