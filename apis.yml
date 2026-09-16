@@ -85,39 +85,6 @@ apis:
   properties:
   - type: Documentation
     url: https://developers.venminder.com/
-- aid: venminder-digital-comply:venminder-digital-comply-businessunit-api
-  name: Venminder (Digital Comply) BusinessUnit API
-  description: The BusinessUnit API from Venminder (Digital Comply) — 1 operation(s) for businessunit.
-  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
-  baseURL: https://rsd.venminder.com
-  tags:
-  - Business Unit
-  tags_raw:
-  - BusinessUnit
-  properties:
-  - type: OpenAPI
-    url: openapi/venminder-digital-comply-businessunit-api-openapi.yml
-  - type: Documentation
-    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
-  - type: SwaggerUI
-    url: https://rsd.venminder.com/swagger
-- aid: venminder-digital-comply:venminder-digital-comply-clientinformation-api
-  name: Venminder (Digital Comply) ClientInformation API
-  description: >-
-    The ClientInformation API from Venminder (Digital Comply) — 1 operation(s) for clientinformation.
-  humanURL: https://developers.venminder.com/318218fb2/p/9845ac-the-venminder-apis/b/30923a
-  baseURL: https://rsd.venminder.com
-  tags:
-  - Client information
-  tags_raw:
-  - ClientInformation
-  properties:
-  - type: OpenAPI
-    url: openapi/venminder-digital-comply-clientinformation-api-openapi.yml
-  - type: Documentation
-    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
-  - type: SwaggerUI
-    url: https://rsd.venminder.com/swagger
 - aid: venminder-digital-comply:venminder-digital-comply-contact-api
   name: Venminder (Digital Comply) Contact API
   description: The Contact API from Venminder (Digital Comply) — 1 operation(s) for contact.
@@ -302,6 +269,36 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/venminder-digital-comply-venmonitor-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-business-unit-api
+  name: Venminder (Digital Comply) Business Unit API
+  description: >-
+    The Business Unit API from Venminder (Digital Comply) — 1 operation(s) for business unit.
+  humanURL: https://developers.venminder.com/
+  baseURL: https://rsd.venminder.com/scim/v2
+  tags:
+  - Business Unit
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-business-unit-api-openapi.yml
+  - type: Documentation
+    url: https://developers.venminder.com/318218fb2/p/325101-getting-started
+  - type: SwaggerUI
+    url: https://rsd.venminder.com/swagger
+- aid: venminder-digital-comply:venminder-digital-comply-client-information-api
+  name: Venminder (Digital Comply) Client information API
+  description: >-
+    The Client information API from Venminder (Digital Comply) — 1 operation(s) for client information.
+  humanURL: https://developers.venminder.com/
+  baseURL: https://rsd.venminder.com/scim/v2
+  tags:
+  - Client information
+  properties:
+  - type: OpenAPI
+    url: openapi/venminder-digital-comply-client-information-api-openapi.yml
   - type: Documentation
     url: https://developers.venminder.com/318218fb2/p/325101-getting-started
   - type: SwaggerUI
