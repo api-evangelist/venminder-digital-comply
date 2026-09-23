@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Venminder OpenApi BusinessUnit VendorSpend API
+  title: Venminder OpenApi Vendor Spend API
   version: v1
 security:
 - Bearer: []
@@ -53,6 +53,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: postApiV1SpendAnalysisCreateBudget
+      x-operation-id-source: derived
   /api/v1/SpendAnalysis/CreateSpendItem:
     post:
       tags:
@@ -99,11 +101,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: postApiV1SpendAnalysisCreateSpendItem
+      x-operation-id-source: derived
   /api/v1/SpendAnalysis/DeleteBudget:
     delete:
       tags:
       - VendorSpend
-      summary: Deletes a vendor budget and unlinks all spend items associated with the budget.
+      summary: Deletes a vendor budget and unlinks all spend items associated with the budget
       parameters:
       - name: budgetKey
         in: query
@@ -122,11 +126,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: deleteApiV1SpendAnalysisDeleteBudget
+      x-operation-id-source: derived
   /api/v1/SpendAnalysis/DeleteSpend:
     delete:
       tags:
       - VendorSpend
-      summary: Deletes a vendor spend.
+      summary: Deletes a vendor spend
       parameters:
       - name: spendKey
         in: query
@@ -145,11 +151,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: deleteApiV1SpendAnalysisDeleteSpend
+      x-operation-id-source: derived
   /api/v1/SpendAnalysis/GetBudgets:
     get:
       tags:
       - VendorSpend
-      summary: Provides a list of active budgets for a particular vendor.
+      summary: Provides a list of active budgets for a particular vendor
       description: Provides a list of active budgets for a particular vendor. This includes the budget key, name, amount, start date, and end date.
       parameters:
       - name: vendorKey
@@ -173,11 +181,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: getApiV1SpendAnalysisGetBudgets
+      x-operation-id-source: derived
   /api/v1/SpendAnalysis/GetSpends:
     get:
       tags:
       - VendorSpend
-      summary: Gets all active spend items based on the vendor key.
+      summary: Gets all active spend items based on the vendor key
       description: Returns null for ProductKey if the spend is only linked to the vendor.
       parameters:
       - name: vendorKey
@@ -201,6 +211,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: getApiV1SpendAnalysisGetSpends
+      x-operation-id-source: derived
   /api/v1/SpendAnalysis/UpdateSpendItem:
     post:
       tags:
@@ -243,6 +255,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: postApiV1SpendAnalysisUpdateSpendItem
+      x-operation-id-source: derived
   /api/v1/SpendAnalysis/UpdateBudget:
     post:
       tags:
@@ -285,8 +299,33 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: postApiV1SpendAnalysisUpdateBudget
+      x-operation-id-source: derived
 components:
   schemas:
+    OpenApi.v1.VendorSpend.UpdateBudgetRequest:
+      title: OpenApi.v1.VendorSpend.UpdateBudgetRequest
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        startDate:
+          type:
+          - string
+          - 'null'
+        amount:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: VendorSpend.UpdateBudgetRequest
     OpenApi.v1.VendorSpend.GetSpendItemsResponse:
       title: OpenApi.v1.VendorSpend.GetSpendItemsResponse
       type: object
@@ -296,33 +335,123 @@ components:
           format: int32
           readOnly: true
         spends:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OpenApi.v1.VendorSpend.SpendItem'
-          nullable: true
       additionalProperties: false
       xml:
         name: VendorSpend.GetSpendItemsResponse
-    OpenApi.v1.VendorSpend.CreateSpendResponse:
-      title: OpenApi.v1.VendorSpend.CreateSpendResponse
+    OpenApi.v1.VendorSpend.CreateBudgetRequest:
+      title: OpenApi.v1.VendorSpend.CreateBudgetRequest
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        startDate:
+          type:
+          - string
+          - 'null'
+        amount:
+          type:
+          - string
+          - 'null'
+        vendorKey:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: VendorSpend.CreateBudgetRequest
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type:
+          - string
+          - 'null'
+        resourceValue:
+          type:
+          - string
+          - 'null'
+        field:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ErrorResource
+    OpenApi.v1.ErrorResponse:
+      title: OpenApi.v1.ErrorResponse
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int32
+        errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
+      additionalProperties: false
+      xml:
+        name: ErrorResponse
+    OpenApi.v1.VendorSpend.UpdateSpendRequest:
+      title: OpenApi.v1.VendorSpend.UpdateSpendRequest
       type: object
       properties:
         key:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        budgetKey:
+          type:
+          - string
+          - 'null'
+        productKey:
+          type:
+          - string
+          - 'null'
+        invoiceNumber:
+          type:
+          - string
+          - 'null'
+        invoiceDate:
+          type:
+          - string
+          - 'null'
+        amount:
+          type:
+          - string
+          - 'null'
+        notes:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
       xml:
-        name: VendorSpend.CreateSpendResponse
+        name: VendorSpend.UpdateSpendRequest
     OpenApi.v1.VendorSpend.BudgetResponse:
       title: OpenApi.v1.VendorSpend.BudgetResponse
       type: object
       properties:
         key:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         amount:
           type: number
           format: double
@@ -335,116 +464,34 @@ components:
       additionalProperties: false
       xml:
         name: VendorSpend.BudgetResponse
-    OpenApi.v1.VendorSpend.UpdateBudgetRequest:
-      title: OpenApi.v1.VendorSpend.UpdateBudgetRequest
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-        name:
-          type: string
-          nullable: true
-        startDate:
-          type: string
-          nullable: true
-        amount:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: VendorSpend.UpdateBudgetRequest
-    OpenApi.v1.VendorSpend.CreateBudgetResponse:
-      title: OpenApi.v1.VendorSpend.CreateBudgetResponse
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: VendorSpend.CreateBudgetResponse
-    OpenApi.v1.ErrorResponse:
-      title: OpenApi.v1.ErrorResponse
-      type: object
-      properties:
-        statusCode:
-          type: integer
-          format: int32
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ErrorResponse
-    OpenApi.v1.VendorSpend.CreateSpendRequest:
-      title: OpenApi.v1.VendorSpend.CreateSpendRequest
-      type: object
-      properties:
-        budgetKey:
-          type: string
-          nullable: true
-        vendorKey:
-          type: string
-          nullable: true
-        productKey:
-          type: string
-          nullable: true
-        invoiceNumber:
-          type: string
-          nullable: true
-        invoiceDate:
-          type: string
-          nullable: true
-        amount:
-          type: string
-          nullable: true
-        notes:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: VendorSpend.CreateSpendRequest
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
-      type: object
-      properties:
-        resourceKey:
-          type: string
-          nullable: true
-        resourceValue:
-          type: string
-          nullable: true
-        field:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ErrorResource
     OpenApi.v1.VendorSpend.SpendItem:
       title: OpenApi.v1.VendorSpend.SpendItem
       type: object
       properties:
         key:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         budgetKey:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         budgetName:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         vendorKey:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         productKey:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         invoiceNumber:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         invoiceDate:
           type: string
           format: date-time
@@ -452,61 +499,69 @@ components:
           type: number
           format: double
         notes:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: false
       xml:
         name: VendorSpend.SpendItem
-    OpenApi.v1.VendorSpend.CreateBudgetRequest:
-      title: OpenApi.v1.VendorSpend.CreateBudgetRequest
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: true
-        startDate:
-          type: string
-          nullable: true
-        amount:
-          type: string
-          nullable: true
-        vendorKey:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: VendorSpend.CreateBudgetRequest
-    OpenApi.v1.VendorSpend.UpdateSpendRequest:
-      title: OpenApi.v1.VendorSpend.UpdateSpendRequest
+    OpenApi.v1.VendorSpend.CreateSpendResponse:
+      title: OpenApi.v1.VendorSpend.CreateSpendResponse
       type: object
       properties:
         key:
-          type: string
-          nullable: true
-        vendorKey:
-          type: string
-          nullable: true
-        budgetKey:
-          type: string
-          nullable: true
-        productKey:
-          type: string
-          nullable: true
-        invoiceNumber:
-          type: string
-          nullable: true
-        invoiceDate:
-          type: string
-          nullable: true
-        amount:
-          type: string
-          nullable: true
-        notes:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: false
       xml:
-        name: VendorSpend.UpdateSpendRequest
+        name: VendorSpend.CreateSpendResponse
+    OpenApi.v1.VendorSpend.CreateSpendRequest:
+      title: OpenApi.v1.VendorSpend.CreateSpendRequest
+      type: object
+      properties:
+        budgetKey:
+          type:
+          - string
+          - 'null'
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        productKey:
+          type:
+          - string
+          - 'null'
+        invoiceNumber:
+          type:
+          - string
+          - 'null'
+        invoiceDate:
+          type:
+          - string
+          - 'null'
+        amount:
+          type:
+          - string
+          - 'null'
+        notes:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: VendorSpend.CreateSpendRequest
+    OpenApi.v1.VendorSpend.CreateBudgetResponse:
+      title: OpenApi.v1.VendorSpend.CreateBudgetResponse
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: VendorSpend.CreateBudgetResponse
   securitySchemes:
     Bearer:
       type: apiKey

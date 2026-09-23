@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Venminder OpenApi BusinessUnit Vendors API
+  title: Venminder OpenApi Vendors API
   version: v1
 security:
 - Bearer: []
@@ -11,7 +11,7 @@ paths:
     get:
       tags:
       - Vendors
-      summary: Provides detailed information about a specific vendor.
+      summary: Provides detailed information about a specific vendor
       description: Provide detailed information about a specific vendor. This includes vendor profile information, oversight requirements, a list of products, a list of contracts and much more.
       parameters:
       - name: vendorKey
@@ -43,11 +43,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: getApiV1VendorsGetVendorProfile
+      x-operation-id-source: derived
   /api/v1/Vendors/VendorProduct:
     post:
       tags:
       - Vendors
-      summary: Creates a new vendor and/or product.
+      summary: Creates a new vendor and/or product
       description: Creates a new vendor and product or adds a new product to an existing vendor.
       parameters:
       - name: cultureCode
@@ -98,11 +100,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: postApiV1VendorsVendorProduct
+      x-operation-id-source: derived
   /api/v1/Vendors/VendorProfile:
     post:
       tags:
       - Vendors
-      summary: Updates an existing vendor's profile information.
+      summary: Updates an existing vendor's profile information
       description: Updates a vendor's profile information. This includes standard questions as well as custom question add to the Venminder platform. Validation based on results provided in the GET ProfileAnswers API.
       parameters:
       - name: cultureCode
@@ -155,11 +159,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: postApiV1VendorsVendorProfile
+      x-operation-id-source: derived
   /api/v1/Vendors/Relationships:
     post:
       tags:
       - Vendors
-      summary: Adds a third and/or a fourth party relationships to a vendor.
+      summary: Adds a third and/or a fourth party relationships to a vendor
       description: Adds a third and/or a fourth party relationships to a vendor.
       parameters:
       - name: cultureCode
@@ -210,10 +216,12 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: postApiV1VendorsRelationships
+      x-operation-id-source: derived
     delete:
       tags:
       - Vendors
-      summary: Deletes a third and/or a fourth party relationships from a vendor.
+      summary: Deletes a third and/or a fourth party relationships from a vendor
       description: Deletes a third and/or a fourth party relationships from a vendor.
       parameters:
       - name: cultureCode
@@ -264,11 +272,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: deleteApiV1VendorsRelationships
+      x-operation-id-source: derived
   /api/v1/Vendors/Risk:
     post:
       tags:
       - Vendors
-      summary: Updates a product's risk level.
+      summary: Updates a product's risk level
       description: Updates a product's risk level given a Risk Assessment has not been performed.
       parameters:
       - name: cultureCode
@@ -321,11 +331,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: postApiV1VendorsRisk
+      x-operation-id-source: derived
   /api/v1/Vendors/SetVendorRisk:
     post:
       tags:
       - Vendors
-      summary: Updates a vendor's risk level.
+      summary: Updates a vendor's risk level
       description: Updates a vendor's risk level given a Product Risk Assessment has not been performed.
       parameters:
       - name: cultureCode
@@ -378,11 +390,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: postApiV1VendorsSetVendorRisk
+      x-operation-id-source: derived
   /api/v1/Vendors/ProductProfile:
     post:
       tags:
       - Vendors
-      summary: Updates an existing product's profile information.
+      summary: Updates an existing product's profile information
       description: Updates a product's profile information. This includes standard questions as well as custom question add to the Venminder platform. Validation based on results provided in the GET ProfileAnswers API.
       parameters:
       - name: cultureCode
@@ -433,11 +447,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: postApiV1VendorsProductProfile
+      x-operation-id-source: derived
   /api/v1/Vendors/ProductContact:
     post:
       tags:
       - Vendors
-      summary: Create a contact and assign them to a product.
+      summary: Create a contact and assign them to a product
       description: Creates a contact and assigns them to a product. If the contact already exists, use the POST ProductProfile API to update the list of contacts for a product.
       parameters:
       - name: cultureCode
@@ -488,11 +504,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: postApiV1VendorsProductContact
+      x-operation-id-source: derived
   /api/v1/Vendors/ProfileAnswers:
     get:
       tags:
       - Vendors
-      summary: Provides a list of answers for vendor and product profile questions.
+      summary: Provides a list of answers for vendor and product profile questions
       description: Provides a list of expected answers for the vendor and product profile questions.
       parameters:
       - name: vendorKey
@@ -528,11 +546,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: getApiV1VendorsProfileAnswers
+      x-operation-id-source: derived
   /api/v1/Vendors/GetVendorQuestionKeys:
     get:
       tags:
       - Vendors
-      summary: Provides a list of question keys for vendor information.
+      summary: Provides a list of question keys for vendor information
       description: Provides a list of question keys for vendor information.
       responses:
         '200':
@@ -562,440 +582,530 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: getApiV1VendorsGetVendorQuestionKeys
+      x-operation-id-source: derived
 components:
   schemas:
-    OpenApi.v1.CreateContactResponse:
-      title: OpenApi.v1.CreateContactResponse
-      type: object
-      properties:
-        contactsKeys:
-          type: array
-          items:
-            type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: CreateContactResponse
-    OpenApi.v1.NewProductContact:
-      title: OpenApi.v1.NewProductContact
-      type: object
-      properties:
-        firstName:
-          type: string
-          nullable: true
-        lastName:
-          type: string
-          nullable: true
-        phoneNumbers:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ProductContactPhoneNumber'
-          nullable: true
-        emailAddress:
-          type: string
-          nullable: true
-        isPrimaryContact:
-          type: boolean
-      additionalProperties: false
-      xml:
-        name: NewProductContact
-    OpenApi.v1.VendorProfile:
-      title: OpenApi.v1.VendorProfile
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-        contactKey:
-          type: string
-          nullable: true
-        name:
-          type: string
-          nullable: true
-        isThirdParty:
-          type: boolean
-        fourthPartyVendorKeys:
-          type: array
-          items:
-            type: string
-          nullable: true
-        isFourthParty:
-          type: boolean
-        thirdPartyVendorKeys:
-          type: array
-          items:
-            type: string
-          nullable: true
-        confidenceLevel:
-          type: string
-          nullable: true
-        confidenceLevelComments:
-          type: string
-          nullable: true
-        hasVendorSpendBudgets:
-          type: boolean
-        hasVendorSpendDetails:
-          type: boolean
-        vendorProfileData:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ProfileDataAnswerWithGroupIdentity'
-          nullable: true
-        openRequirements:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.OversightRequirementDetail'
-          nullable: true
-        products:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ProductDetail'
-          nullable: true
-        contracts:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ContractOverview'
-          nullable: true
-        vendorRisk:
-          $ref: '#/components/schemas/OpenApi.v1.VendorRisk'
-      additionalProperties: false
-      xml:
-        name: VendorProfile
-    OpenApi.v1.ProductContacts:
-      title: OpenApi.v1.ProductContacts
-      type: object
-      properties:
-        productKey:
-          type: string
-          nullable: true
-        contacts:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.NewProductContact'
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ProductContacts
-    OpenApi.v1.VendorRelationships:
-      title: OpenApi.v1.VendorRelationships
-      type: object
-      properties:
-        vendorKey:
-          type: string
-          nullable: true
-        isThirdParty:
-          type: boolean
-          nullable: true
-        fourthPartyVendorKeys:
-          type: array
-          items:
-            type: string
-          nullable: true
-        isFourthParty:
-          type: boolean
-          nullable: true
-        thirdPartyVendorKeys:
-          type: array
-          items:
-            type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: VendorRelationships
-    OpenApi.v1.PhoneNumber:
-      title: OpenApi.v1.PhoneNumber
-      type: object
-      properties:
-        type:
-          type: string
-          nullable: true
-        areaCode:
-          type: string
-          nullable: true
-        prefix:
-          type: string
-          nullable: true
-        suffix:
-          type: string
-          nullable: true
-        extension:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: PhoneNumber
-    OpenApi.VendorRiskLevels:
-      title: OpenApi.VendorRiskLevels
-      type: object
-      properties:
-        vendorKey:
-          type: string
-          nullable: true
-        inherentRiskKey:
-          type: string
-          nullable: true
-        residualRiskKey:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: OpenApi.VendorRiskLevels
-    OpenApi.v1.ProfileExpectedAnswers:
-      title: OpenApi.v1.ProfileExpectedAnswers
-      type: object
-      properties:
-        dataFieldKey:
-          type: string
-          nullable: true
-        expectedAnswers:
-          type: array
-          items:
-            type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ProfileExpectedAnswers
-    OpenApi.v1.ProductProfileData:
-      title: OpenApi.v1.ProductProfileData
-      type: object
-      properties:
-        dataFieldKey:
-          type: string
-          nullable: true
-        answers:
-          type: array
-          items:
-            type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ProductProfileData
-    OpenApi.v1.ProductDetail:
-      title: OpenApi.v1.ProductDetail
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-        name:
-          type: string
-          nullable: true
-        isActive:
-          type: boolean
-        inherentRisk:
-          type: string
-          nullable: true
-        inherentRiskScore:
-          type: integer
-          format: int32
-        residualRisk:
-          type: string
-          nullable: true
-        residualRiskScore:
-          type: integer
-          format: int32
-          nullable: true
-        contacts:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.Contact'
-          nullable: true
-        businessUnits:
-          type: array
-          items:
-            type: string
-          nullable: true
-        category:
-          type: string
-          nullable: true
-        productProfileData:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ProfileDataAnswerWithGroupIdentity'
-          nullable: true
-        managerKey:
-          type: string
-          nullable: true
-        collaboratorKeys:
-          type: array
-          items:
-            type: string
-          nullable: true
-        assessmentLastCompleted:
-          type: string
-          format: date-time
-          nullable: true
-        inherentAssessmentPerformedBy:
-          type: string
-          nullable: true
-        residualAssessmentPerformedBy:
-          type: string
-          nullable: true
-        inherentAssessmentApprovedBy:
-          type: string
-          nullable: true
-        residualAssessmentApprovedBy:
-          type: string
-          nullable: true
-        assessmentNextDue:
-          type: string
-          format: date-time
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ProductDetail
-    OpenApi.v1.CreateVendorResponse:
-      title: OpenApi.v1.CreateVendorResponse
-      type: object
-      properties:
-        vendorKey:
-          type: string
-          nullable: true
-        productKey:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: CreateVendorResponse
-    OpenApi.v1.VendorProfileDataField:
-      title: OpenApi.v1.VendorProfileDataField
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-        label:
-          type: string
-          nullable: true
-        answerFormat:
-          type: string
-          nullable: true
-        vendorsAppliedTo:
-          type: array
-          items:
-            type: string
-          nullable: true
-        parentKey:
-          type: string
-          nullable: true
-        selectedParentOption:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: VendorProfileDataField
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
-      type: object
-      properties:
-        resourceKey:
-          type: string
-          nullable: true
-        resourceValue:
-          type: string
-          nullable: true
-        field:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ErrorResource
     OpenApi.v1.ProductContact:
       title: OpenApi.v1.ProductContact
       type: object
       properties:
         key:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         isPrimaryContact:
           type: boolean
       additionalProperties: false
       xml:
         name: ProductContact
-    OpenApi.v1.RiskLevels:
-      title: OpenApi.v1.RiskLevels
+    OpenApi.v1.OversightRequirementDetail:
+      title: OpenApi.v1.OversightRequirementDetail
       type: object
       properties:
-        productKey:
+        requirementKey:
+          type:
+          - string
+          - 'null'
+        key:
+          type:
+          - string
+          - 'null'
+        taskOwnerKey:
+          type:
+          - string
+          - 'null'
+        dueDate:
           type: string
-          nullable: true
-        inherentRiskKey:
-          type: string
-          nullable: true
-        residualRiskKey:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: RiskLevels
-    OpenApi.v1.ProfileDataAnswerWithGroupIdentity:
-      title: OpenApi.v1.ProfileDataAnswerWithGroupIdentity
-      type: object
-      properties:
-        answers:
-          type: array
+          format: date-time
+        productKeys:
+          type:
+          - array
+          - 'null'
           items:
             type: string
-          nullable: true
-        answer:
-          type: string
-          nullable: true
-        key:
-          type: string
-          nullable: true
-        groupIdentity:
-          type: string
-          nullable: true
-        dataFieldKey:
-          type: string
-          nullable: true
-        label:
-          type: string
-          nullable: true
-        answerFormat:
-          type: string
-          nullable: true
-        formattedAnswer:
-          type: string
-          nullable: true
       additionalProperties: false
       xml:
-        name: ProfileDataAnswerWithGroupIdentity
+        name: OversightRequirementDetail
+    OpenApi.v1.VendorRisk:
+      title: OpenApi.v1.VendorRisk
+      type: object
+      properties:
+        inherentRisk:
+          type:
+          - string
+          - 'null'
+        inherentRiskScore:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        residualRisk:
+          type:
+          - string
+          - 'null'
+        residualRiskScore:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+      xml:
+        name: VendorRisk
+    OpenApi.v1.CreateContactResponse:
+      title: OpenApi.v1.CreateContactResponse
+      type: object
+      properties:
+        contactsKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+      xml:
+        name: CreateContactResponse
+    OpenApi.v1.ProductDetail:
+      title: OpenApi.v1.ProductDetail
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        isActive:
+          type: boolean
+        inherentRisk:
+          type:
+          - string
+          - 'null'
+        inherentRiskScore:
+          type: integer
+          format: int32
+        residualRisk:
+          type:
+          - string
+          - 'null'
+        residualRiskScore:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        contacts:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Contact'
+        businessUnits:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        category:
+          type:
+          - string
+          - 'null'
+        productProfileData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ProfileDataAnswerWithGroupIdentity'
+        managerKey:
+          type:
+          - string
+          - 'null'
+        collaboratorKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        assessmentLastCompleted:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        inherentAssessmentPerformedBy:
+          type:
+          - string
+          - 'null'
+        residualAssessmentPerformedBy:
+          type:
+          - string
+          - 'null'
+        inherentAssessmentApprovedBy:
+          type:
+          - string
+          - 'null'
+        residualAssessmentApprovedBy:
+          type:
+          - string
+          - 'null'
+        assessmentNextDue:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+      xml:
+        name: ProductDetail
+    OpenApi.v1.Contact:
+      title: OpenApi.v1.Contact
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        contactKey:
+          type:
+          - string
+          - 'null'
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        phoneNumbers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.PhoneNumber'
+        emailAddress:
+          type:
+          - string
+          - 'null'
+        isPrimary:
+          type: boolean
+        isPrimaryQuestionnaires:
+          type: boolean
+      additionalProperties: false
+      xml:
+        name: Contact
     OpenApi.v1.ContractOverview:
       title: OpenApi.v1.ContractOverview
       type: object
       properties:
         key:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         isPerpetual:
           type: boolean
         effectiveDate:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         notificationDeadline:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         expirationDate:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         vendorKey:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         productKeys:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
-          nullable: true
       additionalProperties: false
       xml:
         name: ContractOverview
+    OpenApi.v1.VendorProductRequest:
+      title: OpenApi.v1.VendorProductRequest
+      type: object
+      properties:
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        vendorName:
+          type:
+          - string
+          - 'null'
+        productType:
+          type:
+          - string
+          - 'null'
+        productName:
+          type:
+          - string
+          - 'null'
+        productManagerKey:
+          type:
+          - string
+          - 'null'
+        isCriticalVendor:
+          type: boolean
+        isThirdParty:
+          type: boolean
+        isFourthParty:
+          type: boolean
+        annualReviewDate:
+          type:
+          - string
+          - 'null'
+        category:
+          type:
+          - string
+          - 'null'
+        businessUnits:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+      xml:
+        name: VendorProductRequest
+    OpenApi.v1.ProfileDataAnswerWithGroupIdentity:
+      title: OpenApi.v1.ProfileDataAnswerWithGroupIdentity
+      type: object
+      properties:
+        answers:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        answer:
+          type:
+          - string
+          - 'null'
+        key:
+          type:
+          - string
+          - 'null'
+        groupIdentity:
+          type:
+          - string
+          - 'null'
+        dataFieldKey:
+          type:
+          - string
+          - 'null'
+        label:
+          type:
+          - string
+          - 'null'
+        answerFormat:
+          type:
+          - string
+          - 'null'
+        formattedAnswer:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ProfileDataAnswerWithGroupIdentity
+    OpenApi.v1.ProductContactPhoneNumber:
+      title: OpenApi.v1.ProductContactPhoneNumber
+      type: object
+      properties:
+        countryCodeAbbreviation:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+        extension:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ProductContactPhoneNumber
+    OpenApi.v1.CreateVendorResponse:
+      title: OpenApi.v1.CreateVendorResponse
+      type: object
+      properties:
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        productKey:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: CreateVendorResponse
+    OpenApi.v1.PhoneNumber:
+      title: OpenApi.v1.PhoneNumber
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        areaCode:
+          type:
+          - string
+          - 'null'
+        prefix:
+          type:
+          - string
+          - 'null'
+        suffix:
+          type:
+          - string
+          - 'null'
+        extension:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: PhoneNumber
+    OpenApi.v1.UpdateProductProfileRequest:
+      title: OpenApi.v1.UpdateProductProfileRequest
+      type: object
+      properties:
+        productKey:
+          type:
+          - string
+          - 'null'
+        productManagerKey:
+          type:
+          - string
+          - 'null'
+        productName:
+          type:
+          - string
+          - 'null'
+        productType:
+          type:
+          - string
+          - 'null'
+        productProfileData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ProductProfileData'
+        isActive:
+          type:
+          - boolean
+          - 'null'
+        category:
+          type:
+          - string
+          - 'null'
+        collaboratorKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        contacts:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ProductContact'
+      additionalProperties: false
+      xml:
+        name: UpdateProductProfileRequest
+    OpenApi.v1.VendorRelationships:
+      title: OpenApi.v1.VendorRelationships
+      type: object
+      properties:
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        isThirdParty:
+          type:
+          - boolean
+          - 'null'
+        fourthPartyVendorKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        isFourthParty:
+          type:
+          - boolean
+          - 'null'
+        thirdPartyVendorKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+      xml:
+        name: VendorRelationships
+    OpenApi.v1.ProductProfileData:
+      title: OpenApi.v1.ProductProfileData
+      type: object
+      properties:
+        dataFieldKey:
+          type:
+          - string
+          - 'null'
+        answers:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+      xml:
+        name: ProductProfileData
+    OpenApi.v1.UpdateVendorProfileRequest:
+      title: OpenApi.v1.UpdateVendorProfileRequest
+      type: object
+      properties:
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        vendorName:
+          type:
+          - string
+          - 'null'
+        vendorProfileData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ProfileDataAnswerWithGroupIdentity'
+      additionalProperties: false
+      xml:
+        name: UpdateVendorProfileRequest
     OpenApi.v1.ErrorResponse:
       title: OpenApi.v1.ErrorResponse
       type: object
@@ -1004,242 +1114,280 @@ components:
           type: integer
           format: int32
         errors:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
-          nullable: true
       additionalProperties: false
       xml:
         name: ErrorResponse
-    OpenApi.v1.VendorRisk:
-      title: OpenApi.v1.VendorRisk
-      type: object
-      properties:
-        inherentRisk:
-          type: string
-          nullable: true
-        inherentRiskScore:
-          type: integer
-          format: int32
-          nullable: true
-        residualRisk:
-          type: string
-          nullable: true
-        residualRiskScore:
-          type: integer
-          format: int32
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: VendorRisk
-    OpenApi.v1.OversightRequirementDetail:
-      title: OpenApi.v1.OversightRequirementDetail
-      type: object
-      properties:
-        requirementKey:
-          type: string
-          nullable: true
-        key:
-          type: string
-          nullable: true
-        taskOwnerKey:
-          type: string
-          nullable: true
-        dueDate:
-          type: string
-          format: date-time
-        productKeys:
-          type: array
-          items:
-            type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: OversightRequirementDetail
-    OpenApi.v1.UpdateProductProfileRequest:
-      title: OpenApi.v1.UpdateProductProfileRequest
+    OpenApi.v1.RiskLevels:
+      title: OpenApi.v1.RiskLevels
       type: object
       properties:
         productKey:
-          type: string
-          nullable: true
-        productManagerKey:
-          type: string
-          nullable: true
-        productName:
-          type: string
-          nullable: true
-        productType:
-          type: string
-          nullable: true
-        productProfileData:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ProductProfileData'
-          nullable: true
-        isActive:
-          type: boolean
-          nullable: true
-        category:
-          type: string
-          nullable: true
-        collaboratorKeys:
-          type: array
-          items:
-            type: string
-          nullable: true
-        contacts:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ProductContact'
-          nullable: true
+          type:
+          - string
+          - 'null'
+        inherentRiskKey:
+          type:
+          - string
+          - 'null'
+        residualRiskKey:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
       xml:
-        name: UpdateProductProfileRequest
-    OpenApi.v1.ProductContactPhoneNumber:
-      title: OpenApi.v1.ProductContactPhoneNumber
-      type: object
-      properties:
-        countryCodeAbbreviation:
-          type: string
-          nullable: true
-        phoneNumber:
-          type: string
-          nullable: true
-        extension:
-          type: string
-          nullable: true
-        type:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ProductContactPhoneNumber
-    OpenApi.v1.VendorProductRequest:
-      title: OpenApi.v1.VendorProductRequest
-      type: object
-      properties:
-        vendorKey:
-          type: string
-          nullable: true
-        vendorName:
-          type: string
-          nullable: true
-        productType:
-          type: string
-          nullable: true
-        productName:
-          type: string
-          nullable: true
-        productManagerKey:
-          type: string
-          nullable: true
-        isCriticalVendor:
-          type: boolean
-        isThirdParty:
-          type: boolean
-        isFourthParty:
-          type: boolean
-        annualReviewDate:
-          type: string
-          nullable: true
-        category:
-          type: string
-          nullable: true
-        businessUnits:
-          type: array
-          items:
-            type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: VendorProductRequest
-    OpenApi.v1.DeleteVendorRelationships:
-      title: OpenApi.v1.DeleteVendorRelationships
-      type: object
-      properties:
-        vendorKey:
-          type: string
-          nullable: true
-        thirdPartyVendorKeys:
-          type: array
-          items:
-            type: string
-          nullable: true
-        fourthPartyVendorKeys:
-          type: array
-          items:
-            type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: DeleteVendorRelationships
+        name: RiskLevels
     OpenApi.v1.ProfileAnswers:
       title: OpenApi.v1.ProfileAnswers
       type: object
       properties:
         vendorProfileAnswers:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OpenApi.v1.ProfileExpectedAnswers'
-          nullable: true
         productProfileAnswers:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OpenApi.v1.ProfileExpectedAnswers'
-          nullable: true
       additionalProperties: false
       xml:
         name: ProfileAnswers
-    OpenApi.v1.UpdateVendorProfileRequest:
-      title: OpenApi.v1.UpdateVendorProfileRequest
+    OpenApi.v1.ProfileExpectedAnswers:
+      title: OpenApi.v1.ProfileExpectedAnswers
+      type: object
+      properties:
+        dataFieldKey:
+          type:
+          - string
+          - 'null'
+        expectedAnswers:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+      xml:
+        name: ProfileExpectedAnswers
+    OpenApi.v1.NewProductContact:
+      title: OpenApi.v1.NewProductContact
+      type: object
+      properties:
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        phoneNumbers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ProductContactPhoneNumber'
+        emailAddress:
+          type:
+          - string
+          - 'null'
+        isPrimaryContact:
+          type: boolean
+      additionalProperties: false
+      xml:
+        name: NewProductContact
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type:
+          - string
+          - 'null'
+        resourceValue:
+          type:
+          - string
+          - 'null'
+        field:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ErrorResource
+    OpenApi.VendorRiskLevels:
+      title: OpenApi.VendorRiskLevels
       type: object
       properties:
         vendorKey:
-          type: string
-          nullable: true
-        vendorName:
-          type: string
-          nullable: true
-        vendorProfileData:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ProfileDataAnswerWithGroupIdentity'
-          nullable: true
+          type:
+          - string
+          - 'null'
+        inherentRiskKey:
+          type:
+          - string
+          - 'null'
+        residualRiskKey:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
       xml:
-        name: UpdateVendorProfileRequest
-    OpenApi.v1.Contact:
-      title: OpenApi.v1.Contact
+        name: OpenApi.VendorRiskLevels
+    OpenApi.v1.VendorProfile:
+      title: OpenApi.v1.VendorProfile
       type: object
       properties:
         key:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         contactKey:
-          type: string
-          nullable: true
-        firstName:
-          type: string
-          nullable: true
-        lastName:
-          type: string
-          nullable: true
-        phoneNumbers:
-          type: array
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        isThirdParty:
+          type: boolean
+        fourthPartyVendorKeys:
+          type:
+          - array
+          - 'null'
           items:
-            $ref: '#/components/schemas/OpenApi.v1.PhoneNumber'
-          nullable: true
-        emailAddress:
-          type: string
-          nullable: true
-        isPrimary:
+            type: string
+        isFourthParty:
           type: boolean
-        isPrimaryQuestionnaires:
+        thirdPartyVendorKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        confidenceLevel:
+          type:
+          - string
+          - 'null'
+        confidenceLevelComments:
+          type:
+          - string
+          - 'null'
+        hasVendorSpendBudgets:
           type: boolean
+        hasVendorSpendDetails:
+          type: boolean
+        vendorProfileData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ProfileDataAnswerWithGroupIdentity'
+        openRequirements:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.OversightRequirementDetail'
+        products:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ProductDetail'
+        contracts:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ContractOverview'
+        vendorRisk:
+          $ref: '#/components/schemas/OpenApi.v1.VendorRisk'
       additionalProperties: false
       xml:
-        name: Contact
+        name: VendorProfile
+    OpenApi.v1.DeleteVendorRelationships:
+      title: OpenApi.v1.DeleteVendorRelationships
+      type: object
+      properties:
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        thirdPartyVendorKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        fourthPartyVendorKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+      xml:
+        name: DeleteVendorRelationships
+    OpenApi.v1.VendorProfileDataField:
+      title: OpenApi.v1.VendorProfileDataField
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        label:
+          type:
+          - string
+          - 'null'
+        answerFormat:
+          type:
+          - string
+          - 'null'
+        vendorsAppliedTo:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        parentKey:
+          type:
+          - string
+          - 'null'
+        selectedParentOption:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: VendorProfileDataField
+    OpenApi.v1.ProductContacts:
+      title: OpenApi.v1.ProductContacts
+      type: object
+      properties:
+        productKey:
+          type:
+          - string
+          - 'null'
+        contacts:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.NewProductContact'
+      additionalProperties: false
+      xml:
+        name: ProductContacts
   securitySchemes:
     Bearer:
       type: apiKey

@@ -1,17 +1,17 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Venminder OpenApi BusinessUnit API
+  title: Venminder OpenApi Business Unit API
   version: v1
 security:
 - Bearer: []
 tags:
-- name: BusinessUnit
+- name: Business Unit
 paths:
   /api/v1/BusinessUnitInformation/GetBusinessUnits:
     get:
       tags:
-      - BusinessUnit
-      summary: Provides a list of business unit related informtion.
+      - Business Unit
+      summary: Provides a list of business unit related informtion
       description: Provides a list of business units with their assigned products and users as well as a list of unassigned products and users.
       responses:
         '200':
@@ -41,66 +41,34 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: getApiV1BusinessUnitInformationGetBusinessUnits
+      x-operation-id-source: derived
 components:
   schemas:
-    OpenApi.v1.BusinessUnitInformation:
-      title: OpenApi.v1.BusinessUnitInformation
-      type: object
-      properties:
-        businessUnits:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.BusinessUnitInfo'
-          nullable: true
-        unassignedProducts:
-          type: array
-          items:
-            type: string
-          nullable: true
-        unassignedUsers:
-          type: array
-          items:
-            type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: BusinessUnitInformation
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
-      type: object
-      properties:
-        resourceKey:
-          type: string
-          nullable: true
-        resourceValue:
-          type: string
-          nullable: true
-        field:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ErrorResource
     OpenApi.v1.BusinessUnitInfo:
       title: OpenApi.v1.BusinessUnitInfo
       type: object
       properties:
         key:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         products:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
-          nullable: true
         users:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
-          nullable: true
       additionalProperties: false
       xml:
         name: BusinessUnitInfo
@@ -112,13 +80,58 @@ components:
           type: integer
           format: int32
         errors:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
-          nullable: true
       additionalProperties: false
       xml:
         name: ErrorResponse
+    OpenApi.v1.BusinessUnitInformation:
+      title: OpenApi.v1.BusinessUnitInformation
+      type: object
+      properties:
+        businessUnits:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.BusinessUnitInfo'
+        unassignedProducts:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        unassignedUsers:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+      xml:
+        name: BusinessUnitInformation
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type:
+          - string
+          - 'null'
+        resourceValue:
+          type:
+          - string
+          - 'null'
+        field:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ErrorResource
   securitySchemes:
     Bearer:
       type: apiKey

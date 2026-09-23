@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Venminder OpenApi BusinessUnit Contracts API
+  title: Venminder OpenApi Contracts API
   version: v1
 security:
 - Bearer: []
@@ -11,7 +11,7 @@ paths:
     get:
       tags:
       - Contracts
-      summary: Provides detailed information concerning a specific contract.
+      summary: Provides detailed information concerning a specific contract
       description: Provides detailed information concerning a specific contract associated with a vendor. This will included both standard and custom metadata fields as well as a list of any modification to the contract.
       parameters:
       - name: contractKey
@@ -28,11 +28,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ContractDetails'
+      operationId: getApiV1ContractsGetDetails
+      x-operation-id-source: derived
   /api/v1/Contracts/GetHierarchy:
     get:
       tags:
       - Contracts
-      summary: Provides detailed contract hierarchy information for a vendor.
+      summary: Provides detailed contract hierarchy information for a vendor
       description: Provides detailed contract hierarchy including parent contracts, child contracts and modifications for a vendor.
       parameters:
       - name: vendorKey
@@ -60,11 +62,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: getApiV1ContractsGetHierarchy
+      x-operation-id-source: derived
   /api/v1/Contracts/GetContracts:
     get:
       tags:
       - Contracts
-      summary: Provides list of contracts for client or a specific vendor/product that is either in Ongoing or Offboarding.
+      summary: Provides list of contracts for client or a specific vendor/product that is…
       description: Provides list of contracts for client or specific vendor/product that is in Ongoing or Offboarding, taking into consideration extra filters applied as well. This will include metadata and simple data for the contract and associated product(s).
       parameters:
       - name: vendorKey
@@ -123,11 +127,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: getApiV1ContractsGetContracts
+      x-operation-id-source: derived
   /api/v1/Contracts/GetDrafts:
     get:
       tags:
       - Contracts
-      summary: Provides contract drafts information for a vendor.
+      summary: Provides contract drafts information for a vendor
       description: Provides list of contract drafts including notes for a vendor.
       parameters:
       - name: vendorKey
@@ -159,11 +165,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: getApiV1ContractsGetDrafts
+      x-operation-id-source: derived
   /api/v1/Contracts/GetDraftDetails:
     get:
       tags:
       - Contracts
-      summary: Provides contract draft details for a contract draft.
+      summary: Provides contract draft details for a contract draft
       description: Provides detailed information for contract draft including approvers, draft documents and timelines.
       parameters:
       - name: draftKey
@@ -189,11 +197,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: getApiV1ContractsGetDraftDetails
+      x-operation-id-source: derived
   /api/v1/Contracts/AddNoteToContractDraft:
     post:
       tags:
       - Contracts
-      summary: Adds a new note to an existing or new draft contract, given that FIVR and Onboarding Request pass validation and authorization checks.
+      summary: Adds a new note to an existing or new draft contract, given that FIVR and…
       description: Adds a new note to an existing or new draft contract, given that FIVR and Onboarding Request pass validation and authorization checks.
       parameters:
       - name: cultureCode
@@ -251,11 +261,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: postApiV1ContractsAddNoteToContractDraft
+      x-operation-id-source: derived
   /api/v1/Contracts/EditContract:
     post:
       tags:
       - Contracts
-      summary: Modifies basic contract details provided in the request parameter.
+      summary: Modifies basic contract details provided in the request parameter
       description: Modifies basic contract details provided in the request parameter.
       parameters:
       - name: cultureCode
@@ -297,11 +309,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: postApiV1ContractsEditContract
+      x-operation-id-source: derived
   /api/v1/Contracts/CreateContract:
     post:
       tags:
       - Contracts
-      summary: Creates a basic self-processed contract with details provided in the request parameter.
+      summary: Creates a basic self-processed contract with details provided in the request…
       description: Creates a basic self-processed contract with details provided in the request parameter.
       parameters:
       - name: cultureCode
@@ -343,11 +357,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: postApiV1ContractsCreateContract
+      x-operation-id-source: derived
   /api/v1/Contracts/EditContractCustomData:
     post:
       tags:
       - Contracts
-      summary: Updates existing custom data for the contract with the supplied contract's custom data key.
+      summary: Updates existing custom data for the contract with the supplied contract's…
       description: Updates existing custom data for the contract with the supplied contract's custom data key.
       parameters:
       - name: cultureCode
@@ -389,146 +405,293 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: postApiV1ContractsEditContractCustomData
+      x-operation-id-source: derived
 components:
   schemas:
+    OpenApi.v1.Contracts.EditClientContractUserDataRequest:
+      title: OpenApi.v1.Contracts.EditClientContractUserDataRequest
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Contracts.EditClientContractUserDataRequest
+    OpenApi.v1.ContractDetails:
+      title: OpenApi.v1.ContractDetails
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        uploadedByKey:
+          type:
+          - string
+          - 'null'
+        uploadedDate:
+          type: string
+          format: date-time
+        effectiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        term:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        expirationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        autoRenewalNoticeDays:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        firstReminderDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        firstReminderOffset:
+          type: integer
+          format: int32
+        renewalMonths:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        hasAutoRenewalClause:
+          type:
+          - boolean
+          - 'null'
+        hasSla:
+          type:
+          - boolean
+          - 'null'
+        hasNda:
+          type:
+          - boolean
+          - 'null'
+        slas:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ContractSla'
+        hasEqualOpportunityEmployment:
+          type:
+          - boolean
+          - 'null'
+        vendorSignator:
+          type:
+          - string
+          - 'null'
+        institutionSignator:
+          type:
+          - string
+          - 'null'
+        dataItems:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ContractData'
+        hasEarlyTerminationProvision:
+          type:
+          - boolean
+          - 'null'
+        hasEarlyTerminationProvisionDescription:
+          type:
+          - string
+          - 'null'
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        productKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        pricings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ContractPricing'
+        status:
+          type:
+          - string
+          - 'null'
+        active:
+          type: boolean
+        cancellationEffectiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        documents:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Document'
+        hasPricing:
+          type:
+          - boolean
+          - 'null'
+        isPerpetual:
+          type: boolean
+        contractName:
+          type:
+          - string
+          - 'null'
+        requiredNotificationDeadline:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          readOnly: true
+        modifications:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ContractModification'
+      additionalProperties: false
+      xml:
+        name: ContractDetails
+    OpenApi.v1.ContractProduct:
+      title: OpenApi.v1.ContractProduct
+      type: object
+      properties:
+        productName:
+          type:
+          - string
+          - 'null'
+        productStatus:
+          type:
+          - string
+          - 'null'
+        productKey:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ContractProduct
+    OpenApi.v1.Contracts.ApproverContact:
+      title: OpenApi.v1.Contracts.ApproverContact
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        emailAddress:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Contracts.ApproverContact
+    OpenApi.v1.Contracts.ContractDraftDetails:
+      title: OpenApi.v1.Contracts.ContractDraftDetails
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        contractName:
+          type:
+          - string
+          - 'null'
+        notes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Contracts.DraftNote'
+        draftApprovers:
+          $ref: '#/components/schemas/OpenApi.v1.Contracts.DraftApprovers'
+        draftDocuments:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Contracts.DraftDocument'
+      additionalProperties: false
+      xml:
+        name: Contracts.ContractDraftDetails
     OpenApi.v1.Contracts.DraftNote:
       title: OpenApi.v1.Contracts.DraftNote
       type: object
       properties:
         note:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         authorName:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         createdDate:
           type: string
           format: date-time
       additionalProperties: false
       xml:
         name: Contracts.DraftNote
-    OpenApi.v1.Contracts.ContractDraftInformation:
-      title: OpenApi.v1.Contracts.ContractDraftInformation
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-        contractName:
-          type: string
-          nullable: true
-        notes:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.Contracts.DraftNote'
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: Contracts.ContractDraftInformation
-    OpenApi.v1.Contracts.CreateClientContractRequest:
-      title: OpenApi.v1.Contracts.CreateClientContractRequest
-      type: object
-      properties:
-        contractName:
-          type: string
-          nullable: true
-        contractDate:
-          type: string
-          format: date-time
-          nullable: true
-        term:
-          type: integer
-          format: int32
-          nullable: true
-        expirationDate:
-          type: string
-          format: date-time
-          nullable: true
-        daysRequired:
-          type: integer
-          format: int32
-          nullable: true
-        hasAutoRenewalClause:
-          type: boolean
-          nullable: true
-        autoRenewalTerm:
-          type: integer
-          format: int32
-          nullable: true
-        vendorKey:
-          type: string
-          nullable: true
-        productKeys:
-          type: array
-          items:
-            type: string
-          nullable: true
-        isPerpetual:
-          type: boolean
-          nullable: true
-        emailSchedule:
-          type: integer
-          format: int32
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: Contracts.CreateClientContractRequest
-    OpenApi.v1.Document:
-      title: OpenApi.v1.Document
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-        fileName:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: Document
-    OpenApi.v1.Contracts.AddNoteToContractDraftRequest:
-      title: OpenApi.v1.Contracts.AddNoteToContractDraftRequest
-      type: object
-      properties:
-        draftKey:
-          type: string
-          nullable: true
-        productKey:
-          type: string
-          nullable: true
-        requestRelationshipKey:
-          type: string
-          nullable: true
-        note:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: Contracts.AddNoteToContractDraftRequest
     OpenApi.v1.Contracts.ContractHierarchyInformation:
       title: OpenApi.v1.Contracts.ContractHierarchyInformation
       type: object
       properties:
         key:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         contractName:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         status:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         expirationDate:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         firstReminderDate:
           type: string
           format: date-time
         cancellationEffectiveDate:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         isAddendumOrModification:
           type: boolean
         isPerpetual:
@@ -544,462 +707,296 @@ components:
           type: integer
           format: int32
         contractDocumentTypes:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
-          nullable: true
         products:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
-          nullable: true
         childContracts:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OpenApi.v1.Contracts.ContractHierarchyInformation'
-          nullable: true
         modifications:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OpenApi.v1.Contracts.ContractHierarchyInformation'
-          nullable: true
       additionalProperties: false
       xml:
         name: Contracts.ContractHierarchyInformation
-    OpenApi.v1.ModificationData:
-      title: OpenApi.v1.ModificationData
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: true
-        fromValue:
-          type: string
-          nullable: true
-        toValue:
-          type: string
-          nullable: true
-        isUserData:
-          type: boolean
-        sortOrder:
-          type: integer
-          format: int32
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ModificationData
-    OpenApi.v1.ContractSla:
-      title: OpenApi.v1.ContractSla
-      type: object
-      properties:
-        title:
-          type: string
-          nullable: true
-        description:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ContractSla
-    OpenApi.v1.ContractInformation:
-      title: OpenApi.v1.ContractInformation
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-        contractName:
-          type: string
-          nullable: true
-        status:
-          type: string
-          nullable: true
-        isPerpetual:
-          type: boolean
-        effectiveDate:
-          type: string
-          format: date-time
-          nullable: true
-        expirationDate:
-          type: string
-          format: date-time
-          nullable: true
-        autoRenewalNoticeDays:
-          type: integer
-          format: int32
-          nullable: true
-        requiredNotificationDeadline:
-          type: string
-          format: date-time
-          nullable: true
-          readOnly: true
-        archivedDate:
-          type: string
-          format: date-time
-          nullable: true
-        vendorName:
-          type: string
-          nullable: true
-        vendorKey:
-          type: string
-          nullable: true
-        products:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ContractProduct'
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ContractInformation
-    OpenApi.v1.Contracts.CreateDraftNoteResponseForAPI:
-      title: OpenApi.v1.Contracts.CreateDraftNoteResponseForAPI
-      type: object
-      properties:
-        draftKey:
-          type: string
-          nullable: true
-        productKey:
-          type: string
-          nullable: true
-        requestRelationshipKey:
-          type: string
-          nullable: true
-        note:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: Contracts.CreateDraftNoteResponseForAPI
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
-      type: object
-      properties:
-        resourceKey:
-          type: string
-          nullable: true
-        resourceValue:
-          type: string
-          nullable: true
-        field:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ErrorResource
-    OpenApi.v1.ContractModification:
-      title: OpenApi.v1.ContractModification
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-        uploadedByKey:
-          type: string
-          nullable: true
-        uploadedDate:
-          type: string
-          format: date-time
-        createdDate:
-          type: string
-          format: date-time
-        effectiveDate:
-          type: string
-          format: date-time
-          nullable: true
-        description:
-          type: string
-          nullable: true
-        documents:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.Document'
-          nullable: true
-        modifications:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ModificationData'
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ContractModification
-    OpenApi.v1.Contracts.EditClientContractUserDataRequest:
-      title: OpenApi.v1.Contracts.EditClientContractUserDataRequest
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-        value:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: Contracts.EditClientContractUserDataRequest
-    OpenApi.v1.Contracts.Timeline:
-      title: OpenApi.v1.Contracts.Timeline
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-        fileName:
-          type: string
-          nullable: true
-        type:
-          type: string
-          nullable: true
-        action:
-          type: string
-          nullable: true
-        versionMajor:
-          type: integer
-          format: int32
-        versionMinor:
-          type: integer
-          format: int32
-        createdBy:
-          type: string
-          nullable: true
-        createdDate:
-          type: string
-          format: date-time
-        assignedTo:
-          type: string
-          nullable: true
-        approverCustomRole:
-          type: string
-          nullable: true
-        onBehalfOfUploadedBy:
-          type: string
-          nullable: true
-        dueDate:
-          type: string
-          format: date-time
-          nullable: true
-        completedDate:
-          type: string
-          format: date-time
-          nullable: true
-        comment:
-          type: string
-          nullable: true
-        active:
-          type: boolean
-      additionalProperties: false
-      xml:
-        name: Contracts.Timeline
     OpenApi.v1.Contracts.DraftApprovers:
       title: OpenApi.v1.Contracts.DraftApprovers
       type: object
       properties:
         approverContacts:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OpenApi.v1.Contracts.ApproverContact'
-          nullable: true
         approverRoles:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
-          nullable: true
       additionalProperties: false
       xml:
         name: Contracts.DraftApprovers
+    OpenApi.v1.ContractInformation:
+      title: OpenApi.v1.ContractInformation
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        contractName:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - string
+          - 'null'
+        isPerpetual:
+          type: boolean
+        effectiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        expirationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        autoRenewalNoticeDays:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        requiredNotificationDeadline:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          readOnly: true
+        archivedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        vendorName:
+          type:
+          - string
+          - 'null'
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        products:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ContractProduct'
+      additionalProperties: false
+      xml:
+        name: ContractInformation
+    OpenApi.v1.Contracts.DraftDocument:
+      title: OpenApi.v1.Contracts.DraftDocument
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        timelines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Contracts.Timeline'
+      additionalProperties: false
+      xml:
+        name: Contracts.DraftDocument
     OpenApi.v1.Contracts.EditClientContractRequest:
       title: OpenApi.v1.Contracts.EditClientContractRequest
       type: object
       properties:
         contractName:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         contractDate:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         term:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         expirationDate:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         daysRequired:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         hasAutoRenewalClause:
-          type: boolean
-          nullable: true
+          type:
+          - boolean
+          - 'null'
         autoRenewalTerm:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         key:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         hasNda:
-          type: boolean
-          nullable: true
+          type:
+          - boolean
+          - 'null'
         hasEarlyTerminationProvision:
-          type: boolean
-          nullable: true
+          type:
+          - boolean
+          - 'null'
         earlyTerminationProvisionDescription:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         isEqualOpportunityEmployer:
-          type: boolean
-          nullable: true
+          type:
+          - boolean
+          - 'null'
         vendorSignator:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         institutionSignator:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: false
       xml:
         name: Contracts.EditClientContractRequest
-    OpenApi.v1.Contracts.ApproverContact:
-      title: OpenApi.v1.Contracts.ApproverContact
+    OpenApi.v1.Contracts.CreateDraftNoteResponseForAPI:
+      title: OpenApi.v1.Contracts.CreateDraftNoteResponseForAPI
       type: object
       properties:
-        key:
-          type: string
-          nullable: true
-        firstName:
-          type: string
-          nullable: true
-        lastName:
-          type: string
-          nullable: true
-        emailAddress:
-          type: string
-          nullable: true
+        draftKey:
+          type:
+          - string
+          - 'null'
+        productKey:
+          type:
+          - string
+          - 'null'
+        requestRelationshipKey:
+          type:
+          - string
+          - 'null'
+        note:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
       xml:
-        name: Contracts.ApproverContact
-    OpenApi.v1.ContractDetails:
-      title: OpenApi.v1.ContractDetails
+        name: Contracts.CreateDraftNoteResponseForAPI
+    OpenApi.v1.ContractData:
+      title: OpenApi.v1.ContractData
       type: object
       properties:
         key:
-          type: string
-          nullable: true
-        uploadedByKey:
-          type: string
-          nullable: true
-        uploadedDate:
-          type: string
-          format: date-time
-        effectiveDate:
-          type: string
-          format: date-time
-          nullable: true
-        term:
-          type: integer
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+        sortOrder:
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
-        expirationDate:
-          type: string
-          format: date-time
-          nullable: true
-        autoRenewalNoticeDays:
-          type: integer
-          format: int32
-          nullable: true
-        firstReminderDate:
-          type: string
-          format: date-time
-          nullable: true
-        firstReminderOffset:
-          type: integer
-          format: int32
-        renewalMonths:
-          type: integer
-          format: int32
-          nullable: true
-        hasAutoRenewalClause:
-          type: boolean
-          nullable: true
-        hasSla:
-          type: boolean
-          nullable: true
-        hasNda:
-          type: boolean
-          nullable: true
-        slas:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ContractSla'
-          nullable: true
-        hasEqualOpportunityEmployment:
-          type: boolean
-          nullable: true
-        vendorSignator:
-          type: string
-          nullable: true
-        institutionSignator:
-          type: string
-          nullable: true
-        dataItems:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ContractData'
-          nullable: true
-        hasEarlyTerminationProvision:
-          type: boolean
-          nullable: true
-        hasEarlyTerminationProvisionDescription:
-          type: string
-          nullable: true
-        vendorKey:
-          type: string
-          nullable: true
-        productKeys:
-          type: array
-          items:
-            type: string
-          nullable: true
-        pricings:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ContractPricing'
-          nullable: true
-        status:
-          type: string
-          nullable: true
-        active:
-          type: boolean
-        cancellationEffectiveDate:
-          type: string
-          format: date-time
-          nullable: true
-        documents:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.Document'
-          nullable: true
-        hasPricing:
-          type: boolean
-          nullable: true
-        isPerpetual:
-          type: boolean
+        type:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ContractData
+    OpenApi.v1.Contracts.ContractDraftInformation:
+      title: OpenApi.v1.Contracts.ContractDraftInformation
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
         contractName:
-          type: string
-          nullable: true
-        requiredNotificationDeadline:
-          type: string
-          format: date-time
-          nullable: true
-          readOnly: true
-        modifications:
-          type: array
+          type:
+          - string
+          - 'null'
+        notes:
+          type:
+          - array
+          - 'null'
           items:
-            $ref: '#/components/schemas/OpenApi.v1.ContractModification'
-          nullable: true
+            $ref: '#/components/schemas/OpenApi.v1.Contracts.DraftNote'
       additionalProperties: false
       xml:
-        name: ContractDetails
+        name: Contracts.ContractDraftInformation
+    OpenApi.v1.Contracts.AddNoteToContractDraftRequest:
+      title: OpenApi.v1.Contracts.AddNoteToContractDraftRequest
+      type: object
+      properties:
+        draftKey:
+          type:
+          - string
+          - 'null'
+        productKey:
+          type:
+          - string
+          - 'null'
+        requestRelationshipKey:
+          type:
+          - string
+          - 'null'
+        note:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Contracts.AddNoteToContractDraftRequest
     OpenApi.v1.ErrorResponse:
       title: OpenApi.v1.ErrorResponse
       type: object
@@ -1008,137 +1005,305 @@ components:
           type: integer
           format: int32
         errors:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
-          nullable: true
       additionalProperties: false
       xml:
         name: ErrorResponse
-    OpenApi.v1.Contracts.ContractDraftDetails:
-      title: OpenApi.v1.Contracts.ContractDraftDetails
+    OpenApi.v1.Document:
+      title: OpenApi.v1.Document
       type: object
       properties:
         key:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
+        fileName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Document
+    OpenApi.v1.Contracts.CreateClientContractRequest:
+      title: OpenApi.v1.Contracts.CreateClientContractRequest
+      type: object
+      properties:
         contractName:
-          type: string
-          nullable: true
-        notes:
-          type: array
+          type:
+          - string
+          - 'null'
+        contractDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        term:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        expirationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        daysRequired:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        hasAutoRenewalClause:
+          type:
+          - boolean
+          - 'null'
+        autoRenewalTerm:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        productKeys:
+          type:
+          - array
+          - 'null'
           items:
-            $ref: '#/components/schemas/OpenApi.v1.Contracts.DraftNote'
-          nullable: true
-        draftApprovers:
-          $ref: '#/components/schemas/OpenApi.v1.Contracts.DraftApprovers'
-        draftDocuments:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.Contracts.DraftDocument'
-          nullable: true
+            type: string
+        isPerpetual:
+          type:
+          - boolean
+          - 'null'
+        emailSchedule:
+          type:
+          - integer
+          - 'null'
+          format: int32
       additionalProperties: false
       xml:
-        name: Contracts.ContractDraftDetails
-    OpenApi.v1.Contracts.DraftDocument:
-      title: OpenApi.v1.Contracts.DraftDocument
+        name: Contracts.CreateClientContractRequest
+    OpenApi.v1.ContractModification:
+      title: OpenApi.v1.ContractModification
       type: object
       properties:
         key:
+          type:
+          - string
+          - 'null'
+        uploadedByKey:
+          type:
+          - string
+          - 'null'
+        uploadedDate:
           type: string
-          nullable: true
-        name:
+          format: date-time
+        createdDate:
           type: string
-          nullable: true
-        timelines:
-          type: array
+          format: date-time
+        effectiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        description:
+          type:
+          - string
+          - 'null'
+        documents:
+          type:
+          - array
+          - 'null'
           items:
-            $ref: '#/components/schemas/OpenApi.v1.Contracts.Timeline'
-          nullable: true
+            $ref: '#/components/schemas/OpenApi.v1.Document'
+        modifications:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ModificationData'
       additionalProperties: false
       xml:
-        name: Contracts.DraftDocument
+        name: ContractModification
     OpenApi.v1.ContractPricing:
       title: OpenApi.v1.ContractPricing
       type: object
       properties:
         key:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         price:
           type: number
           format: double
         item:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         period:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         productKey:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         tieredPricingFrom:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         tieredPricingTo:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         tieredPricing:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         term:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         comments:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         sortOrder:
           type: integer
           format: int32
       additionalProperties: false
       xml:
         name: ContractPricing
-    OpenApi.v1.ContractData:
-      title: OpenApi.v1.ContractData
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type:
+          - string
+          - 'null'
+        resourceValue:
+          type:
+          - string
+          - 'null'
+        field:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ErrorResource
+    OpenApi.v1.ContractSla:
+      title: OpenApi.v1.ContractSla
+      type: object
+      properties:
+        title:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ContractSla
+    OpenApi.v1.ModificationData:
+      title: OpenApi.v1.ModificationData
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        fromValue:
+          type:
+          - string
+          - 'null'
+        toValue:
+          type:
+          - string
+          - 'null'
+        isUserData:
+          type: boolean
+        sortOrder:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+      xml:
+        name: ModificationData
+    OpenApi.v1.Contracts.Timeline:
+      title: OpenApi.v1.Contracts.Timeline
       type: object
       properties:
         key:
-          type: string
-          nullable: true
-        name:
-          type: string
-          nullable: true
-        value:
-          type: string
-          nullable: true
-        sortOrder:
+          type:
+          - string
+          - 'null'
+        fileName:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        action:
+          type:
+          - string
+          - 'null'
+        versionMajor:
           type: integer
           format: int32
-          nullable: true
-        type:
+        versionMinor:
+          type: integer
+          format: int32
+        createdBy:
+          type:
+          - string
+          - 'null'
+        createdDate:
           type: string
-          nullable: true
+          format: date-time
+        assignedTo:
+          type:
+          - string
+          - 'null'
+        approverCustomRole:
+          type:
+          - string
+          - 'null'
+        onBehalfOfUploadedBy:
+          type:
+          - string
+          - 'null'
+        dueDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        completedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        comment:
+          type:
+          - string
+          - 'null'
+        active:
+          type: boolean
       additionalProperties: false
       xml:
-        name: ContractData
-    OpenApi.v1.ContractProduct:
-      title: OpenApi.v1.ContractProduct
-      type: object
-      properties:
-        productName:
-          type: string
-          nullable: true
-        productStatus:
-          type: string
-          nullable: true
-        productKey:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ContractProduct
+        name: Contracts.Timeline
   securitySchemes:
     Bearer:
       type: apiKey

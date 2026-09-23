@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Venminder OpenApi BusinessUnit Venmonitor API
+  title: Venminder OpenApi Venmonitor API
   version: v1
 security:
 - Bearer: []
@@ -46,77 +46,76 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      summary: Get api venmonitor get vendor score
+      x-summary-source: derived
+      operationId: getApiV1VenmonitorGetVendorScore
+      x-operation-id-source: derived
 components:
   schemas:
-    OpenApi.v1.Venmonitor.GetVendorScoreResponse:
-      title: OpenApi.v1.Venmonitor.GetVendorScoreResponse
-      type: object
-      properties:
-        vendorNickname:
-          type: string
-          nullable: true
-        vendorKey:
-          type: string
-          nullable: true
-        venmonitorType:
-          type: string
-          nullable: true
-        publishedDate:
-          type: string
-          format: date-time
-          nullable: true
-        lastRefreshDate:
-          type: string
-          format: date-time
-          nullable: true
-        overallScoreQuantitative:
-          type: number
-          format: double
-          nullable: true
-        overallScoreQualitative:
-          type: string
-          nullable: true
-        dataPartnerScores:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.Venmonitor.DataPartnerScore'
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: Venmonitor.GetVendorScoreResponse
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
-      type: object
-      properties:
-        resourceKey:
-          type: string
-          nullable: true
-        resourceValue:
-          type: string
-          nullable: true
-        field:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ErrorResource
     OpenApi.v1.Venmonitor.DataPartnerScore:
       title: OpenApi.v1.Venmonitor.DataPartnerScore
       type: object
       properties:
         dataPartnerName:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         normalizedScoreQuantitative:
-          type: number
+          type:
+          - number
+          - 'null'
           format: double
-          nullable: true
         normalizedScoreQualitative:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: false
       xml:
         name: Venmonitor.DataPartnerScore
+    OpenApi.v1.Venmonitor.GetVendorScoreResponse:
+      title: OpenApi.v1.Venmonitor.GetVendorScoreResponse
+      type: object
+      properties:
+        vendorNickname:
+          type:
+          - string
+          - 'null'
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        venmonitorType:
+          type:
+          - string
+          - 'null'
+        publishedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastRefreshDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        overallScoreQuantitative:
+          type:
+          - number
+          - 'null'
+          format: double
+        overallScoreQualitative:
+          type:
+          - string
+          - 'null'
+        dataPartnerScores:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Venmonitor.DataPartnerScore'
+      additionalProperties: false
+      xml:
+        name: Venmonitor.GetVendorScoreResponse
     OpenApi.v1.ErrorResponse:
       title: OpenApi.v1.ErrorResponse
       type: object
@@ -125,13 +124,33 @@ components:
           type: integer
           format: int32
         errors:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
-          nullable: true
       additionalProperties: false
       xml:
         name: ErrorResponse
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type:
+          - string
+          - 'null'
+        resourceValue:
+          type:
+          - string
+          - 'null'
+        field:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ErrorResource
   securitySchemes:
     Bearer:
       type: apiKey

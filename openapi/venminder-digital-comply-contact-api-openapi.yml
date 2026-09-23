@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Venminder OpenApi BusinessUnit Contact API
+  title: Venminder OpenApi Contact API
   version: v1
 security:
 - Bearer: []
@@ -11,7 +11,7 @@ paths:
     get:
       tags:
       - Contact
-      summary: Provides a list of internal and external contacts.
+      summary: Provides a list of internal and external contacts
       description: Provides a list of internal and external contacts. This includes name, email address, phone numbers, if contact is enrolled and active, and vendors and products the external contact is assigned to.
       responses:
         '200':
@@ -41,102 +41,45 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: getApiV1ContactGetContactList
+      x-operation-id-source: derived
 components:
   schemas:
-    OpenApi.v1.PhoneNumber:
-      title: OpenApi.v1.PhoneNumber
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
       type: object
       properties:
-        type:
-          type: string
-          nullable: true
-        areaCode:
-          type: string
-          nullable: true
-        prefix:
-          type: string
-          nullable: true
-        suffix:
-          type: string
-          nullable: true
-        extension:
-          type: string
-          nullable: true
+        resourceKey:
+          type:
+          - string
+          - 'null'
+        resourceValue:
+          type:
+          - string
+          - 'null'
+        field:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
       xml:
-        name: PhoneNumber
-    OpenApi.v1.Role:
-      title: OpenApi.v1.Role
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-        roleName:
-          type: string
-          nullable: true
-        isCustom:
-          type: boolean
-      additionalProperties: false
-      xml:
-        name: Role
-    OpenApi.v1.InternalContact:
-      title: OpenApi.v1.InternalContact
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-        isActive:
-          type: boolean
-        isEnrolled:
-          type: boolean
-        firstName:
-          type: string
-          nullable: true
-        lastName:
-          type: string
-          nullable: true
-        emailAddress:
-          type: string
-          nullable: true
-        fullName:
-          type: string
-          nullable: true
-        phoneNumbers:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.PhoneNumber'
-          nullable: true
-        createdByUserKeyOrDescription:
-          type: string
-          nullable: true
-        createdDate:
-          type: string
-          format: date-time
-          nullable: true
-        roles:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.Role'
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: InternalContact
+        name: ErrorResource
     OpenApi.v1.ContactListResponse:
       title: OpenApi.v1.ContactListResponse
       type: object
       properties:
         internalContacts:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OpenApi.v1.InternalContact'
-          nullable: true
         externalContacts:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OpenApi.v1.ExternalContact'
-          nullable: true
       additionalProperties: false
       xml:
         name: ContactListResponse
@@ -148,73 +91,163 @@ components:
           type: integer
           format: int32
         errors:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
-          nullable: true
       additionalProperties: false
       xml:
         name: ErrorResponse
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
-      type: object
-      properties:
-        resourceKey:
-          type: string
-          nullable: true
-        resourceValue:
-          type: string
-          nullable: true
-        field:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ErrorResource
     OpenApi.v1.ExternalContact:
       title: OpenApi.v1.ExternalContact
       type: object
       properties:
         addressBookKey:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         contactKey:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         firstName:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         lastName:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         fullName:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         emailAddress:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         isEnrolled:
           type: boolean
         isActive:
           type: boolean
         phoneNumbers:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OpenApi.v1.PhoneNumber'
-          nullable: true
         vendorsAppliedTo:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
-          nullable: true
         productsAppliedTo:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
-          nullable: true
       additionalProperties: false
       xml:
         name: ExternalContact
+    OpenApi.v1.Role:
+      title: OpenApi.v1.Role
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        roleName:
+          type:
+          - string
+          - 'null'
+        isCustom:
+          type: boolean
+      additionalProperties: false
+      xml:
+        name: Role
+    OpenApi.v1.PhoneNumber:
+      title: OpenApi.v1.PhoneNumber
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        areaCode:
+          type:
+          - string
+          - 'null'
+        prefix:
+          type:
+          - string
+          - 'null'
+        suffix:
+          type:
+          - string
+          - 'null'
+        extension:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: PhoneNumber
+    OpenApi.v1.InternalContact:
+      title: OpenApi.v1.InternalContact
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        isActive:
+          type: boolean
+        isEnrolled:
+          type: boolean
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        emailAddress:
+          type:
+          - string
+          - 'null'
+        fullName:
+          type:
+          - string
+          - 'null'
+        phoneNumbers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.PhoneNumber'
+        createdByUserKeyOrDescription:
+          type:
+          - string
+          - 'null'
+        createdDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        roles:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Role'
+      additionalProperties: false
+      xml:
+        name: InternalContact
   securitySchemes:
     Bearer:
       type: apiKey

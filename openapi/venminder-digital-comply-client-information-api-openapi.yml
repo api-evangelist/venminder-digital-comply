@@ -1,0 +1,451 @@
+openapi: 3.2.0
+info:
+  title: Venminder OpenApi Client Information API
+  version: v1
+security:
+- Bearer: []
+tags:
+- name: Client information
+paths:
+  /api/v1/ClientInformation/GetClientInformation:
+    get:
+      tags:
+      - Client information
+      summary: Provides a list of basic vendor and product related information
+      description: Provides high level client configuration information including a list of the vendors and the vendor's products, a list of the profile fields for each vendor, a list of all active contracts and the products with which they are associated, a list of oversight requirements and a list of users.
+      parameters:
+      - name: createdDate
+        in: query
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ClientInformation'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/OpenApi.v1.ClientInformation'
+      operationId: getApiV1ClientInformationGetClientInformation
+      x-operation-id-source: derived
+components:
+  schemas:
+    OpenApi.v1.OversightRequirement:
+      title: OpenApi.v1.OversightRequirement
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        label:
+          type:
+          - string
+          - 'null'
+        appliesToAllProducts:
+          type: boolean
+      additionalProperties: false
+      xml:
+        name: OversightRequirement
+    OpenApi.v1.RiskLevel:
+      title: OpenApi.v1.RiskLevel
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        score:
+          type: integer
+          format: int32
+      additionalProperties: false
+      xml:
+        name: RiskLevel
+    OpenApi.v1.Vendor:
+      title: OpenApi.v1.Vendor
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        isCritical:
+          type:
+          - boolean
+          - 'null'
+        isThirdParty:
+          type: boolean
+        isFourthParty:
+          type: boolean
+        confidenceLevel:
+          type:
+          - string
+          - 'null'
+        confidenceLevelComments:
+          type:
+          - string
+          - 'null'
+        products:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Product'
+        contracts:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ContractOverview'
+        hasVendorSpendBudgets:
+          type: boolean
+        hasVendorSpendDetails:
+          type: boolean
+      additionalProperties: false
+      xml:
+        name: Vendor
+    OpenApi.v1.ContractOverview:
+      title: OpenApi.v1.ContractOverview
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        isPerpetual:
+          type: boolean
+        effectiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        notificationDeadline:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        expirationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        productKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+      xml:
+        name: ContractOverview
+    OpenApi.v1.ProductProfileDataField:
+      title: OpenApi.v1.ProductProfileDataField
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        label:
+          type:
+          - string
+          - 'null'
+        answerFormat:
+          type:
+          - string
+          - 'null'
+        parentKey:
+          type:
+          - string
+          - 'null'
+        selectedParentOption:
+          type:
+          - string
+          - 'null'
+        productsAppliedTo:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+      xml:
+        name: ProductProfileDataField
+    OpenApi.v1.ValueList:
+      title: OpenApi.v1.ValueList
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        label:
+          type:
+          - string
+          - 'null'
+        dataKeyFieldLabel:
+          type:
+          - string
+          - 'null'
+        dataKeyField:
+          type:
+          - string
+          - 'null'
+        sortIndex:
+          type: integer
+          format: int32
+      additionalProperties: false
+      xml:
+        name: ValueList
+    OpenApi.v1.Role:
+      title: OpenApi.v1.Role
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        roleName:
+          type:
+          - string
+          - 'null'
+        isCustom:
+          type: boolean
+      additionalProperties: false
+      xml:
+        name: Role
+    OpenApi.v1.Product:
+      title: OpenApi.v1.Product
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        isActive:
+          type: boolean
+        productType:
+          type:
+          - string
+          - 'null'
+        category:
+          type:
+          - string
+          - 'null'
+        createdDate:
+          type: string
+          format: date-time
+      additionalProperties: false
+      xml:
+        name: Product
+    OpenApi.v1.ClientInformation:
+      title: OpenApi.v1.ClientInformation
+      type: object
+      properties:
+        vendors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Vendor'
+        vendorProfileDataFields:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.VendorProfileDataField'
+        productProfileDataFields:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ProductProfileDataField'
+        oversightRequirements:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.OversightRequirement'
+        users:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.User'
+        businessUnits:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.BusinessUnit'
+        riskLevels:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.RiskLevel'
+        valueLists:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ValueList'
+      additionalProperties: false
+      xml:
+        name: ClientInformation
+    OpenApi.v1.VendorProfileDataField:
+      title: OpenApi.v1.VendorProfileDataField
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        label:
+          type:
+          - string
+          - 'null'
+        answerFormat:
+          type:
+          - string
+          - 'null'
+        vendorsAppliedTo:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        parentKey:
+          type:
+          - string
+          - 'null'
+        selectedParentOption:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: VendorProfileDataField
+    OpenApi.v1.PhoneNumber:
+      title: OpenApi.v1.PhoneNumber
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        areaCode:
+          type:
+          - string
+          - 'null'
+        prefix:
+          type:
+          - string
+          - 'null'
+        suffix:
+          type:
+          - string
+          - 'null'
+        extension:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: PhoneNumber
+    OpenApi.v1.User:
+      title: OpenApi.v1.User
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        isActive:
+          type: boolean
+        isEnrolled:
+          type: boolean
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        emailAddress:
+          type:
+          - string
+          - 'null'
+        fullName:
+          type:
+          - string
+          - 'null'
+        phoneNumbers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.PhoneNumber'
+        createdByUserKeyOrDescription:
+          type:
+          - string
+          - 'null'
+        createdDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        roles:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Role'
+      additionalProperties: false
+      xml:
+        name: User
+    OpenApi.v1.BusinessUnit:
+      title: OpenApi.v1.BusinessUnit
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: BusinessUnit
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Please insert access token with Bearer into field eg. Bearer eyJhbGciOiJSUzI1Ni and click authorize.
+      name: Authorization
+      in: header

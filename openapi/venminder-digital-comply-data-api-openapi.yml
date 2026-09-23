@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Venminder OpenApi BusinessUnit Data API
+  title: Venminder OpenApi Data API
   version: v1
 security:
 - Bearer: []
@@ -11,7 +11,7 @@ paths:
     get:
       tags:
       - Data
-      summary: Provides a list of countries.
+      summary: Provides a list of countries
       description: Provides a list of valid countries along with their abbreviations and dialing codes.
       responses:
         '200':
@@ -25,6 +25,8 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.CountryResponse'
+      operationId: getApiV1DataCountries
+      x-operation-id-source: derived
 components:
   schemas:
     OpenApi.v1.CountryResponse:
@@ -32,14 +34,17 @@ components:
       type: object
       properties:
         abbreviation:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         country:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         dialingCode:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: false
       xml:
         name: CountryResponse

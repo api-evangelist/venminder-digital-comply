@@ -1,21 +1,7 @@
 {
   "provider": "venminder-digital-comply",
   "sources": [
-    "venminder-digital-comply-businessunit-api-openapi.yml",
-    "venminder-digital-comply-clientinformation-api-openapi.yml",
-    "venminder-digital-comply-contact-api-openapi.yml",
-    "venminder-digital-comply-contracts-api-openapi.yml",
-    "venminder-digital-comply-data-api-openapi.yml",
-    "venminder-digital-comply-documents-api-openapi.yml",
-    "venminder-digital-comply-issues-api-openapi.yml",
-    "venminder-digital-comply-oversightrequirement-api-openapi.yml",
-    "venminder-digital-comply-oversighttask-api-openapi.yml",
-    "venminder-digital-comply-questionnaire-api-openapi.yml",
-    "venminder-digital-comply-services-api-openapi.yml",
-    "venminder-digital-comply-vendoronboarding-api-openapi.yml",
-    "venminder-digital-comply-vendors-api-openapi.yml",
-    "venminder-digital-comply-vendorspend-api-openapi.yml",
-    "venminder-digital-comply-venmonitor-api-openapi.yml"
+    "_original/venminder-digital-comply-openapi-original.json"
   ],
   "outputs": [
     "venminder-digital-comply-businessunit-api-openapi.yml",
@@ -30,13 +16,51 @@
     "venminder-digital-comply-questionnaire-api-openapi.yml",
     "venminder-digital-comply-services-api-openapi.yml",
     "venminder-digital-comply-vendoronboarding-api-openapi.yml",
-    "venminder-digital-comply-vendors-api-openapi.yml",
     "venminder-digital-comply-vendorspend-api-openapi.yml",
+    "venminder-digital-comply-vendors-api-openapi.yml",
     "venminder-digital-comply-venmonitor-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 2 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "venminder-digital-comply-openapi-original.json: upgraded openapi 3.0.1 -> OpenAPI 3.2.0; renamed 4 component key(s) illegal in 3.x (e.g. OpenApi.v1.JsonPatch.JsonPatchDocument`1[[Venminder.OversightManagement.Business.Models.OversightRequirements.OversightRequirementLifecycle, Venminder.OversightManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]])",
+    "venminder-digital-comply-openapi-original.json: declared missing tag: BusinessUnit",
+    "venminder-digital-comply-openapi-original.json: declared missing tag: ClientInformation",
+    "venminder-digital-comply-openapi-original.json: declared missing tag: Contact",
+    "venminder-digital-comply-openapi-original.json: declared missing tag: Contracts",
+    "venminder-digital-comply-openapi-original.json: declared missing tag: Data",
+    "venminder-digital-comply-openapi-original.json: declared missing tag: Documents",
+    "venminder-digital-comply-openapi-original.json: declared missing tag: Issues",
+    "venminder-digital-comply-openapi-original.json: declared missing tag: OversightRequirement",
+    "venminder-digital-comply-openapi-original.json: declared missing tag: OversightTask",
+    "venminder-digital-comply-openapi-original.json: declared missing tag: Questionnaire",
+    "venminder-digital-comply-openapi-original.json: declared missing tag: Services",
+    "venminder-digital-comply-openapi-original.json: declared missing tag: VendorOnboarding",
+    "venminder-digital-comply-openapi-original.json: declared missing tag: VendorSpend",
+    "venminder-digital-comply-openapi-original.json: declared missing tag: Vendors",
+    "venminder-digital-comply-openapi-original.json: declared missing tag: Venmonitor",
+    "superseded outputs removed: venminder-digital-comply-business-unit-api-openapi.yml, venminder-digital-comply-client-information-api-openapi.yml",
+    "apis.yml register: written (+2 apis, 16 total)"
+  ],
+  "skipped": [
+    "venminder-digital-comply-business-unit-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "venminder-digital-comply-client-information-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "venminder-digital-comply-contact-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "venminder-digital-comply-contracts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "venminder-digital-comply-data-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "venminder-digital-comply-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "venminder-digital-comply-issues-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "venminder-digital-comply-oversightrequirement-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "venminder-digital-comply-oversighttask-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "venminder-digital-comply-questionnaire-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "venminder-digital-comply-services-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "venminder-digital-comply-vendoronboarding-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "venminder-digital-comply-vendors-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "venminder-digital-comply-vendorspend-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "venminder-digital-comply-venmonitor-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

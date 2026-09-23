@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Venminder OpenApi BusinessUnit Documents API
+  title: Venminder OpenApi Documents API
   version: v1
 security:
 - Bearer: []
@@ -11,7 +11,7 @@ paths:
     get:
       tags:
       - Documents
-      summary: Provides a service to download a document.
+      summary: Provides a service to download a document
       description: Provides a service to download a document stored in the Venminder platform to a local folder.
       parameters:
       - name: documentKey
@@ -34,12 +34,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: getApiV1DocumentsByDocumentKey
+      x-operation-id-source: derived
   /api/v1/Documents/GetDocumentsList:
     get:
       tags:
       - Documents
-      summary: Provides a list of documents stored in the Venminder platform.
-      description: Provides a list of documents stored in the Venminder platform filtered based on a high level category.  Some of the properties will include the file name, the upload date, associated vendor product, tags…
+      summary: Provides a list of documents stored in the Venminder platform
+      description: Provides a list of documents stored in the Venminder platform filtered based on a high level category. Some of the properties will include the file name, the upload date, associated vendor product, tags…
       parameters:
       - name: documentCategory
         in: query
@@ -73,61 +75,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OpenApi.v1.ErrorResponse'
+      operationId: getApiV1DocumentsGetDocumentsList
+      x-operation-id-source: derived
 components:
   schemas:
-    OpenApi.v1.ApiDocument:
-      title: OpenApi.v1.ApiDocument
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-        fileName:
-          type: string
-          nullable: true
-        uploadedDate:
-          type: string
-          nullable: true
-        effectiveDate:
-          type: string
-          nullable: true
-        expirationDate:
-          type: string
-          nullable: true
-        vendorKey:
-          type: string
-          nullable: true
-        isArchived:
-          type: boolean
-        productKeys:
-          type: array
-          items:
-            type: string
-          nullable: true
-        tags:
-          type: array
-          items:
-            type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ApiDocument
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
-      type: object
-      properties:
-        resourceKey:
-          type: string
-          nullable: true
-        resourceValue:
-          type: string
-          nullable: true
-        field:
-          type: string
-          nullable: true
-      additionalProperties: false
-      xml:
-        name: ErrorResource
     OpenApi.v1.ErrorResponse:
       title: OpenApi.v1.ErrorResponse
       type: object
@@ -136,13 +87,78 @@ components:
           type: integer
           format: int32
         errors:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
-          nullable: true
       additionalProperties: false
       xml:
         name: ErrorResponse
+    OpenApi.v1.ApiDocument:
+      title: OpenApi.v1.ApiDocument
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        fileName:
+          type:
+          - string
+          - 'null'
+        uploadedDate:
+          type:
+          - string
+          - 'null'
+        effectiveDate:
+          type:
+          - string
+          - 'null'
+        expirationDate:
+          type:
+          - string
+          - 'null'
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        isArchived:
+          type: boolean
+        productKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        tags:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+      xml:
+        name: ApiDocument
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type:
+          - string
+          - 'null'
+        resourceValue:
+          type:
+          - string
+          - 'null'
+        field:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ErrorResource
   securitySchemes:
     Bearer:
       type: apiKey
