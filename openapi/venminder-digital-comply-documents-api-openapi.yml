@@ -95,6 +95,25 @@ components:
       additionalProperties: false
       xml:
         name: ErrorResponse
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type:
+          - string
+          - 'null'
+        resourceValue:
+          type:
+          - string
+          - 'null'
+        field:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ErrorResource
     OpenApi.v1.ApiDocument:
       title: OpenApi.v1.ApiDocument
       type: object
@@ -140,25 +159,6 @@ components:
       additionalProperties: false
       xml:
         name: ApiDocument
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
-      type: object
-      properties:
-        resourceKey:
-          type:
-          - string
-          - 'null'
-        resourceValue:
-          type:
-          - string
-          - 'null'
-        field:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: ErrorResource
   securitySchemes:
     Bearer:
       type: apiKey

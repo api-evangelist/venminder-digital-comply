@@ -401,6 +401,405 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    OpenApi.v1.ProfileAnswers:
+      title: OpenApi.v1.ProfileAnswers
+      type: object
+      properties:
+        vendorProfileAnswers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ProfileExpectedAnswers'
+        productProfileAnswers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ProfileExpectedAnswers'
+      additionalProperties: false
+      xml:
+        name: ProfileAnswers
+    OpenApi.v1.ErrorResponse:
+      title: OpenApi.v1.ErrorResponse
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int32
+        errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
+      additionalProperties: false
+      xml:
+        name: ErrorResponse
+    OpenApi.v1.ChildQuestion:
+      title: OpenApi.v1.ChildQuestion
+      type: object
+      properties:
+        question:
+          type:
+          - string
+          - 'null'
+        questionKey:
+          type:
+          - string
+          - 'null'
+        questionResponsibility:
+          type:
+          - string
+          - 'null'
+        questionType:
+          type:
+          - string
+          - 'null'
+        parentSelectionName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ChildQuestion
+    OpenApi.v1.RiskInformation:
+      title: OpenApi.v1.RiskInformation
+      type: object
+      properties:
+        inherentRiskScore:
+          type: integer
+          format: int32
+        inherentRiskDescription:
+          type:
+          - string
+          - 'null'
+        residualRiskScore:
+          type: integer
+          format: int32
+        residualRiskDescription:
+          type:
+          - string
+          - 'null'
+        riskLevelCount:
+          type: integer
+          format: int32
+      additionalProperties: false
+      xml:
+        name: RiskInformation
+    OpenApi.v1.UpdatedAnswers:
+      title: OpenApi.v1.UpdatedAnswers
+      type: object
+      properties:
+        questionKey:
+          type:
+          - string
+          - 'null'
+        answers:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+      xml:
+        name: UpdatedAnswers
+    OpenApi.v1.OnboardingQuestion:
+      title: OpenApi.v1.OnboardingQuestion
+      type: object
+      properties:
+        question:
+          type:
+          - string
+          - 'null'
+        questionKey:
+          type:
+          - string
+          - 'null'
+        questionResponsibility:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: OnboardingQuestion
+    OpenApi.v1.VendorInfoStatusDetails:
+      title: OpenApi.v1.VendorInfoStatusDetails
+      type: object
+      properties:
+        vendorName:
+          type:
+          - string
+          - 'null'
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        productName:
+          type:
+          - string
+          - 'null'
+        productKey:
+          type:
+          - string
+          - 'null'
+        isExempt:
+          type: boolean
+        isOversightExempt:
+          type: boolean
+      additionalProperties: false
+      xml:
+        name: VendorInfoStatusDetails
+    OpenApi.v1.OnboardingRequestDataWithChild:
+      title: OpenApi.v1.OnboardingRequestDataWithChild
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        answers:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        tieredAnswers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.OnboardingRequestDataAnswer'
+      additionalProperties: false
+      xml:
+        name: OnboardingRequestDataWithChild
+    OpenApi.v1.WorkflowInformation:
+      title: OpenApi.v1.WorkflowInformation
+      type: object
+      properties:
+        workflowName:
+          type:
+          - string
+          - 'null'
+        workflowKey:
+          type:
+          - string
+          - 'null'
+        steps:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.WorkflowStepDetails'
+        isWorklfowComplete:
+          type: boolean
+        stepsCount:
+          type: integer
+          format: int32
+        completedStepsCount:
+          type: integer
+          format: int32
+      additionalProperties: false
+      xml:
+        name: WorkflowInformation
+    OpenApi.v1.VendorOnboardingInformationResponse:
+      title: OpenApi.v1.VendorOnboardingInformationResponse
+      type: object
+      properties:
+        onboardingForms:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.VendorOnboardingFormInformation'
+        requestReasons:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.OnboardingRequestReason'
+      additionalProperties: false
+      xml:
+        name: VendorOnboardingInformationResponse
+    OpenApi.v1.WorkflowStepDetails:
+      title: OpenApi.v1.WorkflowStepDetails
+      type: object
+      properties:
+        description:
+          type:
+          - string
+          - 'null'
+        isComplete:
+          type: boolean
+        completedDate:
+          type:
+          - string
+          - 'null'
+        startDate:
+          type:
+          - string
+          - 'null'
+        dueDate:
+          type:
+          - string
+          - 'null'
+        comment:
+          $ref: '#/components/schemas/OpenApi.v1.WorkflowsStepCommentDetails'
+        stepStatus:
+          type: integer
+          format: int32
+        claimedBy:
+          type:
+          - string
+          - 'null'
+        approvedBy:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: WorkflowStepDetails
+    OpenApi.v1.OnboardingRequestData:
+      title: OpenApi.v1.OnboardingRequestData
+      type: object
+      properties:
+        category:
+          type:
+          - string
+          - 'null'
+        reasonID:
+          type: integer
+          format: int32
+        productType:
+          type:
+          - string
+          - 'null'
+        deadline:
+          type:
+          - string
+          - 'null'
+        requestorKey:
+          type:
+          - string
+          - 'null'
+        isDraft:
+          type: boolean
+        relationships:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.OnboardingRelationships'
+      additionalProperties: false
+      xml:
+        name: OnboardingRequestData
+    OpenApi.v1.VendorOnboardingRequestDetail:
+      title: OpenApi.v1.VendorOnboardingRequestDetail
+      type: object
+      properties:
+        onboardingStatusDetail:
+          $ref: '#/components/schemas/OpenApi.v1.OnboardingStatusDetails'
+        onboardingDetails:
+          $ref: '#/components/schemas/OpenApi.v1.OnboardingDetailsTab'
+        sectionStatus:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.VendorOnboarding.SectionStatus'
+      additionalProperties: false
+      xml:
+        name: VendorOnboardingRequestDetail
+    OpenApi.v1.OnboardingResponse:
+      title: OpenApi.v1.OnboardingResponse
+      type: object
+      properties:
+        relationshipKey:
+          type:
+          - string
+          - 'null'
+        vendorName:
+          type:
+          - string
+          - 'null'
+        productName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: OnboardingResponse
+    OpenApi.v1.VendorOnboardingFormInformation:
+      title: OpenApi.v1.VendorOnboardingFormInformation
+      type: object
+      properties:
+        formName:
+          type:
+          - string
+          - 'null'
+        formKey:
+          type:
+          - string
+          - 'null'
+        categories:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        formType:
+          type:
+          - string
+          - 'null'
+        isActive:
+          type: boolean
+        lastEditedBy:
+          type:
+          - string
+          - 'null'
+        lastEditedDate:
+          type: string
+          format: date-time
+        lastEditedByKey:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: VendorOnboardingFormInformation
+    OpenApi.v1.OnboardingQuestionWithChildren:
+      title: OpenApi.v1.OnboardingQuestionWithChildren
+      type: object
+      properties:
+        question:
+          type:
+          - string
+          - 'null'
+        questionKey:
+          type:
+          - string
+          - 'null'
+        questionResponsibility:
+          type:
+          - string
+          - 'null'
+        dataFieldKey:
+          type:
+          - string
+          - 'null'
+        questionType:
+          type:
+          - string
+          - 'null'
+        childQuestions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ChildQuestion'
+      additionalProperties: false
+      xml:
+        name: OnboardingQuestionWithChildren
     OpenApi.v1.OnboardingDetailsTab:
       title: OpenApi.v1.OnboardingDetailsTab
       type: object
@@ -426,25 +825,6 @@ components:
       additionalProperties: false
       xml:
         name: OnboardingDetailsTab
-    OpenApi.v1.VendorOnboardingInformationResponse:
-      title: OpenApi.v1.VendorOnboardingInformationResponse
-      type: object
-      properties:
-        onboardingForms:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.VendorOnboardingFormInformation'
-        requestReasons:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.OnboardingRequestReason'
-      additionalProperties: false
-      xml:
-        name: VendorOnboardingInformationResponse
     OpenApi.v1.OnboardingRelationships:
       title: OpenApi.v1.OnboardingRelationships
       type: object
@@ -486,63 +866,25 @@ components:
       additionalProperties: false
       xml:
         name: OnboardingRelationships
-    OpenApi.v1.VendorOnboardingFormInformation:
-      title: OpenApi.v1.VendorOnboardingFormInformation
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
       type: object
       properties:
-        formName:
+        resourceKey:
           type:
           - string
           - 'null'
-        formKey:
+        resourceValue:
           type:
           - string
           - 'null'
-        categories:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        formType:
-          type:
-          - string
-          - 'null'
-        isActive:
-          type: boolean
-        lastEditedBy:
-          type:
-          - string
-          - 'null'
-        lastEditedDate:
-          type: string
-          format: date-time
-        lastEditedByKey:
+        field:
           type:
           - string
           - 'null'
       additionalProperties: false
       xml:
-        name: VendorOnboardingFormInformation
-    OpenApi.v1.OnboardingResponse:
-      title: OpenApi.v1.OnboardingResponse
-      type: object
-      properties:
-        relationshipKey:
-          type:
-          - string
-          - 'null'
-        vendorName:
-          type:
-          - string
-          - 'null'
-        productName:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: OnboardingResponse
+        name: ErrorResource
     OpenApi.v1.AdditionalRelationships:
       title: OpenApi.v1.AdditionalRelationships
       type: object
@@ -562,156 +904,6 @@ components:
       additionalProperties: false
       xml:
         name: AdditionalRelationships
-    OpenApi.v1.OnboardingRequestDataWithChild:
-      title: OpenApi.v1.OnboardingRequestDataWithChild
-      type: object
-      properties:
-        key:
-          type:
-          - string
-          - 'null'
-        answers:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        tieredAnswers:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.OnboardingRequestDataAnswer'
-      additionalProperties: false
-      xml:
-        name: OnboardingRequestDataWithChild
-    OpenApi.v1.OnboardingQuestionWithChildren:
-      title: OpenApi.v1.OnboardingQuestionWithChildren
-      type: object
-      properties:
-        question:
-          type:
-          - string
-          - 'null'
-        questionKey:
-          type:
-          - string
-          - 'null'
-        questionResponsibility:
-          type:
-          - string
-          - 'null'
-        dataFieldKey:
-          type:
-          - string
-          - 'null'
-        questionType:
-          type:
-          - string
-          - 'null'
-        childQuestions:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ChildQuestion'
-      additionalProperties: false
-      xml:
-        name: OnboardingQuestionWithChildren
-    OpenApi.v1.UpdatedAnswers:
-      title: OpenApi.v1.UpdatedAnswers
-      type: object
-      properties:
-        questionKey:
-          type:
-          - string
-          - 'null'
-        answers:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-      additionalProperties: false
-      xml:
-        name: UpdatedAnswers
-    OpenApi.v1.OnboardingRiskQuestion:
-      title: OpenApi.v1.OnboardingRiskQuestion
-      type: object
-      properties:
-        question:
-          type:
-          - string
-          - 'null'
-        questionKey:
-          type:
-          - string
-          - 'null'
-        questionResponsibility:
-          type:
-          - string
-          - 'null'
-        isPrevailing:
-          type: boolean
-      additionalProperties: false
-      xml:
-        name: OnboardingRiskQuestion
-    OpenApi.v1.VendorInfoStatusDetails:
-      title: OpenApi.v1.VendorInfoStatusDetails
-      type: object
-      properties:
-        vendorName:
-          type:
-          - string
-          - 'null'
-        vendorKey:
-          type:
-          - string
-          - 'null'
-        productName:
-          type:
-          - string
-          - 'null'
-        productKey:
-          type:
-          - string
-          - 'null'
-        isExempt:
-          type: boolean
-        isOversightExempt:
-          type: boolean
-      additionalProperties: false
-      xml:
-        name: VendorInfoStatusDetails
-    OpenApi.v1.WorkflowInformation:
-      title: OpenApi.v1.WorkflowInformation
-      type: object
-      properties:
-        workflowName:
-          type:
-          - string
-          - 'null'
-        workflowKey:
-          type:
-          - string
-          - 'null'
-        steps:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.WorkflowStepDetails'
-        isWorklfowComplete:
-          type: boolean
-        stepsCount:
-          type: integer
-          format: int32
-        completedStepsCount:
-          type: integer
-          format: int32
-      additionalProperties: false
-      xml:
-        name: WorkflowInformation
     OpenApi.v1.OnboardingFormDetails:
       title: OpenApi.v1.OnboardingFormDetails
       type: object
@@ -757,301 +949,6 @@ components:
       additionalProperties: false
       xml:
         name: OnboardingFormDetails
-    OpenApi.v1.OnboardingRequestData:
-      title: OpenApi.v1.OnboardingRequestData
-      type: object
-      properties:
-        category:
-          type:
-          - string
-          - 'null'
-        reasonID:
-          type: integer
-          format: int32
-        productType:
-          type:
-          - string
-          - 'null'
-        deadline:
-          type:
-          - string
-          - 'null'
-        requestorKey:
-          type:
-          - string
-          - 'null'
-        isDraft:
-          type: boolean
-        relationships:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.OnboardingRelationships'
-      additionalProperties: false
-      xml:
-        name: OnboardingRequestData
-    OpenApi.v1.RiskInformation:
-      title: OpenApi.v1.RiskInformation
-      type: object
-      properties:
-        inherentRiskScore:
-          type: integer
-          format: int32
-        inherentRiskDescription:
-          type:
-          - string
-          - 'null'
-        residualRiskScore:
-          type: integer
-          format: int32
-        residualRiskDescription:
-          type:
-          - string
-          - 'null'
-        riskLevelCount:
-          type: integer
-          format: int32
-      additionalProperties: false
-      xml:
-        name: RiskInformation
-    OpenApi.v1.OnboardingQuestion:
-      title: OpenApi.v1.OnboardingQuestion
-      type: object
-      properties:
-        question:
-          type:
-          - string
-          - 'null'
-        questionKey:
-          type:
-          - string
-          - 'null'
-        questionResponsibility:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: OnboardingQuestion
-    OpenApi.v1.OnboardingNote:
-      title: OpenApi.v1.OnboardingNote
-      type: object
-      properties:
-        date:
-          type: string
-          format: date-time
-        author:
-          type:
-          - string
-          - 'null'
-        description:
-          type:
-          - string
-          - 'null'
-        isEditable:
-          type: boolean
-      additionalProperties: false
-      xml:
-        name: OnboardingNote
-    OpenApi.v1.VendorOnboardingRequestDetail:
-      title: OpenApi.v1.VendorOnboardingRequestDetail
-      type: object
-      properties:
-        onboardingStatusDetail:
-          $ref: '#/components/schemas/OpenApi.v1.OnboardingStatusDetails'
-        onboardingDetails:
-          $ref: '#/components/schemas/OpenApi.v1.OnboardingDetailsTab'
-        sectionStatus:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.VendorOnboarding.SectionStatus'
-      additionalProperties: false
-      xml:
-        name: VendorOnboardingRequestDetail
-    OpenApi.v1.ChildQuestion:
-      title: OpenApi.v1.ChildQuestion
-      type: object
-      properties:
-        question:
-          type:
-          - string
-          - 'null'
-        questionKey:
-          type:
-          - string
-          - 'null'
-        questionResponsibility:
-          type:
-          - string
-          - 'null'
-        questionType:
-          type:
-          - string
-          - 'null'
-        parentSelectionName:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: ChildQuestion
-    OpenApi.v1.ErrorResponse:
-      title: OpenApi.v1.ErrorResponse
-      type: object
-      properties:
-        statusCode:
-          type: integer
-          format: int32
-        errors:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
-      additionalProperties: false
-      xml:
-        name: ErrorResponse
-    OpenApi.v1.ProfileAnswers:
-      title: OpenApi.v1.ProfileAnswers
-      type: object
-      properties:
-        vendorProfileAnswers:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ProfileExpectedAnswers'
-        productProfileAnswers:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ProfileExpectedAnswers'
-      additionalProperties: false
-      xml:
-        name: ProfileAnswers
-    OpenApi.v1.ProfileExpectedAnswers:
-      title: OpenApi.v1.ProfileExpectedAnswers
-      type: object
-      properties:
-        dataFieldKey:
-          type:
-          - string
-          - 'null'
-        expectedAnswers:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-      additionalProperties: false
-      xml:
-        name: ProfileExpectedAnswers
-    OpenApi.v1.OnboardingStatusDetails:
-      title: OpenApi.v1.OnboardingStatusDetails
-      type: object
-      properties:
-        isIncumbentVendor:
-          type: boolean
-        currentProductManagerKey:
-          type:
-          - string
-          - 'null'
-        request:
-          $ref: '#/components/schemas/OpenApi.v1.ReqInfo'
-        vendorInformation:
-          $ref: '#/components/schemas/OpenApi.v1.VendorInfoStatusDetails'
-        riskInformation:
-          $ref: '#/components/schemas/OpenApi.v1.RiskInformation'
-        notes:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.OnboardingNote'
-        workflowDetails:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.WorkflowInformation'
-      additionalProperties: false
-      xml:
-        name: OnboardingStatusDetails
-    OpenApi.v1.ReqInfo:
-      title: OpenApi.v1.ReqInfo
-      type: object
-      properties:
-        requestKey:
-          type:
-          - string
-          - 'null'
-        requestorName:
-          type:
-          - string
-          - 'null'
-        requestorKey:
-          type:
-          - string
-          - 'null'
-        requestDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        requestReason:
-          type:
-          - string
-          - 'null'
-        requestReasonID:
-          type:
-          - string
-          - 'null'
-        deadlineDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        vmoManagerName:
-          type:
-          - string
-          - 'null'
-        vmoManagerKey:
-          type:
-          - string
-          - 'null'
-        statusID:
-          type: integer
-          format: int32
-        status:
-          type:
-          - string
-          - 'null'
-        approvedOrDeclinedDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        isCategoryExempted:
-          type: boolean
-        category:
-          type:
-          - string
-          - 'null'
-        areMultipleVendorsInRequest:
-          type: boolean
-        otherRelationshipsInRequest:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.AdditionalRelationships'
-      additionalProperties: false
-      xml:
-        name: ReqInfo
     OpenApi.v1.OnboardingRequestDataAnswer:
       title: OpenApi.v1.OnboardingRequestDataAnswer
       type: object
@@ -1069,42 +966,24 @@ components:
       additionalProperties: false
       xml:
         name: OnboardingRequestDataAnswer
-    OpenApi.v1.EditOnboardingRelationshipQuestionsRequest:
-      title: OpenApi.v1.EditOnboardingRelationshipQuestionsRequest
+    OpenApi.v1.WorkflowsStepCommentDetails:
+      title: OpenApi.v1.WorkflowsStepCommentDetails
       type: object
       properties:
-        relationshipKey:
+        note:
           type:
           - string
           - 'null'
-        details:
+        creator:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.UpdatedAnswers'
+        createdDate:
+          type: string
+          format: date-time
       additionalProperties: false
       xml:
-        name: EditOnboardingRelationshipQuestionsRequest
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
-      type: object
-      properties:
-        resourceKey:
-          type:
-          - string
-          - 'null'
-        resourceValue:
-          type:
-          - string
-          - 'null'
-        field:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: ErrorResource
+        name: WorkflowsStepCommentDetails
     OpenApi.v1.VendorOnboardingRequestModel:
       title: OpenApi.v1.VendorOnboardingRequestModel
       type: object
@@ -1223,6 +1102,58 @@ components:
       additionalProperties: false
       xml:
         name: OnboardingQuestionAnswer
+    OpenApi.v1.OnboardingRiskQuestion:
+      title: OpenApi.v1.OnboardingRiskQuestion
+      type: object
+      properties:
+        question:
+          type:
+          - string
+          - 'null'
+        questionKey:
+          type:
+          - string
+          - 'null'
+        questionResponsibility:
+          type:
+          - string
+          - 'null'
+        isPrevailing:
+          type: boolean
+      additionalProperties: false
+      xml:
+        name: OnboardingRiskQuestion
+    OpenApi.v1.OnboardingStatusDetails:
+      title: OpenApi.v1.OnboardingStatusDetails
+      type: object
+      properties:
+        isIncumbentVendor:
+          type: boolean
+        currentProductManagerKey:
+          type:
+          - string
+          - 'null'
+        request:
+          $ref: '#/components/schemas/OpenApi.v1.ReqInfo'
+        vendorInformation:
+          $ref: '#/components/schemas/OpenApi.v1.VendorInfoStatusDetails'
+        riskInformation:
+          $ref: '#/components/schemas/OpenApi.v1.RiskInformation'
+        notes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.OnboardingNote'
+        workflowDetails:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.WorkflowInformation'
+      additionalProperties: false
+      xml:
+        name: OnboardingStatusDetails
     OpenApi.v1.VendorOnboardingRequest:
       title: OpenApi.v1.VendorOnboardingRequest
       type: object
@@ -1239,60 +1170,6 @@ components:
       additionalProperties: false
       xml:
         name: VendorOnboardingRequest
-    OpenApi.v1.WorkflowStepDetails:
-      title: OpenApi.v1.WorkflowStepDetails
-      type: object
-      properties:
-        description:
-          type:
-          - string
-          - 'null'
-        isComplete:
-          type: boolean
-        completedDate:
-          type:
-          - string
-          - 'null'
-        startDate:
-          type:
-          - string
-          - 'null'
-        dueDate:
-          type:
-          - string
-          - 'null'
-        comment:
-          $ref: '#/components/schemas/OpenApi.v1.WorkflowsStepCommentDetails'
-        stepStatus:
-          type: integer
-          format: int32
-        claimedBy:
-          type:
-          - string
-          - 'null'
-        approvedBy:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: WorkflowStepDetails
-    OpenApi.v1.OnboardingRequestReason:
-      title: OpenApi.v1.OnboardingRequestReason
-      type: object
-      properties:
-        reasonID:
-          type: integer
-          format: int32
-        reason:
-          type:
-          - string
-          - 'null'
-        isCustomReason:
-          type: boolean
-      additionalProperties: false
-      xml:
-        name: OnboardingRequestReason
     OpenApi.v1.VendorOnboarding.SectionStatus:
       title: OpenApi.v1.VendorOnboarding.SectionStatus
       type: object
@@ -1331,24 +1208,147 @@ components:
       additionalProperties: false
       xml:
         name: VendorOnboarding.SectionStatus
-    OpenApi.v1.WorkflowsStepCommentDetails:
-      title: OpenApi.v1.WorkflowsStepCommentDetails
+    OpenApi.v1.ReqInfo:
+      title: OpenApi.v1.ReqInfo
       type: object
       properties:
-        note:
+        requestKey:
           type:
           - string
           - 'null'
-        creator:
+        requestorName:
           type:
           - string
           - 'null'
-        createdDate:
-          type: string
+        requestorKey:
+          type:
+          - string
+          - 'null'
+        requestDate:
+          type:
+          - string
+          - 'null'
           format: date-time
+        requestReason:
+          type:
+          - string
+          - 'null'
+        requestReasonID:
+          type:
+          - string
+          - 'null'
+        deadlineDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        vmoManagerName:
+          type:
+          - string
+          - 'null'
+        vmoManagerKey:
+          type:
+          - string
+          - 'null'
+        statusID:
+          type: integer
+          format: int32
+        status:
+          type:
+          - string
+          - 'null'
+        approvedOrDeclinedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isCategoryExempted:
+          type: boolean
+        category:
+          type:
+          - string
+          - 'null'
+        areMultipleVendorsInRequest:
+          type: boolean
+        otherRelationshipsInRequest:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.AdditionalRelationships'
       additionalProperties: false
       xml:
-        name: WorkflowsStepCommentDetails
+        name: ReqInfo
+    OpenApi.v1.OnboardingRequestReason:
+      title: OpenApi.v1.OnboardingRequestReason
+      type: object
+      properties:
+        reasonID:
+          type: integer
+          format: int32
+        reason:
+          type:
+          - string
+          - 'null'
+        isCustomReason:
+          type: boolean
+      additionalProperties: false
+      xml:
+        name: OnboardingRequestReason
+    OpenApi.v1.ProfileExpectedAnswers:
+      title: OpenApi.v1.ProfileExpectedAnswers
+      type: object
+      properties:
+        dataFieldKey:
+          type:
+          - string
+          - 'null'
+        expectedAnswers:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+      xml:
+        name: ProfileExpectedAnswers
+    OpenApi.v1.EditOnboardingRelationshipQuestionsRequest:
+      title: OpenApi.v1.EditOnboardingRelationshipQuestionsRequest
+      type: object
+      properties:
+        relationshipKey:
+          type:
+          - string
+          - 'null'
+        details:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.UpdatedAnswers'
+      additionalProperties: false
+      xml:
+        name: EditOnboardingRelationshipQuestionsRequest
+    OpenApi.v1.OnboardingNote:
+      title: OpenApi.v1.OnboardingNote
+      type: object
+      properties:
+        date:
+          type: string
+          format: date-time
+        author:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        isEditable:
+          type: boolean
+      additionalProperties: false
+      xml:
+        name: OnboardingNote
   securitySchemes:
     Bearer:
       type: apiKey

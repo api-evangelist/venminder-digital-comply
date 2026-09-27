@@ -196,6 +196,22 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    OpenApi.v1.ErrorResponse:
+      title: OpenApi.v1.ErrorResponse
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int32
+        errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
+      additionalProperties: false
+      xml:
+        name: ErrorResponse
     OpenApi.v1.Questionnaire.QuestionnaireResponse:
       title: OpenApi.v1.Questionnaire.QuestionnaireResponse
       type: object
@@ -336,6 +352,34 @@ components:
       additionalProperties: false
       xml:
         name: Questionnaire.ChangeLog
+    OpenApi.v1.Questionnaire.AvailableResponse:
+      title: OpenApi.v1.Questionnaire.AvailableResponse
+      type: object
+      properties:
+        response:
+          type:
+          - string
+          - 'null'
+        points:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Questionnaire.AvailableResponse
+    OpenApi.v1.Questionnaire.QuestionScore:
+      title: OpenApi.v1.Questionnaire.QuestionScore
+      type: object
+      properties:
+        appliedPoints:
+          type: integer
+          format: int32
+        maxPoints:
+          type: integer
+          format: int32
+      additionalProperties: false
+      xml:
+        name: Questionnaire.QuestionScore
     OpenApi.v1.ErrorResource:
       title: OpenApi.v1.ErrorResource
       type: object
@@ -355,6 +399,78 @@ components:
       additionalProperties: false
       xml:
         name: ErrorResource
+    OpenApi.v1.Questionnaire.SectionWithScore:
+      title: OpenApi.v1.Questionnaire.SectionWithScore
+      type: object
+      properties:
+        questions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Questionnaire.QuestionWithScore'
+        name:
+          type:
+          - string
+          - 'null'
+        sectionRiskLevel:
+          type:
+          - string
+          - 'null'
+        sectionScore:
+          $ref: '#/components/schemas/OpenApi.v1.Questionnaire.ScoreValues'
+      additionalProperties: false
+      xml:
+        name: Questionnaire.SectionWithScore
+    OpenApi.v1.Questionnaire.QuestionWithScore:
+      title: OpenApi.v1.Questionnaire.QuestionWithScore
+      type: object
+      properties:
+        question:
+          type:
+          - string
+          - 'null'
+        questionNumber:
+          type:
+          - string
+          - 'null'
+        serialNumber:
+          type:
+          - string
+          - 'null'
+        questionScore:
+          $ref: '#/components/schemas/OpenApi.v1.Questionnaire.QuestionScore'
+        answer:
+          type:
+          - string
+          - 'null'
+        isIssueCreated:
+          type: boolean
+        recipientAttachmentKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        availableResponses:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Questionnaire.AvailableResponse'
+        additionalComments:
+          type:
+          - string
+          - 'null'
+        childQuestions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Questionnaire.QuestionWithScore'
+      additionalProperties: false
+      xml:
+        name: Questionnaire.QuestionWithScore
     OpenApi.v1.Questionnaire.QuestionnaireWithScore:
       title: OpenApi.v1.Questionnaire.QuestionnaireWithScore
       type: object
@@ -409,22 +525,6 @@ components:
       additionalProperties: false
       xml:
         name: Questionnaire.QuestionnaireWithScore
-    OpenApi.v1.ErrorResponse:
-      title: OpenApi.v1.ErrorResponse
-      type: object
-      properties:
-        statusCode:
-          type: integer
-          format: int32
-        errors:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
-      additionalProperties: false
-      xml:
-        name: ErrorResponse
     OpenApi.v1.Questionnaire.QuestionnaireLibraryData:
       title: OpenApi.v1.Questionnaire.QuestionnaireLibraryData
       type: object
@@ -474,42 +574,6 @@ components:
       additionalProperties: false
       xml:
         name: Questionnaire.QuestionnaireLibraryData
-    OpenApi.v1.Questionnaire.QuestionScore:
-      title: OpenApi.v1.Questionnaire.QuestionScore
-      type: object
-      properties:
-        appliedPoints:
-          type: integer
-          format: int32
-        maxPoints:
-          type: integer
-          format: int32
-      additionalProperties: false
-      xml:
-        name: Questionnaire.QuestionScore
-    OpenApi.v1.Questionnaire.SectionWithScore:
-      title: OpenApi.v1.Questionnaire.SectionWithScore
-      type: object
-      properties:
-        questions:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.Questionnaire.QuestionWithScore'
-        name:
-          type:
-          - string
-          - 'null'
-        sectionRiskLevel:
-          type:
-          - string
-          - 'null'
-        sectionScore:
-          $ref: '#/components/schemas/OpenApi.v1.Questionnaire.ScoreValues'
-      additionalProperties: false
-      xml:
-        name: Questionnaire.SectionWithScore
     OpenApi.v1.Questionnaire.ScoreValues:
       title: OpenApi.v1.Questionnaire.ScoreValues
       type: object
@@ -528,97 +592,6 @@ components:
       additionalProperties: false
       xml:
         name: Questionnaire.ScoreValues
-    OpenApi.v1.Questionnaire.AvailableResponse:
-      title: OpenApi.v1.Questionnaire.AvailableResponse
-      type: object
-      properties:
-        response:
-          type:
-          - string
-          - 'null'
-        points:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: Questionnaire.AvailableResponse
-    OpenApi.v1.Questionnaire.QuestionnaireFilterJsonRequest:
-      title: OpenApi.v1.Questionnaire.QuestionnaireFilterJsonRequest
-      type: object
-      properties:
-        searchText:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - string
-          - 'null'
-        sentDate:
-          type:
-          - string
-          - 'null'
-        deadline:
-          type:
-          - string
-          - 'null'
-        completedDate:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: Questionnaire.QuestionnaireFilterJsonRequest
-    OpenApi.v1.Questionnaire.QuestionWithScore:
-      title: OpenApi.v1.Questionnaire.QuestionWithScore
-      type: object
-      properties:
-        question:
-          type:
-          - string
-          - 'null'
-        questionNumber:
-          type:
-          - string
-          - 'null'
-        serialNumber:
-          type:
-          - string
-          - 'null'
-        questionScore:
-          $ref: '#/components/schemas/OpenApi.v1.Questionnaire.QuestionScore'
-        answer:
-          type:
-          - string
-          - 'null'
-        isIssueCreated:
-          type: boolean
-        recipientAttachmentKeys:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        availableResponses:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.Questionnaire.AvailableResponse'
-        additionalComments:
-          type:
-          - string
-          - 'null'
-        childQuestions:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.Questionnaire.QuestionWithScore'
-      additionalProperties: false
-      xml:
-        name: Questionnaire.QuestionWithScore
     OpenApi.v1.Questionnaire.QuestionnaireRequestEmailLog:
       title: OpenApi.v1.Questionnaire.QuestionnaireRequestEmailLog
       type: object
@@ -653,6 +626,33 @@ components:
       additionalProperties: false
       xml:
         name: Questionnaire.QuestionnaireRequestEmailLog
+    OpenApi.v1.Questionnaire.QuestionnaireFilterJsonRequest:
+      title: OpenApi.v1.Questionnaire.QuestionnaireFilterJsonRequest
+      type: object
+      properties:
+        searchText:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - string
+          - 'null'
+        sentDate:
+          type:
+          - string
+          - 'null'
+        deadline:
+          type:
+          - string
+          - 'null'
+        completedDate:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Questionnaire.QuestionnaireFilterJsonRequest
   securitySchemes:
     Bearer:
       type: apiKey

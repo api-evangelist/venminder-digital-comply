@@ -96,6 +96,37 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    OpenApi.v1.ErrorResponse:
+      title: OpenApi.v1.ErrorResponse
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int32
+        errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
+      additionalProperties: false
+      xml:
+        name: ErrorResponse
+    OpenApi.v1.Oversight.OpenApiOversightContact:
+      title: OpenApi.v1.Oversight.OpenApiOversightContact
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOversightContact
     OpenApi.v1.ErrorResource:
       title: OpenApi.v1.ErrorResource
       type: object
@@ -115,21 +146,55 @@ components:
       additionalProperties: false
       xml:
         name: ErrorResource
-    OpenApi.v1.Oversight.OpenApiOversightContact:
-      title: OpenApi.v1.Oversight.OpenApiOversightContact
+    OpenApi.v1.Oversight.Request.GetOversightRequirementListRequest:
+      title: OpenApi.v1.Oversight.Request.GetOversightRequirementListRequest
       type: object
       properties:
-        key:
+        lifecycles:
           type:
-          - string
+          - array
           - 'null'
-        name:
+          items:
+            type: string
+        defaultTaskOwnerKeys:
           type:
-          - string
+          - array
           - 'null'
+          items:
+            type: string
+        defaultApproverKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        keys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        isOneTimeRequirement:
+          type:
+          - boolean
+          - 'null'
+        isSoc:
+          type:
+          - boolean
+          - 'null'
+        willNotifyAdminWhenOverdue:
+          type:
+          - boolean
+          - 'null'
+        requirementLevel:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
       additionalProperties: false
       xml:
-        name: Oversight.OpenApiOversightContact
+        name: Oversight.Request.GetOversightRequirementListRequest
     OpenApi.v1.Oversight.OpenApiOversightRequirementLifecycle:
       title: OpenApi.v1.Oversight.OpenApiOversightRequirementLifecycle
       type: object
@@ -145,22 +210,6 @@ components:
       additionalProperties: false
       xml:
         name: Oversight.OpenApiOversightRequirementLifecycle
-    OpenApi.v1.ErrorResponse:
-      title: OpenApi.v1.ErrorResponse
-      type: object
-      properties:
-        statusCode:
-          type: integer
-          format: int32
-        errors:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
-      additionalProperties: false
-      xml:
-        name: ErrorResponse
     OpenApi.v1.Oversight.OpenApiOversightTaskOwner:
       title: OpenApi.v1.Oversight.OpenApiOversightTaskOwner
       type: object
@@ -222,55 +271,6 @@ components:
       additionalProperties: false
       xml:
         name: Oversight.OpenApiOversightRequirement
-    OpenApi.v1.Oversight.Request.GetOversightRequirementListRequest:
-      title: OpenApi.v1.Oversight.Request.GetOversightRequirementListRequest
-      type: object
-      properties:
-        lifecycles:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        defaultTaskOwnerKeys:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        defaultApproverKeys:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        keys:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        isOneTimeRequirement:
-          type:
-          - boolean
-          - 'null'
-        isSoc:
-          type:
-          - boolean
-          - 'null'
-        willNotifyAdminWhenOverdue:
-          type:
-          - boolean
-          - 'null'
-        requirementLevel:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-      additionalProperties: false
-      xml:
-        name: Oversight.Request.GetOversightRequirementListRequest
   securitySchemes:
     Bearer:
       type: apiKey

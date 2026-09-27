@@ -52,26 +52,41 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    OpenApi.v1.Venmonitor.DataPartnerScore:
-      title: OpenApi.v1.Venmonitor.DataPartnerScore
+    OpenApi.v1.ErrorResponse:
+      title: OpenApi.v1.ErrorResponse
       type: object
       properties:
-        dataPartnerName:
+        statusCode:
+          type: integer
+          format: int32
+        errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
+      additionalProperties: false
+      xml:
+        name: ErrorResponse
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
           type:
           - string
           - 'null'
-        normalizedScoreQuantitative:
+        resourceValue:
           type:
-          - number
+          - string
           - 'null'
-          format: double
-        normalizedScoreQualitative:
+        field:
           type:
           - string
           - 'null'
       additionalProperties: false
       xml:
-        name: Venmonitor.DataPartnerScore
+        name: ErrorResource
     OpenApi.v1.Venmonitor.GetVendorScoreResponse:
       title: OpenApi.v1.Venmonitor.GetVendorScoreResponse
       type: object
@@ -116,41 +131,26 @@ components:
       additionalProperties: false
       xml:
         name: Venmonitor.GetVendorScoreResponse
-    OpenApi.v1.ErrorResponse:
-      title: OpenApi.v1.ErrorResponse
+    OpenApi.v1.Venmonitor.DataPartnerScore:
+      title: OpenApi.v1.Venmonitor.DataPartnerScore
       type: object
       properties:
-        statusCode:
-          type: integer
-          format: int32
-        errors:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
-      additionalProperties: false
-      xml:
-        name: ErrorResponse
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
-      type: object
-      properties:
-        resourceKey:
+        dataPartnerName:
           type:
           - string
           - 'null'
-        resourceValue:
+        normalizedScoreQuantitative:
           type:
-          - string
+          - number
           - 'null'
-        field:
+          format: double
+        normalizedScoreQualitative:
           type:
           - string
           - 'null'
       additionalProperties: false
       xml:
-        name: ErrorResource
+        name: Venmonitor.DataPartnerScore
   securitySchemes:
     Bearer:
       type: apiKey

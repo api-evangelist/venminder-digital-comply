@@ -83,6 +83,22 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    OpenApi.v1.ErrorResponse:
+      title: OpenApi.v1.ErrorResponse
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int32
+        errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
+      additionalProperties: false
+      xml:
+        name: ErrorResponse
     OpenApi.v1.Services.ServiceDetails:
       title: OpenApi.v1.Services.ServiceDetails
       type: object
@@ -175,6 +191,21 @@ components:
       additionalProperties: false
       xml:
         name: Services.Service
+    OpenApi.v1.Services.Product:
+      title: OpenApi.v1.Services.Product
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        productKey:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Services.Product
     OpenApi.v1.ErrorResource:
       title: OpenApi.v1.ErrorResource
       type: object
@@ -194,37 +225,6 @@ components:
       additionalProperties: false
       xml:
         name: ErrorResource
-    OpenApi.v1.Services.Product:
-      title: OpenApi.v1.Services.Product
-      type: object
-      properties:
-        name:
-          type:
-          - string
-          - 'null'
-        productKey:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: Services.Product
-    OpenApi.v1.ErrorResponse:
-      title: OpenApi.v1.ErrorResponse
-      type: object
-      properties:
-        statusCode:
-          type: integer
-          format: int32
-        errors:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
-      additionalProperties: false
-      xml:
-        name: ErrorResponse
     OpenApi.v1.Services.GetServicesRequest:
       title: OpenApi.v1.Services.GetServicesRequest
       type: object

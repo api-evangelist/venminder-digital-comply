@@ -48,10 +48,10 @@ tags:
 - Company
 - Third-Party Risk Management
 - Vendor Management
-- Risk
+- Risk Management
 - Compliance
 - Contracts
-- Financial-Services
+- Financial Services
 - Due Diligence
 - SCIM
 tags_raw:
@@ -64,6 +64,7 @@ tags_raw:
 - Financial Services
 - Due Diligence
 - SCIM
+- Financial-Services
 apis:
 - aid: venminder-digital-comply:venminder-scim-api
   name: Venminder SCIM 2.0 User Provisioning API

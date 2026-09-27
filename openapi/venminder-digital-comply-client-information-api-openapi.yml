@@ -33,41 +33,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    OpenApi.v1.OversightRequirement:
-      title: OpenApi.v1.OversightRequirement
-      type: object
-      properties:
-        key:
-          type:
-          - string
-          - 'null'
-        label:
-          type:
-          - string
-          - 'null'
-        appliesToAllProducts:
-          type: boolean
-      additionalProperties: false
-      xml:
-        name: OversightRequirement
-    OpenApi.v1.RiskLevel:
-      title: OpenApi.v1.RiskLevel
-      type: object
-      properties:
-        key:
-          type:
-          - string
-          - 'null'
-        name:
-          type:
-          - string
-          - 'null'
-        score:
-          type: integer
-          format: int32
-      additionalProperties: false
-      xml:
-        name: RiskLevel
     OpenApi.v1.Vendor:
       title: OpenApi.v1.Vendor
       type: object
@@ -115,8 +80,35 @@ components:
       additionalProperties: false
       xml:
         name: Vendor
-    OpenApi.v1.ContractOverview:
-      title: OpenApi.v1.ContractOverview
+    OpenApi.v1.PhoneNumber:
+      title: OpenApi.v1.PhoneNumber
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        areaCode:
+          type:
+          - string
+          - 'null'
+        prefix:
+          type:
+          - string
+          - 'null'
+        suffix:
+          type:
+          - string
+          - 'null'
+        extension:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: PhoneNumber
+    OpenApi.v1.RiskLevel:
+      title: OpenApi.v1.RiskLevel
       type: object
       properties:
         key:
@@ -127,112 +119,12 @@ components:
           type:
           - string
           - 'null'
-        isPerpetual:
-          type: boolean
-        effectiveDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        notificationDeadline:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        expirationDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        vendorKey:
-          type:
-          - string
-          - 'null'
-        productKeys:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-      additionalProperties: false
-      xml:
-        name: ContractOverview
-    OpenApi.v1.ProductProfileDataField:
-      title: OpenApi.v1.ProductProfileDataField
-      type: object
-      properties:
-        key:
-          type:
-          - string
-          - 'null'
-        label:
-          type:
-          - string
-          - 'null'
-        answerFormat:
-          type:
-          - string
-          - 'null'
-        parentKey:
-          type:
-          - string
-          - 'null'
-        selectedParentOption:
-          type:
-          - string
-          - 'null'
-        productsAppliedTo:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-      additionalProperties: false
-      xml:
-        name: ProductProfileDataField
-    OpenApi.v1.ValueList:
-      title: OpenApi.v1.ValueList
-      type: object
-      properties:
-        key:
-          type:
-          - string
-          - 'null'
-        label:
-          type:
-          - string
-          - 'null'
-        dataKeyFieldLabel:
-          type:
-          - string
-          - 'null'
-        dataKeyField:
-          type:
-          - string
-          - 'null'
-        sortIndex:
+        score:
           type: integer
           format: int32
       additionalProperties: false
       xml:
-        name: ValueList
-    OpenApi.v1.Role:
-      title: OpenApi.v1.Role
-      type: object
-      properties:
-        key:
-          type:
-          - string
-          - 'null'
-        roleName:
-          type:
-          - string
-          - 'null'
-        isCustom:
-          type: boolean
-      additionalProperties: false
-      xml:
-        name: Role
+        name: RiskLevel
     OpenApi.v1.Product:
       title: OpenApi.v1.Product
       type: object
@@ -316,6 +208,123 @@ components:
       additionalProperties: false
       xml:
         name: ClientInformation
+    OpenApi.v1.BusinessUnit:
+      title: OpenApi.v1.BusinessUnit
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: BusinessUnit
+    OpenApi.v1.ValueList:
+      title: OpenApi.v1.ValueList
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        label:
+          type:
+          - string
+          - 'null'
+        dataKeyFieldLabel:
+          type:
+          - string
+          - 'null'
+        dataKeyField:
+          type:
+          - string
+          - 'null'
+        sortIndex:
+          type: integer
+          format: int32
+      additionalProperties: false
+      xml:
+        name: ValueList
+    OpenApi.v1.ContractOverview:
+      title: OpenApi.v1.ContractOverview
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        isPerpetual:
+          type: boolean
+        effectiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        notificationDeadline:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        expirationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        productKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+      xml:
+        name: ContractOverview
+    OpenApi.v1.Role:
+      title: OpenApi.v1.Role
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        roleName:
+          type:
+          - string
+          - 'null'
+        isCustom:
+          type: boolean
+      additionalProperties: false
+      xml:
+        name: Role
+    OpenApi.v1.OversightRequirement:
+      title: OpenApi.v1.OversightRequirement
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        label:
+          type:
+          - string
+          - 'null'
+        appliesToAllProducts:
+          type: boolean
+      additionalProperties: false
+      xml:
+        name: OversightRequirement
     OpenApi.v1.VendorProfileDataField:
       title: OpenApi.v1.VendorProfileDataField
       type: object
@@ -349,33 +358,39 @@ components:
       additionalProperties: false
       xml:
         name: VendorProfileDataField
-    OpenApi.v1.PhoneNumber:
-      title: OpenApi.v1.PhoneNumber
+    OpenApi.v1.ProductProfileDataField:
+      title: OpenApi.v1.ProductProfileDataField
       type: object
       properties:
-        type:
+        key:
           type:
           - string
           - 'null'
-        areaCode:
+        label:
           type:
           - string
           - 'null'
-        prefix:
+        answerFormat:
           type:
           - string
           - 'null'
-        suffix:
+        parentKey:
           type:
           - string
           - 'null'
-        extension:
+        selectedParentOption:
           type:
           - string
           - 'null'
+        productsAppliedTo:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
       additionalProperties: false
       xml:
-        name: PhoneNumber
+        name: ProductProfileDataField
     OpenApi.v1.User:
       title: OpenApi.v1.User
       type: object
@@ -428,21 +443,6 @@ components:
       additionalProperties: false
       xml:
         name: User
-    OpenApi.v1.BusinessUnit:
-      title: OpenApi.v1.BusinessUnit
-      type: object
-      properties:
-        key:
-          type:
-          - string
-          - 'null'
-        name:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: BusinessUnit
   securitySchemes:
     Bearer:
       type: apiKey
