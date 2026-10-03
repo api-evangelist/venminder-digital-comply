@@ -45,58 +45,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    OpenApi.v1.InternalContact:
-      title: OpenApi.v1.InternalContact
-      type: object
-      properties:
-        key:
-          type:
-          - string
-          - 'null'
-        isActive:
-          type: boolean
-        isEnrolled:
-          type: boolean
-        firstName:
-          type:
-          - string
-          - 'null'
-        lastName:
-          type:
-          - string
-          - 'null'
-        emailAddress:
-          type:
-          - string
-          - 'null'
-        fullName:
-          type:
-          - string
-          - 'null'
-        phoneNumbers:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.PhoneNumber'
-        createdByUserKeyOrDescription:
-          type:
-          - string
-          - 'null'
-        createdDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        roles:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.Role'
-      additionalProperties: false
-      xml:
-        name: InternalContact
     OpenApi.v1.ErrorResponse:
       title: OpenApi.v1.ErrorResponse
       type: object
@@ -132,52 +80,6 @@ components:
       additionalProperties: false
       xml:
         name: ContactListResponse
-    OpenApi.v1.PhoneNumber:
-      title: OpenApi.v1.PhoneNumber
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        areaCode:
-          type:
-          - string
-          - 'null'
-        prefix:
-          type:
-          - string
-          - 'null'
-        suffix:
-          type:
-          - string
-          - 'null'
-        extension:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: PhoneNumber
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
-      type: object
-      properties:
-        resourceKey:
-          type:
-          - string
-          - 'null'
-        resourceValue:
-          type:
-          - string
-          - 'null'
-        field:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: ErrorResource
     OpenApi.v1.ExternalContact:
       title: OpenApi.v1.ExternalContact
       type: object
@@ -231,6 +133,85 @@ components:
       additionalProperties: false
       xml:
         name: ExternalContact
+    OpenApi.v1.InternalContact:
+      title: OpenApi.v1.InternalContact
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        isActive:
+          type: boolean
+        isEnrolled:
+          type: boolean
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        emailAddress:
+          type:
+          - string
+          - 'null'
+        fullName:
+          type:
+          - string
+          - 'null'
+        phoneNumbers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.PhoneNumber'
+        createdByUserKeyOrDescription:
+          type:
+          - string
+          - 'null'
+        createdDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        roles:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Role'
+      additionalProperties: false
+      xml:
+        name: InternalContact
+    OpenApi.v1.PhoneNumber:
+      title: OpenApi.v1.PhoneNumber
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        areaCode:
+          type:
+          - string
+          - 'null'
+        prefix:
+          type:
+          - string
+          - 'null'
+        suffix:
+          type:
+          - string
+          - 'null'
+        extension:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: PhoneNumber
     OpenApi.v1.Role:
       title: OpenApi.v1.Role
       type: object
@@ -248,6 +229,25 @@ components:
       additionalProperties: false
       xml:
         name: Role
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type:
+          - string
+          - 'null'
+        resourceValue:
+          type:
+          - string
+          - 'null'
+        field:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ErrorResource
   securitySchemes:
     Bearer:
       type: apiKey

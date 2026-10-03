@@ -59,89 +59,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    OpenApi.v1.Issues.Issue:
-      title: OpenApi.v1.Issues.Issue
-      type: object
-      properties:
-        key:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        vendor:
-          type:
-          - string
-          - 'null'
-        vendorKey:
-          type:
-          - string
-          - 'null'
-        products:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.Issues.IssueProduct'
-        owner:
-          type:
-          - string
-          - 'null'
-        dateOpened:
-          type: string
-          format: date-time
-        dateClosed:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        status:
-          type:
-          - string
-          - 'null'
-        severity:
-          type:
-          - string
-          - 'null'
-        severityKey:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: Issues.Issue
-    OpenApi.v1.Issues.IssueProduct:
-      title: OpenApi.v1.Issues.IssueProduct
-      type: object
-      properties:
-        product:
-          type:
-          - string
-          - 'null'
-        key:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: Issues.IssueProduct
-    OpenApi.v1.Issues.IssueCommentDocument:
-      title: OpenApi.v1.Issues.IssueCommentDocument
-      type: object
-      properties:
-        key:
-          type:
-          - string
-          - 'null'
-        fileName:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: Issues.IssueCommentDocument
     OpenApi.v1.Issues.IssueDetails:
       title: OpenApi.v1.Issues.IssueDetails
       type: object
@@ -223,6 +140,87 @@ components:
       additionalProperties: false
       xml:
         name: Issues.IssueDetails
+    OpenApi.v1.Issues.IssueCommentDocument:
+      title: OpenApi.v1.Issues.IssueCommentDocument
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        fileName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Issues.IssueCommentDocument
+    OpenApi.v1.Issues.GetAllIssuesResponse:
+      title: OpenApi.v1.Issues.GetAllIssuesResponse
+      type: object
+      properties:
+        issues:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Issues.Issue'
+      additionalProperties: false
+      xml:
+        name: Issues.GetAllIssuesResponse
+    OpenApi.v1.Issues.Issue:
+      title: OpenApi.v1.Issues.Issue
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        vendor:
+          type:
+          - string
+          - 'null'
+        vendorKey:
+          type:
+          - string
+          - 'null'
+        products:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Issues.IssueProduct'
+        owner:
+          type:
+          - string
+          - 'null'
+        dateOpened:
+          type: string
+          format: date-time
+        dateClosed:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        status:
+          type:
+          - string
+          - 'null'
+        severity:
+          type:
+          - string
+          - 'null'
+        severityKey:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Issues.Issue
     OpenApi.v1.Issues.IssueAdditionalDetails:
       title: OpenApi.v1.Issues.IssueAdditionalDetails
       type: object
@@ -246,6 +244,21 @@ components:
       additionalProperties: false
       xml:
         name: Issues.IssueAdditionalDetails
+    OpenApi.v1.Issues.IssueProduct:
+      title: OpenApi.v1.Issues.IssueProduct
+      type: object
+      properties:
+        product:
+          type:
+          - string
+          - 'null'
+        key:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Issues.IssueProduct
     OpenApi.v1.Issues.IssueComment:
       title: OpenApi.v1.Issues.IssueComment
       type: object
@@ -274,19 +287,6 @@ components:
       additionalProperties: false
       xml:
         name: Issues.IssueComment
-    OpenApi.v1.Issues.GetAllIssuesResponse:
-      title: OpenApi.v1.Issues.GetAllIssuesResponse
-      type: object
-      properties:
-        issues:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.Issues.Issue'
-      additionalProperties: false
-      xml:
-        name: Issues.GetAllIssuesResponse
   securitySchemes:
     Bearer:
       type: apiKey
