@@ -206,6 +206,17 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    OpenApi.v1.Oversight.OpenApiOnboardingOversightTaskProperties:
+      title: OpenApi.v1.Oversight.OpenApiOnboardingOversightTaskProperties
+      type: object
+      properties:
+        requestRelationshipKey:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOnboardingOversightTaskProperties
     OpenApi.v1.Oversight.OpenApiOversightContact:
       title: OpenApi.v1.Oversight.OpenApiOversightContact
       type: object
@@ -237,132 +248,6 @@ components:
       additionalProperties: false
       xml:
         name: ErrorResponse
-    OpenApi.v1.Oversight.OpenApiOnboardingOversightTaskProperties:
-      title: OpenApi.v1.Oversight.OpenApiOnboardingOversightTaskProperties
-      type: object
-      properties:
-        requestRelationshipKey:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: Oversight.OpenApiOnboardingOversightTaskProperties
-    OpenApi.v1.JsonPatch.Operations.Operation:
-      title: OpenApi.v1.JsonPatch.Operations.Operation
-      type: object
-      properties:
-        path:
-          type:
-          - string
-          - 'null'
-        op:
-          type:
-          - string
-          - 'null'
-        from:
-          type:
-          - string
-          - 'null'
-        value: {}
-      additionalProperties: false
-      xml:
-        name: JsonPatch.Operations.Operation
-    OpenApi.v1.Oversight.OpenApiOffboardingOversightTaskProperties:
-      title: OpenApi.v1.Oversight.OpenApiOffboardingOversightTaskProperties
-      type: object
-      properties:
-        requestKey:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: Oversight.OpenApiOffboardingOversightTaskProperties
-    OpenApi.v1.Oversight.Request.GetOversightTaskListRequest:
-      title: OpenApi.v1.Oversight.Request.GetOversightTaskListRequest
-      type: object
-      properties:
-        keys:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        statuses:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        lifecycles:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        vendorKeys:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        productKeys:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        startDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        endDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        reviewResults:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        taskOwnerKeys:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        requirementKeys:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-      additionalProperties: false
-      xml:
-        name: Oversight.Request.GetOversightTaskListRequest
-    OpenApi.v1.Oversight.OpenApiOversightTaskOwner:
-      title: OpenApi.v1.Oversight.OpenApiOversightTaskOwner
-      type: object
-      properties:
-        key:
-          type:
-          - string
-          - 'null'
-        name:
-          type:
-          - string
-          - 'null'
-        type:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: Oversight.OpenApiOversightTaskOwner
     OpenApi.v1.Oversight.OpenApiOversightTask:
       title: OpenApi.v1.Oversight.OpenApiOversightTask
       type: object
@@ -461,36 +346,26 @@ components:
       additionalProperties: false
       xml:
         name: Oversight.OpenApiOversightTask
-    OpenApi.v1.Oversight.OpenApiOversightTaskComment:
-      title: OpenApi.v1.Oversight.OpenApiOversightTaskComment
+    OpenApi.v1.JsonPatch.Operations.Operation:
+      title: OpenApi.v1.JsonPatch.Operations.Operation
       type: object
       properties:
-        commentString:
+        path:
           type:
           - string
           - 'null'
+        op:
+          type:
+          - string
+          - 'null'
+        from:
+          type:
+          - string
+          - 'null'
+        value: {}
       additionalProperties: false
       xml:
-        name: Oversight.OpenApiOversightTaskComment
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
-      type: object
-      properties:
-        resourceKey:
-          type:
-          - string
-          - 'null'
-        resourceValue:
-          type:
-          - string
-          - 'null'
-        field:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: ErrorResource
+        name: JsonPatch.Operations.Operation
     OpenApi.v1.Oversight.Request.CreateOversightTaskRequest:
       title: OpenApi.v1.Oversight.Request.CreateOversightTaskRequest
       type: object
@@ -527,6 +402,131 @@ components:
       additionalProperties: false
       xml:
         name: Oversight.Request.CreateOversightTaskRequest
+    OpenApi.v1.Oversight.OpenApiOversightTaskOwner:
+      title: OpenApi.v1.Oversight.OpenApiOversightTaskOwner
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOversightTaskOwner
+    OpenApi.v1.Oversight.Request.GetOversightTaskListRequest:
+      title: OpenApi.v1.Oversight.Request.GetOversightTaskListRequest
+      type: object
+      properties:
+        keys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        statuses:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        lifecycles:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        vendorKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        productKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        startDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        endDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        reviewResults:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        taskOwnerKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        requirementKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+      xml:
+        name: Oversight.Request.GetOversightTaskListRequest
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type:
+          - string
+          - 'null'
+        resourceValue:
+          type:
+          - string
+          - 'null'
+        field:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ErrorResource
+    OpenApi.v1.Oversight.OpenApiOversightTaskComment:
+      title: OpenApi.v1.Oversight.OpenApiOversightTaskComment
+      type: object
+      properties:
+        commentString:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOversightTaskComment
+    OpenApi.v1.Oversight.OpenApiOffboardingOversightTaskProperties:
+      title: OpenApi.v1.Oversight.OpenApiOffboardingOversightTaskProperties
+      type: object
+      properties:
+        requestKey:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOffboardingOversightTaskProperties
   securitySchemes:
     Bearer:
       type: apiKey

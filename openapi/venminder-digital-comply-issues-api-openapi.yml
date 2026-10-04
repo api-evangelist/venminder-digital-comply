@@ -59,6 +59,34 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    OpenApi.v1.Issues.GetAllIssuesResponse:
+      title: OpenApi.v1.Issues.GetAllIssuesResponse
+      type: object
+      properties:
+        issues:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.Issues.Issue'
+      additionalProperties: false
+      xml:
+        name: Issues.GetAllIssuesResponse
+    OpenApi.v1.Issues.IssueProduct:
+      title: OpenApi.v1.Issues.IssueProduct
+      type: object
+      properties:
+        product:
+          type:
+          - string
+          - 'null'
+        key:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Issues.IssueProduct
     OpenApi.v1.Issues.IssueDetails:
       title: OpenApi.v1.Issues.IssueDetails
       type: object
@@ -140,34 +168,29 @@ components:
       additionalProperties: false
       xml:
         name: Issues.IssueDetails
-    OpenApi.v1.Issues.IssueCommentDocument:
-      title: OpenApi.v1.Issues.IssueCommentDocument
+    OpenApi.v1.Issues.IssueAdditionalDetails:
+      title: OpenApi.v1.Issues.IssueAdditionalDetails
       type: object
       properties:
-        key:
+        questionKey:
           type:
           - string
           - 'null'
-        fileName:
+        question:
+          type:
+          - string
+          - 'null'
+        answerKey:
+          type:
+          - string
+          - 'null'
+        answer:
           type:
           - string
           - 'null'
       additionalProperties: false
       xml:
-        name: Issues.IssueCommentDocument
-    OpenApi.v1.Issues.GetAllIssuesResponse:
-      title: OpenApi.v1.Issues.GetAllIssuesResponse
-      type: object
-      properties:
-        issues:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.Issues.Issue'
-      additionalProperties: false
-      xml:
-        name: Issues.GetAllIssuesResponse
+        name: Issues.IssueAdditionalDetails
     OpenApi.v1.Issues.Issue:
       title: OpenApi.v1.Issues.Issue
       type: object
@@ -221,44 +244,6 @@ components:
       additionalProperties: false
       xml:
         name: Issues.Issue
-    OpenApi.v1.Issues.IssueAdditionalDetails:
-      title: OpenApi.v1.Issues.IssueAdditionalDetails
-      type: object
-      properties:
-        questionKey:
-          type:
-          - string
-          - 'null'
-        question:
-          type:
-          - string
-          - 'null'
-        answerKey:
-          type:
-          - string
-          - 'null'
-        answer:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: Issues.IssueAdditionalDetails
-    OpenApi.v1.Issues.IssueProduct:
-      title: OpenApi.v1.Issues.IssueProduct
-      type: object
-      properties:
-        product:
-          type:
-          - string
-          - 'null'
-        key:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: Issues.IssueProduct
     OpenApi.v1.Issues.IssueComment:
       title: OpenApi.v1.Issues.IssueComment
       type: object
@@ -287,6 +272,21 @@ components:
       additionalProperties: false
       xml:
         name: Issues.IssueComment
+    OpenApi.v1.Issues.IssueCommentDocument:
+      title: OpenApi.v1.Issues.IssueCommentDocument
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        fileName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Issues.IssueCommentDocument
   securitySchemes:
     Bearer:
       type: apiKey

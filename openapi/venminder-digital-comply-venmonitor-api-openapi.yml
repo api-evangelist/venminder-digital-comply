@@ -52,26 +52,22 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    OpenApi.v1.Venmonitor.DataPartnerScore:
-      title: OpenApi.v1.Venmonitor.DataPartnerScore
+    OpenApi.v1.ErrorResponse:
+      title: OpenApi.v1.ErrorResponse
       type: object
       properties:
-        dataPartnerName:
+        statusCode:
+          type: integer
+          format: int32
+        errors:
           type:
-          - string
+          - array
           - 'null'
-        normalizedScoreQuantitative:
-          type:
-          - number
-          - 'null'
-          format: double
-        normalizedScoreQualitative:
-          type:
-          - string
-          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
       additionalProperties: false
       xml:
-        name: Venmonitor.DataPartnerScore
+        name: ErrorResponse
     OpenApi.v1.Venmonitor.GetVendorScoreResponse:
       title: OpenApi.v1.Venmonitor.GetVendorScoreResponse
       type: object
@@ -135,22 +131,26 @@ components:
       additionalProperties: false
       xml:
         name: ErrorResource
-    OpenApi.v1.ErrorResponse:
-      title: OpenApi.v1.ErrorResponse
+    OpenApi.v1.Venmonitor.DataPartnerScore:
+      title: OpenApi.v1.Venmonitor.DataPartnerScore
       type: object
       properties:
-        statusCode:
-          type: integer
-          format: int32
-        errors:
+        dataPartnerName:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
+        normalizedScoreQuantitative:
+          type:
+          - number
+          - 'null'
+          format: double
+        normalizedScoreQualitative:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
       xml:
-        name: ErrorResponse
+        name: Venmonitor.DataPartnerScore
   securitySchemes:
     Bearer:
       type: apiKey

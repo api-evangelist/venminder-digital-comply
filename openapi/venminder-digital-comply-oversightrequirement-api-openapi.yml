@@ -96,21 +96,22 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    OpenApi.v1.Oversight.OpenApiOversightRequirementLifecycle:
-      title: OpenApi.v1.Oversight.OpenApiOversightRequirementLifecycle
+    OpenApi.v1.ErrorResponse:
+      title: OpenApi.v1.ErrorResponse
       type: object
       properties:
-        isApprovalRequired:
-          type: boolean
-        approverContact:
-          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightContact'
-        defaultTaskOwner:
-          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightTaskOwner'
-        isActive:
-          type: boolean
+        statusCode:
+          type: integer
+          format: int32
+        errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
       additionalProperties: false
       xml:
-        name: Oversight.OpenApiOversightRequirementLifecycle
+        name: ErrorResponse
     OpenApi.v1.Oversight.OpenApiOversightContact:
       title: OpenApi.v1.Oversight.OpenApiOversightContact
       type: object
@@ -175,22 +176,59 @@ components:
       additionalProperties: false
       xml:
         name: Oversight.Request.GetOversightRequirementListRequest
-    OpenApi.v1.ErrorResponse:
-      title: OpenApi.v1.ErrorResponse
+    OpenApi.v1.Oversight.OpenApiOversightRequirementLifecycle:
+      title: OpenApi.v1.Oversight.OpenApiOversightRequirementLifecycle
       type: object
       properties:
-        statusCode:
-          type: integer
-          format: int32
-        errors:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OpenApi.v1.ErrorResource'
+        isApprovalRequired:
+          type: boolean
+        approverContact:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightContact'
+        defaultTaskOwner:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightTaskOwner'
+        isActive:
+          type: boolean
       additionalProperties: false
       xml:
-        name: ErrorResponse
+        name: Oversight.OpenApiOversightRequirementLifecycle
+    OpenApi.v1.Oversight.OpenApiOversightTaskOwner:
+      title: OpenApi.v1.Oversight.OpenApiOversightTaskOwner
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOversightTaskOwner
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type:
+          - string
+          - 'null'
+        resourceValue:
+          type:
+          - string
+          - 'null'
+        field:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ErrorResource
     OpenApi.v1.Oversight.OpenApiOversightRequirement:
       title: OpenApi.v1.Oversight.OpenApiOversightRequirement
       type: object
@@ -233,44 +271,6 @@ components:
       additionalProperties: false
       xml:
         name: Oversight.OpenApiOversightRequirement
-    OpenApi.v1.Oversight.OpenApiOversightTaskOwner:
-      title: OpenApi.v1.Oversight.OpenApiOversightTaskOwner
-      type: object
-      properties:
-        key:
-          type:
-          - string
-          - 'null'
-        name:
-          type:
-          - string
-          - 'null'
-        type:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: Oversight.OpenApiOversightTaskOwner
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
-      type: object
-      properties:
-        resourceKey:
-          type:
-          - string
-          - 'null'
-        resourceValue:
-          type:
-          - string
-          - 'null'
-        field:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: ErrorResource
   securitySchemes:
     Bearer:
       type: apiKey

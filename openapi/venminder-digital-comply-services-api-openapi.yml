@@ -138,21 +138,6 @@ components:
       additionalProperties: false
       xml:
         name: Services.Service
-    OpenApi.v1.Services.Vendor:
-      title: OpenApi.v1.Services.Vendor
-      type: object
-      properties:
-        name:
-          type:
-          - string
-          - 'null'
-        vendorKey:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: Services.Vendor
     OpenApi.v1.Services.ServiceDetails:
       title: OpenApi.v1.Services.ServiceDetails
       type: object
@@ -221,6 +206,25 @@ components:
       additionalProperties: false
       xml:
         name: Services.Product
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type:
+          - string
+          - 'null'
+        resourceValue:
+          type:
+          - string
+          - 'null'
+        field:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ErrorResource
     OpenApi.v1.Services.GetServicesRequest:
       title: OpenApi.v1.Services.GetServicesRequest
       type: object
@@ -250,25 +254,21 @@ components:
       additionalProperties: false
       xml:
         name: Services.GetServicesRequest
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
+    OpenApi.v1.Services.Vendor:
+      title: OpenApi.v1.Services.Vendor
       type: object
       properties:
-        resourceKey:
+        name:
           type:
           - string
           - 'null'
-        resourceValue:
-          type:
-          - string
-          - 'null'
-        field:
+        vendorKey:
           type:
           - string
           - 'null'
       additionalProperties: false
       xml:
-        name: ErrorResource
+        name: Services.Vendor
   securitySchemes:
     Bearer:
       type: apiKey
