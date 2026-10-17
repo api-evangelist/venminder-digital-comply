@@ -112,21 +112,40 @@ components:
       additionalProperties: false
       xml:
         name: ErrorResponse
-    OpenApi.v1.Oversight.OpenApiOversightContact:
-      title: OpenApi.v1.Oversight.OpenApiOversightContact
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
       type: object
       properties:
-        key:
+        resourceKey:
           type:
           - string
           - 'null'
-        name:
+        resourceValue:
+          type:
+          - string
+          - 'null'
+        field:
           type:
           - string
           - 'null'
       additionalProperties: false
       xml:
-        name: Oversight.OpenApiOversightContact
+        name: ErrorResource
+    OpenApi.v1.Oversight.OpenApiOversightRequirementLifecycle:
+      title: OpenApi.v1.Oversight.OpenApiOversightRequirementLifecycle
+      type: object
+      properties:
+        isApprovalRequired:
+          type: boolean
+        approverContact:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightContact'
+        defaultTaskOwner:
+          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightTaskOwner'
+        isActive:
+          type: boolean
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOversightRequirementLifecycle
     OpenApi.v1.Oversight.Request.GetOversightRequirementListRequest:
       title: OpenApi.v1.Oversight.Request.GetOversightRequirementListRequest
       type: object
@@ -176,59 +195,6 @@ components:
       additionalProperties: false
       xml:
         name: Oversight.Request.GetOversightRequirementListRequest
-    OpenApi.v1.Oversight.OpenApiOversightRequirementLifecycle:
-      title: OpenApi.v1.Oversight.OpenApiOversightRequirementLifecycle
-      type: object
-      properties:
-        isApprovalRequired:
-          type: boolean
-        approverContact:
-          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightContact'
-        defaultTaskOwner:
-          $ref: '#/components/schemas/OpenApi.v1.Oversight.OpenApiOversightTaskOwner'
-        isActive:
-          type: boolean
-      additionalProperties: false
-      xml:
-        name: Oversight.OpenApiOversightRequirementLifecycle
-    OpenApi.v1.Oversight.OpenApiOversightTaskOwner:
-      title: OpenApi.v1.Oversight.OpenApiOversightTaskOwner
-      type: object
-      properties:
-        key:
-          type:
-          - string
-          - 'null'
-        name:
-          type:
-          - string
-          - 'null'
-        type:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: Oversight.OpenApiOversightTaskOwner
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
-      type: object
-      properties:
-        resourceKey:
-          type:
-          - string
-          - 'null'
-        resourceValue:
-          type:
-          - string
-          - 'null'
-        field:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: ErrorResource
     OpenApi.v1.Oversight.OpenApiOversightRequirement:
       title: OpenApi.v1.Oversight.OpenApiOversightRequirement
       type: object
@@ -271,6 +237,40 @@ components:
       additionalProperties: false
       xml:
         name: Oversight.OpenApiOversightRequirement
+    OpenApi.v1.Oversight.OpenApiOversightContact:
+      title: OpenApi.v1.Oversight.OpenApiOversightContact
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOversightContact
+    OpenApi.v1.Oversight.OpenApiOversightTaskOwner:
+      title: OpenApi.v1.Oversight.OpenApiOversightTaskOwner
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Oversight.OpenApiOversightTaskOwner
   securitySchemes:
     Bearer:
       type: apiKey

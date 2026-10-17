@@ -52,6 +52,26 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    OpenApi.v1.Venmonitor.DataPartnerScore:
+      title: OpenApi.v1.Venmonitor.DataPartnerScore
+      type: object
+      properties:
+        dataPartnerName:
+          type:
+          - string
+          - 'null'
+        normalizedScoreQuantitative:
+          type:
+          - number
+          - 'null'
+          format: double
+        normalizedScoreQualitative:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: Venmonitor.DataPartnerScore
     OpenApi.v1.ErrorResponse:
       title: OpenApi.v1.ErrorResponse
       type: object
@@ -68,6 +88,25 @@ components:
       additionalProperties: false
       xml:
         name: ErrorResponse
+    OpenApi.v1.ErrorResource:
+      title: OpenApi.v1.ErrorResource
+      type: object
+      properties:
+        resourceKey:
+          type:
+          - string
+          - 'null'
+        resourceValue:
+          type:
+          - string
+          - 'null'
+        field:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      xml:
+        name: ErrorResource
     OpenApi.v1.Venmonitor.GetVendorScoreResponse:
       title: OpenApi.v1.Venmonitor.GetVendorScoreResponse
       type: object
@@ -112,45 +151,6 @@ components:
       additionalProperties: false
       xml:
         name: Venmonitor.GetVendorScoreResponse
-    OpenApi.v1.ErrorResource:
-      title: OpenApi.v1.ErrorResource
-      type: object
-      properties:
-        resourceKey:
-          type:
-          - string
-          - 'null'
-        resourceValue:
-          type:
-          - string
-          - 'null'
-        field:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: ErrorResource
-    OpenApi.v1.Venmonitor.DataPartnerScore:
-      title: OpenApi.v1.Venmonitor.DataPartnerScore
-      type: object
-      properties:
-        dataPartnerName:
-          type:
-          - string
-          - 'null'
-        normalizedScoreQuantitative:
-          type:
-          - number
-          - 'null'
-          format: double
-        normalizedScoreQualitative:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      xml:
-        name: Venmonitor.DataPartnerScore
   securitySchemes:
     Bearer:
       type: apiKey
