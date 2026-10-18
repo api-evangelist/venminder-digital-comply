@@ -27,5 +27,5 @@
     - connectors/applications/venminder
     vendor_link: https://www.venminder.com/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
